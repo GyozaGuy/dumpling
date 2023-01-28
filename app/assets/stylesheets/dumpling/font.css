@@ -10,6 +10,7 @@
   --font-large6: 3rem;
   --font-large7: 3.75rem;
   --font-large8: 4.5rem;
+  font-family: var(--font-family, sans-serif);
 }
 
 .font-small2 {
