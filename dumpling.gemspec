@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ['GyozaGuy']
   spec.email       = ['gyozaguy@gmail.com']
   spec.homepage    = 'https://gyozaguy.com'
-  spec.summary     = 'TODO: Summary of Dumpling.'
-  spec.description = 'TODO: Description of Dumpling.'
+  spec.summary     = 'A simple transpile-free UI toolkit'
+  spec.description = 'Dumpling is a simple transpile-free UI toolkit for Ruby on Rails.'
   spec.license = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/GyozaGuy/dumpling'
-  spec.metadata['changelog_uri'] = "TODO: Put your gem's CHANGELOG.md URL here."
+  # spec.metadata['changelog_uri'] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
