@@ -93,8 +93,6 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.17.0)
-    mountain_view (0.14.0)
-      rails (>= 3.2.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -160,7 +158,6 @@ PLATFORMS
 
 DEPENDENCIES
   dumpling!
-  mountain_view (~> 0.14.0)
   sprockets-rails
   sqlite3
 
