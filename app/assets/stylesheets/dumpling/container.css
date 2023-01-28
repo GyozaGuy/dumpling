@@ -1,0 +1,20 @@
+.container {
+  margin: auto;
+  max-width: var(--container-size-xs, unset);
+}
+
+:root[data-screen-size="sm"] .container {
+  max-width: var(--container-size-sm, 250px);
+}
+
+:root[data-screen-size="md"] .container {
+  max-width: var(--container-size-md, 500px);
+}
+
+:root[data-screen-size="lg"] .container {
+  max-width: var(--container-size-lg, 750px);
+}
+
+:root[data-screen-size="xl"] .container {
+  max-width: var(--container-size-xl, 1000px);
+}
