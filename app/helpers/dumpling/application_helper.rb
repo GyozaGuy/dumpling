@@ -1,7 +1,7 @@
 module Dumpling
   module ApplicationHelper
     def component(name, *args, &block)
-      render_component(name, *args, &block)
+      render("#{name}/#{name}", *args, &block)
     end
 
     def title(content)
