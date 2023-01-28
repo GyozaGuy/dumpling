@@ -1,0 +1,18 @@
+:root {
+  --spacing-small3: 0.25rem;
+  --spacing-small2: 0.5rem;
+  --spacing-small1: 0.75rem;
+  --spacing-normal: 1rem;
+  --spacing-large1: 1.5rem;
+  --spacing-large2: 2rem;
+  --spacing-large3: 3rem;
+  --spacing-large4: 4rem;
+  --spacing-large5: 6rem;
+  --spacing-large6: 8rem;
+  --spacing-large7: 12rem;
+  --spacing-large8: 16rem;
+  --spacing-large9: 24rem;
+  --spacing-large10: 32rem;
+  --spacing-large11: 40rem;
+  --spacing-large12: 48rem;
+}

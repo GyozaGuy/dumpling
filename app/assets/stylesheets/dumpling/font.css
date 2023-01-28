@@ -1,0 +1,57 @@
+:root {
+  --font-small2: 0.75rem;
+  --font-small1: 0.875rem;
+  --font-normal: 1rem;
+  --font-large1: 1.125rem;
+  --font-large2: 1.25rem;
+  --font-large3: 1.5rem;
+  --font-large4: 1.875rem;
+  --font-large5: 2.25rem;
+  --font-large6: 3rem;
+  --font-large7: 3.75rem;
+  --font-large8: 4.5rem;
+}
+
+.font-small2 {
+  font-size: var(--font-small2);
+}
+
+.font-small1 {
+  font-size: var(--font-small1);
+}
+
+.font-normal {
+  font-size: var(--font-normal);
+}
+
+.font-large1 {
+  font-size: var(--font-large1);
+}
+
+.font-large2 {
+  font-size: var(--font-large2);
+}
+
+.font-large3 {
+  font-size: var(--font-large3);
+}
+
+.font-large4 {
+  font-size: var(--font-large4);
+}
+
+.font-large5 {
+  font-size: var(--font-large5);
+}
+
+.font-large6 {
+  font-size: var(--font-large6);
+}
+
+.font-large7 {
+  font-size: var(--font-large7);
+}
+
+.font-large8 {
+  font-size: var(--font-large8);
+}
