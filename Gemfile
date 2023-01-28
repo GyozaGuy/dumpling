@@ -12,3 +12,5 @@ gem 'sprockets-rails'
 # gem "debug", ">= 1.0.0"
 
 gem 'puma', '~> 6.0'
+
+gem 'importmap-rails', '~> 1.1'

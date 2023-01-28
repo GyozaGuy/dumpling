@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     dumpling (0.1.0)
+      importmap-rails
       rails (>= 7.0.4)
 
 GEM
@@ -81,6 +82,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.1.5)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -160,6 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   dumpling!
+  importmap-rails (~> 1.1)
   puma (~> 6.0)
   sprockets-rails
   sqlite3
