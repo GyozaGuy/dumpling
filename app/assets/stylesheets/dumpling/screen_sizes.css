@@ -1,0 +1,6 @@
+:root {
+  --screen-width-xs: 480px;
+  --screen-width-sm: 768px;
+  --screen-width-md: 1024px;
+  --screen-width-lg: 1200px;
+}
