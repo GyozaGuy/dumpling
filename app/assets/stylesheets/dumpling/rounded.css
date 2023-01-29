@@ -1,0 +1,7 @@
+.rounded {
+  border-radius: 4px;
+}
+
+.rounded-full {
+  border-radius: 100%;
+}

@@ -1,5 +1,10 @@
 .container {
+  background-color: var(--container-background-color);
   margin: auto;
+}
+
+.container.container-padded {
+  padding: var(--container-padding, var(--spacing-normal));
 }
 
 @media only screen and (max-width: 480px) {

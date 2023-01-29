@@ -1,0 +1,24 @@
+.column {
+  background-color: var(--column-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--column-gap, var(--spacing-normal));
+}
+
+.column.column-no-gap {
+  gap: 0;
+}
+
+.column.column-pad-x {
+  padding-left: var(--column-padding-x, var(--spacing-normal));
+  padding-right: var(--column-paddding-x, var(--spacing-normal));
+}
+
+.column.column-pad-y {
+  padding-bottom: var(--column-padding-y, var(--spacing-normal));
+  padding-top: var(--column-paddding-y, var(--spacing-normal));
+}
+
+.column.column-padded {
+  padding: var(--column-padding, var(--spacing-normal));
+}

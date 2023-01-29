@@ -1,0 +1,23 @@
+.row {
+  background-color: var(--row-background-color);
+  display: flex;
+  gap: var(--row-gap, var(--spacing-normal));
+}
+
+.row.row-no-gap {
+  gap: 0;
+}
+
+.row.row-pad-x {
+  padding-left: var(--row-padding-x, var(--spacing-normal));
+  padding-right: var(--row-paddding-x, var(--spacing-normal));
+}
+
+.row.row-pad-y {
+  padding-bottom: var(--row-padding-y, var(--spacing-normal));
+  padding-top: var(--row-paddding-y, var(--spacing-normal));
+}
+
+.row.row-padded {
+  padding: var(--row-padding, var(--spacing-normal));
+}

@@ -1,0 +1,26 @@
+<%
+background_color ||= nil
+local_assigns[:class] ||= nil
+size ||= 'md'
+
+class_string = "class=\"#{local_assigns[:class]}\"" unless local_assigns[:class].nil?
+
+sizes = {
+  'xs' => 'var(--spacing-normal)',
+  'sm' => 'var(--spacing-large2)',
+  'md' => 'var(--spacing-large4)',
+  'lg' => 'var(--spacing-large6)',
+  'xl' => 'var(--spacing-large8)'
+}
+
+styles = []
+styles << "--band-background-color: #{background_color}" unless background_color.nil?
+styles << "--band-padding: #{sizes[size]}"
+style = "style=\"#{styles.join('; ')}\""
+%>
+
+<div <%= raw class_string %> data-component="band" <%= raw style %>>
+  <div class="container">
+    <%= yield %>
+  </div>
+</div>
