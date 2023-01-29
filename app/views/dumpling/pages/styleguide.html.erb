@@ -5,6 +5,38 @@
 <% end %>
 
 <div class="column container">
+  <%= render 'styleguide_section', title: 'Alert' do %>
+    <h3>Standard</h3>
+
+    <%= component 'alert' do %>
+      This is a test of the emergency alert system.
+    <% end %>
+
+    <h3>Dismissable</h3>
+
+    <%= component 'alert', dismissable: true do %>
+      This is a test of the emergency alert system.
+    <% end %>
+
+    <h3>Error</h3>
+
+    <%= component 'alert', type: 'error' do %>
+      This is a test of the emergency alert system.
+    <% end %>
+
+    <h3>Success</h3>
+
+    <%= component 'alert', type: 'success' do %>
+      This is a test of the emergency alert system.
+    <% end %>
+
+    <h3>Warning</h3>
+
+    <%= component 'alert', type: 'warning' do %>
+      This is a test of the emergency alert system.
+    <% end %>
+  <% end %>
+
   <%= render 'styleguide_section', title: 'Column' do %>
     <h3>Standard</h3>
 
