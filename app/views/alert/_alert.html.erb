@@ -1,0 +1,17 @@
+<%
+dismissable ||= false
+type ||= nil
+
+classes = ['alert']
+classes << "alert-#{type}" unless type.nil?
+class_string = classes.join(' ')
+%>
+
+<div class="<%= class_string %>" data-controller="alert">
+  <%= yield %>
+  <% if dismissable %>
+    <button class="alert_close" data-action="alert#close" type="button">
+      <%= image_tag 'dumpling/icons/x-mark.svg', alt: 'Close', title: 'Close' %>
+    </button>
+  <% end %>
+</div>
