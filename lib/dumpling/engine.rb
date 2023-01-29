@@ -8,7 +8,6 @@ module Dumpling
     end
 
     initializer 'dumpling.assets.precompile' do |app|
-      app.config.assets.precompile += %w[dumpling.css]
       app.config.assets.precompile += %w[dumpling_manifest]
     end
 
