@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary     = 'A simple transpile-free UI toolkit'
   spec.description = 'Dumpling is a simple transpile-free UI toolkit for Ruby on Rails.'
   spec.license = 'MIT'
+  spec.required_ruby_version = '>= 3.2.0'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
