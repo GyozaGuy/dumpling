@@ -1,5 +1,9 @@
+:root {
+  --border-radius: 4px;
+}
+
 .rounded {
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 }
 
 .rounded-full {
