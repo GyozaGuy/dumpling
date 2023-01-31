@@ -14,3 +14,12 @@
  *= require_self
  *= require_tree ../../../views
  */
+
+body {
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  overflow: auto;
+}

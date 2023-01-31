@@ -1,0 +1,20 @@
+<div
+  class="notification-opening notification-visible"
+  data-component="notification"
+  data-controller="notification-component"
+  data-notification-component-closing-class="notification-closing"
+  data-notification-component-opening-class="notification-opening"
+  data-notification-component-visible-class="notification-visible"
+>
+  <strong class="notification_title" slot="title"></strong>
+  <div slot="content"></div>
+
+  <div class="notification_footer">
+    <button
+      data-action="notification-component#close"
+      type="button"
+    >
+      <%= t('notification.close', default: 'Close') %>
+    </button>
+  </div>
+</div>

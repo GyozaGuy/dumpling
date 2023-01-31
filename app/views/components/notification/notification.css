@@ -1,0 +1,58 @@
+@keyframes slide-in {
+  from {
+    right: -500px;
+  }
+  to {
+    right: var(--spacing-normal);
+  }
+}
+
+[data-controller="notification"] {
+  height: 100%;
+}
+
+.notificationContainer {
+  height: 100%;
+  padding: var(--spacing-normal);
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+[data-component="notification"] {
+  --close-button-color: hsl(0, 0%, 100%);
+  animation-fill-mode: forwards;
+  background-color: hsl(0, 0%, 25%);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-high);
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-normal);
+  min-width: 300px;
+  padding: var(--spacing-normal);
+  position: absolute;
+  right: -500px;
+}
+
+[data-component="notification"].notification-closing {
+  animation: var(--notification-animation-duration) reverse slide-in;
+}
+
+[data-component="notification"].notification-opening {
+  animation: var(--notification-animation-duration) slide-in;
+}
+
+[data-component="notification"].notification-visible {
+  right: var(--spacing-normal);
+}
+
+[data-component="notification"] .notification_title:empty {
+  display: none;
+}
+
+[data-component="notification"] .notification_footer {
+  display: flex;
+  gap: var(--spacing-normal);
+  justify-content: right;
+}

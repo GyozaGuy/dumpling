@@ -12,6 +12,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'components/notification/notification_context' do %>
+      <main>
+        <%= yield %>
+      </main>
+    <% end %>
   </body>
 </html>
