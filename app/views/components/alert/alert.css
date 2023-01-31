@@ -1,7 +1,5 @@
 .alert {
-  align-items: center;
   background-color: hsl(210, 100%, 80%);
-  border: 1px solid hsl(210, 100%, 50%);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lowest);
   color: hsl(210, 50%, 20%);
@@ -20,18 +18,15 @@
 
 .alert.alert-error {
   background-color: hsl(0, 100%, 80%);
-  border: 1px solid hsl(0, 100%, 50%);
   color: hsl(0, 50%, 20%);
 }
 
 .alert.alert-success {
   background-color: hsl(140, 100%, 80%);
-  border: 1px solid hsl(140, 100%, 50%);
   color: hsl(140, 50%, 20%);
 }
 
 .alert.alert-warning {
   background-color: hsl(50, 100%, 80%);
-  border: 1px solid hsl(50, 100%, 50%);
   color: hsl(50, 50%, 20%);
 }
