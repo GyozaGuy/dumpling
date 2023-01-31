@@ -7,10 +7,10 @@ classes << "alert-#{type}" unless type.nil?
 class_string = classes.join(' ')
 %>
 
-<div class="<%= class_string %>" data-controller="alert">
+<div class="<%= class_string %>" data-controller="alert-component">
   <%= yield %>
   <% if dismissable %>
-    <button class="alert_close" data-action="alert#close" type="button">
+    <button class="alert_close" data-action="alert-component#close" type="button">
       <%= image_tag 'dumpling/icons/x-mark.svg', alt: 'Close', title: 'Close' %>
     </button>
   <% end %>
