@@ -10,8 +10,13 @@ class_string = classes.join(' ')
 <div class="<%= class_string %>" data-controller="alert-component">
   <%= yield %>
   <% if dismissable %>
-    <button class="close" data-action="alert-component#close" type="button">
-      <%= image_tag 'dumpling/icons/x-mark.svg', alt: 'Close', title: 'Close' %>
+    <button
+      class="close"
+      data-action="alert-component#close"
+      title="<%= t('notification.close', default: 'Close') %>"
+      type="button"
+    >
+      <%= svg 'dumpling/icons/x-mark.svg' %>
     </button>
   <% end %>
 </div>

@@ -6,6 +6,10 @@ module Dumpling
       render("#{name}/#{name}", *args, &block)
     end
 
+    def svg(path)
+      render inline: Engine.root.join('app', 'assets', 'images', path).read
+    end
+
     def title(content)
       content_for(:title, content)
     end
