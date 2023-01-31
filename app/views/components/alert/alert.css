@@ -8,14 +8,6 @@
   padding: var(--spacing-small1);
 }
 
-.alert button.alert_close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-}
-
 .alert.alert-error {
   background-color: hsl(0, 100%, 80%);
   color: hsl(0, 50%, 20%);
