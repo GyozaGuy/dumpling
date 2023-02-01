@@ -10,7 +10,7 @@ module Dumpling
     end
 
     def partial
-      "#{name}/#{name}"
+      name.include?('/') ? name : "#{name}/#{name}"
     end
 
     def render(context)
