@@ -8,7 +8,7 @@ class_string = classes.join(' ')
 %>
 
 <div class="<%= class_string %>" data-controller="alert-component">
-  <%= yield %>
+  <%= children %>
   <% if dismissable %>
     <button
       class="close"
