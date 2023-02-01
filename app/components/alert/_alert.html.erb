@@ -1,12 +1,3 @@
-<%
-dismissable ||= true unless dismissable == false
-type ||= nil
-
-classes = ['alert']
-classes << "alert-#{type}" unless type.nil?
-class_string = classes.join(' ')
-%>
-
 <div class="<%= class_string %>" data-controller="alert-component">
   <%= children %>
   <% if dismissable %>
