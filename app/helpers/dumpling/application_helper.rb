@@ -9,9 +9,9 @@ module Dumpling
 
     # TODO: Make the following more elegant
     def svg(path)
-      render inline: Engine.root.join('app', 'assets', 'images', path).read
-    rescue StandardError
       render inline: Rails.root.join('app', 'assets', 'images', path).read
+    rescue StandardError
+      render inline: Engine.root.join('app', 'assets', 'images', path).read
     end
 
     def title(content)
