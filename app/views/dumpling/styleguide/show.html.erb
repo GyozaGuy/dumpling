@@ -1,0 +1,13 @@
+<% page_title params[:id].titleize %>
+
+<%= render 'header' %>
+
+<div id="styleguideWrapper">
+  <%= render 'sidebar' %>
+
+  <div class="column fill padded">
+    <%= render 'styleguide_section', title: params[:id].titleize do %>
+      <%= render "#{params[:id]}/#{params[:id]}_examples" %>
+    <% end %>
+  </div>
+</div>

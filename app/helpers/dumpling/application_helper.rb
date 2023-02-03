@@ -7,15 +7,15 @@ module Dumpling
       end
     end
 
+    def page_title(content)
+      content_for(:title, content)
+    end
+
     # TODO: Make the following more elegant
     def svg(path)
       render inline: Rails.root.join('app', 'assets', 'images', path).read
     rescue StandardError
       render inline: Engine.root.join('app', 'assets', 'images', path).read
-    end
-
-    def title(content)
-      content_for(:title, content)
     end
   end
 end

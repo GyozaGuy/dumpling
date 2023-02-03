@@ -17,10 +17,6 @@ module Dumpling
       app.config.paths['app/controllers'].concat(Dir.glob('app/views/*', base: app.root))
     end
 
-    initializer 'dumpling.controllers' do
-      config.paths['app/controllers'].concat(Dir.glob('app/views/*', base: root))
-    end
-
     initializer 'dumpling.importmap', before: 'importmap' do |app|
       app.config.importmap.paths << root.join('config/importmap.rb')
     end

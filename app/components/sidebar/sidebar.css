@@ -1,0 +1,5 @@
+[data-component="sidebar"] {
+  background-color: var(--sidebar-background-color);
+  box-shadow: var(--shadow-medium);
+  min-width: 300px;
+}

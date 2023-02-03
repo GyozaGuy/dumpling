@@ -1,3 +1,5 @@
 Dumpling::Engine.routes.draw do
-  root 'pages#styleguide'
+  root 'styleguide#index'
+
+  resources :styleguide, only: %i[index show]
 end
