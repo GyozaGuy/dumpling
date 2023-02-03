@@ -16,3 +16,28 @@
   --spacing-large11: 40rem;
   --spacing-large12: 48rem;
 }
+
+.fill {
+  flex-grow: 1;
+}
+
+.padded,
+.padded-md {
+  padding: var(--spacing-normal);
+}
+
+.padded-xs {
+  padding: var(--spacing-small2);
+}
+
+.padded-sm {
+  padding: var(--spacing-small1);
+}
+
+.padded-lg {
+  padding: var(--spacing-large1);
+}
+
+.padded-xl {
+  padding: var(--spacing-large2);
+}
