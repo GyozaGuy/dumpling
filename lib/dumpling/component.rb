@@ -30,7 +30,9 @@ module Dumpling
 
     class << self
       def component_for(*args)
-        component_class = "#{args.first.to_s.camelize}Component".safe_constantize
+        component_name = args.first.to_s
+        component_name = component_name.split('/').second if component_name.include?('/')
+        component_class = "#{component_name.camelize}Component".safe_constantize
         component_class ||= self
         component_class.new(*args)
       end
