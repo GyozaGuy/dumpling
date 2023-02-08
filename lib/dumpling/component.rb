@@ -15,9 +15,9 @@ module Dumpling
 
     def render(context)
       context.extend(ViewContext)
-      context.inject_component_context self
+      context.inject_component_context(self)
       properties[:children] ||= yield if block_given?
-      context.render(partial)
+      context.render(partial, partial:)
     end
 
     private
