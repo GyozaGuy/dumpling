@@ -1,0 +1,18 @@
+<div
+  data-component="tabs"
+  data-controller="tabs"
+  data-tabs-active-class="tab-selected"
+  data-tabs-selected-index-value="<%= selected_index %>"
+  style="display: flex; flex-direction: column-reverse;"
+>
+  <% tabs.each_with_index do |tab, i| %>
+    <% tab.instance_variable_get(:@__vc_content) => { attrs:, block:, component_class: } %>
+    <%= render component_class.new(**attrs, index: i, selected: i == selected_index) do %>
+      <%= block.call %>
+    <% end %>
+  <% end %>
+
+  <div class="tabs_tabBar" data-tabs-target="tabBar">
+    <%= content_for :tabs %>
+  </div>
+</div>

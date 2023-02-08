@@ -1,0 +1,11 @@
+<h3>Basic</h3>
+
+<%= render TabsComponent.new do |tabs| %>
+  <% tabs.with_tab(label: 'Tab 1') do %>
+    Tab content 1 in a slot!
+  <% end %>
+
+  <% tabs.with_tab(label: 'Tab 2') do %>
+    Tab content 2 in a slot!
+  <% end %>
+<% end %>

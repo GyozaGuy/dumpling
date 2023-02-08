@@ -14,3 +14,5 @@ gem 'sprockets-rails'
 gem 'puma', '~> 6.0'
 
 gem 'importmap-rails', '~> 1.1'
+
+gem 'view_component', '~> 2.82'

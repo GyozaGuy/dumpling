@@ -1,0 +1,36 @@
+[data-component="tabs"] .tabs_tabBar {
+  display: flex;
+}
+
+[data-component="tabs"] .tabs_tabBar .tab {
+  background: unset;
+  border: 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  color: hsl(0, 0%, 40%);
+  cursor: pointer;
+  padding: var(--spacing-small1) var(--spacing-normal) var(--spacing-small2);
+  position: relative;
+  transition-duration: 250ms;
+  transition-property: border, color, background-color;
+}
+
+[data-component="tabs"] .tabs_tabBar .tab.tab-selected {
+  background-color: hsl(0, 0%, 90%);
+  color: unset;
+}
+
+[data-component="tabs"] .tabs_tabBar .tab .tab_bottom {
+  background-color: hsl(0, 0%, 90%);
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  transition-duration: 250ms;
+  transition-property: background-color, box-shadow;
+  width: 100%;
+}
+
+[data-component="tabs"] .tabs_tabBar .tab.tab-selected .tab_bottom {
+  background-color: hsl(200, 100%, 70%);
+  box-shadow: 0 0 8px hsl(200, 100%, 50%);
+}
