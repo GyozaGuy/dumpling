@@ -1,0 +1,51 @@
+<h3>Basic</h3>
+
+<%= render CardComponent.new do %>
+  Card content
+<% end %>
+
+<h3>Header</h3>
+
+<%= render CardComponent.new do |card| %>
+  <% card.with_header do %>
+    Card Title
+  <% end %>
+
+  Card content
+<% end %>
+
+<h3>Footer</h3>
+
+<%= render CardComponent.new do |card| %>
+  Card content
+
+  <% card.with_footer do %>
+    <button type="button">Do Something</button>
+  <% end %>
+<% end %>
+
+<h3>Header and Footer</h3>
+
+<%= render CardComponent.new do |card| %>
+  <% card.with_header do %>
+    Card Title
+  <% end %>
+
+  Card content
+
+  <% card.with_footer do %>
+    <button type="button">Do Something</button>
+  <% end %>
+<% end %>
+
+<h3>Custom Background Color</h3>
+
+<%= render CardComponent.new(background_color: 'lime') do %>
+  Card content
+<% end %>
+
+<h3>Clickable</h3>
+
+<%= render CardComponent.new(href: '') do %>
+  Card content
+<% end %>

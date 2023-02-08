@@ -1,0 +1,25 @@
+<% if href %>
+  <a class="card_link" href="<%= href %>">
+  <% end %>
+
+  <div data-component="card" <%= style_string %>>
+    <% if header? %>
+      <div class="card_header">
+        <%= header %>
+      </div>
+    <% end %>
+
+    <div class="card_content">
+      <%= content %>
+    </div>
+
+    <% if footer? %>
+      <div class="card_footer">
+        <%= footer %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if href %>
+  </a>
+<% end %>

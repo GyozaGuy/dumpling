@@ -1,0 +1,34 @@
+.card_link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.card_link:hover {
+  text-decoration: inherit;
+}
+
+.card_link [data-component="card"] {
+  transition: 250ms box-shadow;
+}
+
+.card_link:hover [data-component="card"] {
+  box-shadow: var(--shadow-medium);
+}
+
+[data-component="card"] {
+  background-color: var(--background-color, hsl(200, 10%, 95%));
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-low);
+  overflow: hidden;
+}
+
+[data-component="card"] .card_header,
+[data-component="card"] .card_content,
+[data-component="card"] .card_footer {
+  padding: var(--spacing-normal);
+}
+
+[data-component="card"] .card_header {
+  background-color: hsl(200, 10%, 90%);
+  font-weight: bold;
+}
