@@ -9,3 +9,15 @@
     Tab content 2 in a slot!
   <% end %>
 <% end %>
+
+<h3>Set Default Selected Index</h3>
+
+<%= render TabsComponent.new(selected_index: 1) do |tabs| %>
+  <% tabs.with_tab(label: 'Tab 1') do %>
+    This tab was not selected by default.
+  <% end %>
+
+  <% tabs.with_tab(label: 'Tab 2') do %>
+    This tab is selected by default!
+  <% end %>
+<% end %>
