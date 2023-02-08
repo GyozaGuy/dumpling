@@ -6,13 +6,13 @@
   style="display: flex; flex-direction: column-reverse;"
 >
   <% tabs.each_with_index do |tab, i| %>
-    <% tab.instance_variable_get(:@__vc_content) => { attrs:, block:, component_class: } %>
-    <%= render component_class.new(**attrs, index: i, selected: i == selected_index) do %>
+    <% tab.instance_variable_get(:@__vc_content) => { attrs:, block:, component_class:, tabs_id: } %>
+    <%= render component_class.new(**attrs, index: i, selected: i == selected_index, tabs_id: ) do %>
       <%= block.call %>
     <% end %>
   <% end %>
 
   <div class="tabs_tabBar" data-tabs-target="tabBar">
-    <%= content_for :tabs %>
+    <%= content_for tabs_id.to_sym %>
   </div>
 </div>
