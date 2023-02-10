@@ -1,0 +1,27 @@
+label {
+  color: hsl(200, 20%, 20%);
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: inset var(--shadow-lowest);
+  outline: 1px solid hsl(200, 20%, 50%);
+  padding: var(--spacing-small3);
+  transition-duration: 125ms;
+  transition-property: box-shadow, outline;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  box-shadow: inset var(--shadow-low);
+  outline: 2px solid hsl(200, 100%, 50%);
+}
