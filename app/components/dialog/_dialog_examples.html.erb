@@ -65,3 +65,13 @@
 
   Dialog content!
 <% end %>
+
+<h3>Non-Movable</h3>
+
+<%= vc 'dialog', movable: false do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+<% end %>

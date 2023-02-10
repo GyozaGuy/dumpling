@@ -7,7 +7,7 @@
 >
   <% if modal? %>
     <div
-      class="dialog_scrim"
+      <%= scrim_class_string %>
       <%= close_on_click_scrim? ? raw('data-action="click->dialog-component#close"') : '' %>
       data-dialog-component-target="scrim"
       ></div>
@@ -18,7 +18,10 @@
     data-component="dialog"
     data-dialog-component-target="dialog"
   >
-    <div class="dialog_header">
+    <div
+      class="dialog_header"
+      <%= movable? ? raw('data-action="mousedown->dialog-component#beginMove mouseup@document->dialog-component#endMove"') : '' %>
+    >
       <span class="dialog_title"><%= title %></span>
       <button data-action="dialog-component#close" type="button">Close</button>
     </div>

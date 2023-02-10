@@ -32,6 +32,8 @@
 }
 
 [data-component="dialog"] {
+  --dialog-translate-x: 0px;
+  --dialog-translate-y: 0px;
   animation-duration: 125ms;
   animation-fill-mode: forwards;
   background-color: hsl(0, 0%, 100%);
@@ -44,16 +46,19 @@
   overflow: hidden;
   position: absolute;
   top: 50%;
-  translate: -50% -50%;
+  translate: calc(var(--dialog-translate-x) + -50%)
+    calc(var(--dialog-translate-y) + -50%);
   z-index: 100;
 }
 
 @keyframes dialog-slide-in {
   from {
-    translate: -50% -100%;
+    translate: calc(var(--dialog-translate-x) + -50%)
+      calc(var(--dialog-translate-y) + -100%);
   }
   to {
-    translate: -50% -50%;
+    translate: calc(var(--dialog-translate-x) + -50%)
+      calc(var(--dialog-translate-y) + -50%);
   }
 }
 
@@ -72,12 +77,16 @@
 
 [data-component="dialog"] .dialog_header {
   background-color: hsl(200, 10%, 95%);
-  cursor: move;
   display: flex;
   gap: var(--spacing-normal);
   justify-content: space-between;
   padding: var(--spacing-normal);
   width: 100%;
+}
+
+[data-component="dialog"].dialog-movable .dialog_header {
+  cursor: move;
+  user-select: none;
 }
 
 [data-component="dialog"] .dialog_header .dialog_title {
