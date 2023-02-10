@@ -47,6 +47,6 @@ class DialogComponent < ViewComponent::Base
   end
 
   def svg(path)
-    render inline: Engine.root.join('app', 'assets', 'images', path).read
+    render inline: Dumpling::Engine.root.join('app', 'assets', 'images', 'dumpling', path).read
   end
 end

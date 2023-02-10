@@ -23,7 +23,14 @@
       <%= movable? ? raw('data-action="mousedown->dialog-component#beginMove mouseup@document->dialog-component#endMove"') : '' %>
     >
       <span class="dialog_title"><%= title %></span>
-      <button data-action="dialog-component#close" type="button">Close</button>
+      <button
+        class="close"
+        data-action="dialog-component#close"
+        title="<%= t('dialog.close', default: 'Close') %>"
+        type="button"
+      >
+        <%= svg('icons/x-mark.svg') %>
+      </button>
     </div>
 
     <div class="dialog_content">

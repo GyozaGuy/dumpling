@@ -76,6 +76,8 @@
 }
 
 [data-component="dialog"] .dialog_header {
+  --close-button-color: hsl(200, 10%, 40%);
+  align-items: center;
   background-color: hsl(200, 10%, 95%);
   display: flex;
   gap: var(--spacing-normal);
