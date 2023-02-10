@@ -17,5 +17,10 @@ module Dumpling
     rescue StandardError
       render inline: Engine.root.join('app', 'assets', 'images', path).read
     end
+
+    def vc(name, *args, **kwargs, &block)
+      component = "#{name.to_s.camelize}Component".safe_constantize
+      render component.new(*args, **kwargs), &block
+    end
   end
 end
