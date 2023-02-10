@@ -23,7 +23,7 @@
   animation-fill-mode: forwards;
   background-color: hsl(0, 0%, 25%);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-high);
+  box-shadow: var(--shadow-highest);
   color: hsl(0, 0%, 100%);
   display: flex;
   flex-direction: column;
