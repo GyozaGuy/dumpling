@@ -1,12 +1,12 @@
 button,
-a.button,
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.button {
   background-color: hsl(200, 20%, 90%);
   border: none;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lowest);
-  color: hsl(200, 20%, 10%);
+  color: hsl(200, 20%, 20%);
   cursor: pointer;
   display: inline-block;
   padding: var(--spacing-small3) var(--spacing-small1);
@@ -17,20 +17,34 @@ input[type="submit"] {
 }
 
 button:hover,
-a.button:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+.button:hover {
   box-shadow: var(--shadow-low);
   text-decoration: none;
   translate: 0 -1px;
 }
 
 button:active,
-a.button:active,
 input[type="reset"]:active,
-input[type="submit"]:active {
+input[type="submit"]:active,
+.button:active {
   box-shadow: none;
   translate: 0 1px;
+}
+
+.button-danger {
+  background-color: hsl(0, 100%, 80%);
+  color: hsl(0, 50%, 20%);
+}
+
+.button-primary {
+  background-color: hsl(200, 100%, 50%);
+}
+
+.button-success {
+  background-color: hsl(140, 80%, 60%);
+  color: hsl(140, 50%, 20%);
 }
 
 /* Close button for alerts, modals, and notifications */
