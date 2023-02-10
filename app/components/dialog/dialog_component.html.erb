@@ -1,0 +1,42 @@
+<div
+  data-controller="dialog-component"
+  data-dialog-component-closing-class="dialog-closing"
+  data-dialog-component-opening-class="dialog-opening"
+  data-dialog-component-visible-class="dialog-visible"
+  data-turbo-cache="false"
+>
+  <% if modal? %>
+    <div
+      class="dialog_scrim"
+      <%= close_on_click_scrim? ? raw('data-action="click->dialog-component#close"') : '' %>
+      data-dialog-component-target="scrim"
+      ></div>
+  <% end %>
+
+  <div
+    <%= class_string %>
+    data-component="dialog"
+    data-dialog-component-target="dialog"
+  >
+    <div class="dialog_header">
+      <span class="dialog_title"><%= title %></span>
+      <button data-action="dialog-component#close" type="button">Close</button>
+    </div>
+
+    <div class="dialog_content">
+      <%= content %>
+    </div>
+
+    <% if footer? %>
+      <div class="dialog_footer">
+        <%= footer %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if open_button? %>
+    <button data-action="dialog-component#open" type="button">
+      <%= open_button %>
+    </button>
+  <% end %>
+</div>

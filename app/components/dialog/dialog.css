@@ -1,0 +1,95 @@
+@keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-controller="dialog-component"] .dialog_scrim {
+  animation-fill-mode: forwards;
+  background-color: hsla(200, 10%, 20%, 0.25);
+  content: "";
+  display: none;
+  height: 100vh;
+  inset: 0;
+  position: absolute;
+  width: 100vw;
+  z-index: 90;
+}
+
+[data-controller="dialog-component"] .dialog_scrim.dialog-closing {
+  animation: 125ms dialog-fade-in reverse;
+}
+
+[data-controller="dialog-component"] .dialog_scrim.dialog-opening {
+  animation: 125ms dialog-fade-in;
+}
+
+[data-controller="dialog-component"] .dialog_scrim.dialog-visible {
+  display: unset;
+}
+
+[data-component="dialog"] {
+  animation-duration: 125ms;
+  animation-fill-mode: forwards;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-high);
+  display: none;
+  left: 50%;
+  max-width: fit-content;
+  min-width: 500px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 100;
+}
+
+@keyframes dialog-slide-in {
+  from {
+    translate: -50% -100%;
+  }
+  to {
+    translate: -50% -50%;
+  }
+}
+
+[data-component="dialog"].dialog-closing {
+  animation-direction: reverse;
+  animation-name: dialog-fade-in, dialog-slide-in;
+}
+
+[data-component="dialog"].dialog-opening {
+  animation-name: dialog-fade-in, dialog-slide-in;
+}
+
+[data-component="dialog"].dialog-visible {
+  display: unset;
+}
+
+[data-component="dialog"] .dialog_header {
+  background-color: hsl(200, 10%, 95%);
+  cursor: move;
+  display: flex;
+  gap: var(--spacing-normal);
+  justify-content: space-between;
+  padding: var(--spacing-normal);
+  width: 100%;
+}
+
+[data-component="dialog"] .dialog_header .dialog_title {
+  color: hsl(200, 10%, 40%);
+  font-size: 1.25rem;
+}
+
+[data-component="dialog"] .dialog_content {
+  padding: var(--spacing-normal);
+}
+
+[data-component="dialog"] .dialog_footer {
+  padding: var(--spacing-normal);
+  text-align: right;
+}

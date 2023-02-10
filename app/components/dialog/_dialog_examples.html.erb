@@ -1,0 +1,67 @@
+<h3>Basic</h3>
+
+<%= vc 'dialog' do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+<% end %>
+
+<h3>With Title</h3>
+
+<%= vc 'dialog', title: 'Dialog Title' do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+<% end %>
+
+<h3>With Footer</h3>
+
+<%= vc 'dialog' do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+
+  <% dialog.with_footer do %>
+    <button type="button">Cancel</button>
+  <% end %>
+<% end %>
+
+<h3>With Title and Footer</h3>
+
+<%= vc 'dialog', title: 'Dialog Title' do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+
+  <% dialog.with_footer do %>
+    <button type="button">Cancel</button>
+  <% end %>
+<% end %>
+
+<h3>Don't Close When Scrim is Clicked</h3>
+
+<%= vc 'dialog', close_on_click_scrim: false do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+<% end %>
+
+<h3>Non-Modal</h3>
+
+<%= vc 'dialog', modal: false do |dialog| %>
+  <% dialog.with_open_button do %>
+    Open
+  <% end %>
+
+  Dialog content!
+<% end %>
