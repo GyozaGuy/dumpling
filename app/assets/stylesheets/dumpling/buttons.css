@@ -1,0 +1,49 @@
+button,
+a.button,
+input[type="reset"],
+input[type="submit"] {
+  background-color: hsl(200, 20%, 90%);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lowest);
+  color: hsl(200, 20%, 10%);
+  cursor: pointer;
+  display: inline-block;
+  padding: var(--spacing-small3) var(--spacing-small1);
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 125ms;
+  transition-property: box-shadow, translate;
+}
+
+button:hover,
+a.button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  box-shadow: var(--shadow-low);
+  text-decoration: none;
+  translate: 0 -1px;
+}
+
+button:active,
+a.button:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  box-shadow: none;
+  translate: 0 1px;
+}
+
+/* Close button for alerts, modals, and notifications */
+button.close {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  height: 24px;
+  padding: 0;
+  width: 24px;
+}
+
+button.close > svg {
+  color: var(--close-button-color, inherit);
+}
