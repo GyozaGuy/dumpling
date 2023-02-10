@@ -1,4 +1,4 @@
-@keyframes slide-in {
+@keyframes notification-slide-in {
   from {
     right: -500px;
   }
@@ -36,11 +36,12 @@
 }
 
 [data-component="notification"].notification-closing {
-  animation: var(--notification-animation-duration) reverse slide-in;
+  animation: var(--notification-animation-duration) reverse
+    notification-slide-in;
 }
 
 [data-component="notification"].notification-opening {
-  animation: var(--notification-animation-duration) slide-in;
+  animation: var(--notification-animation-duration) notification-slide-in;
 }
 
 [data-component="notification"].notification-visible {
