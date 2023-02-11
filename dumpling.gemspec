@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'importmap-rails'
   spec.add_dependency 'rails', '>= 7.0.4'
+  spec.add_dependency 'view_component'
 end
