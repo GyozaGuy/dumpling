@@ -1,8 +1,8 @@
 <div
   data-component="tabs"
-  data-controller="tabs"
-  data-tabs-active-class="tab-selected"
-  data-tabs-selected-index-value="<%= selected_index %>"
+  data-controller="tabs-component"
+  data-tabs-component-active-class="tab-selected"
+  data-tabs-component-selected-index-value="<%= selected_index %>"
   style="display: flex; flex-direction: column-reverse;"
 >
   <% tabs.each_with_index do |tab, i| %>
@@ -12,7 +12,7 @@
     <% end %>
   <% end %>
 
-  <div class="tabs_tabBar" data-tabs-target="tabBar">
+  <div class="tabs_tabBar" data-tabs-component-target="tabBar">
     <%= content_for tabs_id.to_sym %>
   </div>
 </div>
