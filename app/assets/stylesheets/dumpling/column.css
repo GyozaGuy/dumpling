@@ -5,6 +5,26 @@
   gap: var(--column-gap, var(--spacing-normal));
 }
 
+.column.column-gap-xs {
+  --column-gap: var(--spacing-small2);
+}
+
+.column.column-gap-sm {
+  --column-gap: var(--spacing-small1);
+}
+
+.column.column-gap-md {
+  --column-gap: var(--spacing-normal);
+}
+
+.column.column-gap-lg {
+  --column-gap: var(--spacing-large1);
+}
+
+.column.column-gap-xl {
+  --column-gap: var(--spacing-large2);
+}
+
 .column.column-no-gap {
   gap: 0;
 }

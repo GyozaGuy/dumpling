@@ -4,6 +4,26 @@
   gap: var(--row-gap, var(--spacing-normal));
 }
 
+.row.row-gap-xs {
+  --row-gap: var(--spacing-small2);
+}
+
+.row.row-gap-sm {
+  --row-gap: var(--spacing-small1);
+}
+
+.row.row-gap-md {
+  --row-gap: var(--spacing-normal);
+}
+
+.row.row-gap-lg {
+  --row-gap: var(--spacing-large1);
+}
+
+.row.row-gap-xl {
+  --row-gap: var(--spacing-large2);
+}
+
 .row.row-no-gap {
   gap: 0;
 }
