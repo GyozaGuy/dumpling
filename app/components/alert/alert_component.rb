@@ -10,7 +10,7 @@ class AlertComponent < ViewComponent::Base
   end
 
   def class_string
-    raw @classes.join(' ')
+    raw "class=\"#{@classes.join(' ')}\""
   end
 
   def dismissable?
