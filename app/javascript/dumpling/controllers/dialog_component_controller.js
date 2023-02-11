@@ -1,6 +1,6 @@
 import { Controller } from '@hotwired/stimulus';
 
-import { wait } from '../helpers/utilities';
+import { wait } from 'dumpling/helpers/utilities';
 
 export default class extends Controller {
   static classes = ['closing', 'opening', 'visible'];
