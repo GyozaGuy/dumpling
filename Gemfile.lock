@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     dumpling (0.1.0)
-      importmap-rails
       rails (>= 7.0.4)
+      view_component
 
 GEM
   remote: https://rubygems.org/
