@@ -1,13 +1,14 @@
 <div class="<%= class_string %>" data-controller="alert-component">
-  <%= children %>
-  <% if dismissable %>
+  <%= content %>
+
+  <% if dismissable? %>
     <button
       class="close"
       data-action="alert-component#close"
       title="<%= t('notification.close', default: 'Close') %>"
       type="button"
     >
-      <%= svg 'dumpling/icons/x-mark.svg' %>
+      <%= svg 'icons/x-mark.svg' %>
     </button>
   <% end %>
 </div>
