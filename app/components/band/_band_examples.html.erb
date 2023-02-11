@@ -1,0 +1,31 @@
+<div class="column column-gap-md">
+  <h3>Basic</h3>
+
+  <%= component 'band' do %>
+    Band content!
+  <% end %>
+</div>
+
+<div class="column column-gap-md">
+  <h3>With Background Color</h3>
+
+  <%= component 'band', background_color: 'lightblue' do %>
+    Band content!
+  <% end %>
+</div>
+
+<div class="column column-gap-md">
+  <h3>With Size</h3>
+
+  <%= component 'band', size: 'md' do %>
+    Band content!
+  <% end %>
+</div>
+
+<div class="column column-gap-md">
+  <h3>With Background Color and Size</h3>
+
+  <%= component 'band', background_color: 'lightblue', size: 'sm' do %>
+    Band content!
+  <% end %>
+</div>
