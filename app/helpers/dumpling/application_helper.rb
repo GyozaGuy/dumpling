@@ -1,12 +1,5 @@
 module Dumpling
   module ApplicationHelper
-    def component(name, properties = {}, &block)
-      comp = Dumpling::Component.component_for(name, properties)
-      comp.render(controller.view_context) do
-        capture(&block) if block_given?
-      end
-    end
-
     def page_title(content)
       content_for(:title, content)
     end

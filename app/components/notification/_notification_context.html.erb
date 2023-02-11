@@ -1,9 +1,9 @@
 <div data-controller="notification">
   <template data-notification-target="template">
-    <%= component 'notification' %>
+    <%= render 'notification/notification' %>
   </template>
 
   <div class="notificationContainer" data-notification-target="container"></div>
 
-  <%= children %>
+  <%= yield %>
 </div>
