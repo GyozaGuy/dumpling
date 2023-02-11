@@ -1,4 +1,4 @@
-class CardComponent < ViewComponent::Base
+class CardComponent < Dumpling::Component
   attr_reader :href
 
   renders_one :header
@@ -6,11 +6,6 @@ class CardComponent < ViewComponent::Base
 
   def initialize(background_color: nil, href: nil)
     @href = href
-    @styles = []
-    @styles << "--background-color: #{background_color}" if background_color.present?
-  end
-
-  def style_string
-    raw "style=\"#{@styles.join(' ')}\""
+    styles << "--background-color: #{background_color}" if background_color.present?
   end
 end

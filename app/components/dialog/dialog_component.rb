@@ -1,4 +1,4 @@
-class DialogComponent < ViewComponent::Base
+class DialogComponent < Dumpling::Component
   attr_reader :id, :title
 
   renders_one :footer
@@ -12,7 +12,6 @@ class DialogComponent < ViewComponent::Base
     showing: false,
     title: nil
   )
-    @classes = []
     @scrim_classes = ['dialog_scrim']
 
     @close_on_click_scrim = close_on_click_scrim
@@ -21,13 +20,9 @@ class DialogComponent < ViewComponent::Base
     @movable = movable
     @title = title
 
-    @classes.push('dialog-movable') if movable
-    @classes.push('dialog-visible') if showing
+    classes.push('dialog-movable') if movable
+    classes.push('dialog-visible') if showing
     @scrim_classes.push('dialog-visible') if showing
-  end
-
-  def class_string
-    raw "class=\"#{@classes.join(' ')}\""
   end
 
   def close_on_click_scrim?

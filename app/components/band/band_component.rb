@@ -1,17 +1,9 @@
-class BandComponent < ViewComponent::Base
+class BandComponent < Dumpling::Component
   def initialize(args)
     args => { background_color:, size: }
-
-    @classes = []
-    @styles = []
-
-    @classes << args[:class] if args[:class]
-    @styles << "--band-background-color: #{background_color}" if background_color
-    @styles << "--band-padding: #{padding_size(size)}"
-  end
-
-  def class_string
-    raw "class=\"#{@classes.join(' ')}\""
+    classes << args[:class] if args[:class]
+    styles << "--band-background-color: #{background_color}" if background_color
+    styles << "--band-padding: #{padding_size(size)}"
   end
 
   def padding_size(size)
@@ -22,9 +14,5 @@ class BandComponent < ViewComponent::Base
       'lg' => 'var(--spacing-large6)',
       'xl' => 'var(--spacing-large8)'
     }[size]
-  end
-
-  def style_string
-    raw "style=\"#{@styles.join('; ')}\""
   end
 end

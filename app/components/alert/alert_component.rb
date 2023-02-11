@@ -1,16 +1,10 @@
-class AlertComponent < ViewComponent::Base
+class AlertComponent < Dumpling::Component
   attr_reader :dismissable
 
   def initialize(dismissable: true, type: nil)
-    @classes = ['alert']
-
+    classes << ['alert']
     @dismissable = dismissable
-
-    @classes << "alert-#{type}" if type
-  end
-
-  def class_string
-    raw "class=\"#{@classes.join(' ')}\""
+    classes << "alert-#{type}" if type
   end
 
   def dismissable?

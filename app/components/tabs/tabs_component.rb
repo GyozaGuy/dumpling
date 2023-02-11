@@ -1,4 +1,4 @@
-class TabsComponent < ViewComponent::Base
+class TabsComponent < Dumpling::Component
   attr_reader :selected_index, :tabs_id
 
   renders_many :tabs,
