@@ -1,51 +1,63 @@
-<h3>Basic</h3>
+<div class="column column-gap-md">
+  <h3>Basic</h3>
 
-<%= component 'card' do %>
-  Card content
-<% end %>
-
-<h3>Header</h3>
-
-<%= component 'card' do |card| %>
-  <% card.with_header do %>
-    Card Title
+  <%= component 'card' do %>
+    Card content
   <% end %>
+</div>
 
-  Card content
-<% end %>
+<div class="column column-gap-md">
+  <h3>Header</h3>
 
-<h3>Footer</h3>
+  <%= component 'card' do |card| %>
+    <% card.with_header do %>
+      Card Title
+    <% end %>
 
-<%= component 'card' do |card| %>
-  Card content
-
-  <% card.with_footer do %>
-    <button type="button">Do Something</button>
+    Card content
   <% end %>
-<% end %>
+</div>
 
-<h3>Header and Footer</h3>
+<div class="column column-gap-md">
+  <h3>Footer</h3>
 
-<%= component 'card' do |card| %>
-  <% card.with_header do %>
-    Card Title
+  <%= component 'card' do |card| %>
+    Card content
+
+    <% card.with_footer do %>
+      <button type="button">Do Something</button>
+    <% end %>
   <% end %>
+</div>
 
-  Card content
+<div class="column column-gap-md">
+  <h3>Header and Footer</h3>
 
-  <% card.with_footer do %>
-    <button type="button">Do Something</button>
+  <%= component 'card' do |card| %>
+    <% card.with_header do %>
+      Card Title
+    <% end %>
+
+    Card content
+
+    <% card.with_footer do %>
+      <button type="button">Do Something</button>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<h3>Custom Background Color</h3>
+<div class="column column-gap-md">
+  <h3>Custom Background Color</h3>
 
-<%= component 'card', background_color: 'lime' do %>
-  Card content
-<% end %>
+  <%= component 'card', background_color: 'lime' do %>
+    Card content
+  <% end %>
+</div>
 
-<h3>Clickable</h3>
+<div class="column column-gap-md">
+  <h3>Clickable</h3>
 
-<%= component 'card', href: '' do %>
-  Card content
-<% end %>
+  <%= component 'card', href: '' do %>
+    Card content
+  <% end %>
+</div>

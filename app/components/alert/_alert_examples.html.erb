@@ -1,29 +1,39 @@
-<h3>Basic</h3>
+<div class="column column-gap-md">
+  <h3>Basic</h3>
 
-<%= component 'alert' do %>
-  This is a test of the emergency alert system.
-<% end %>
+  <%= component 'alert' do %>
+    This is a test of the emergency alert system.
+  <% end %>
+</div>
 
-<h3>Not Dismissable</h3>
+<div class="column column-gap-md">
+  <h3>Not Dismissable</h3>
 
-<%= component 'alert', dismissable: false do %>
-  This is a test of the emergency alert system.
-<% end %>
+  <%= component 'alert', dismissable: false do %>
+    This is a test of the emergency alert system.
+  <% end %>
+</div>
 
-<h3>Error</h3>
+<div class="column column-gap-md">
+  <h3>Error</h3>
 
-<%= component 'alert', type: 'error' do %>
-  This is a test of the emergency alert system.
-<% end %>
+  <%= component 'alert', type: 'error' do %>
+    This is a test of the emergency alert system.
+  <% end %>
+</div>
 
-<h3>Success</h3>
+<div class="column column-gap-md">
+  <h3>Success</h3>
 
-<%= component 'alert', type: 'success' do %>
-  This is a test of the emergency alert system.
-<% end %>
+  <%= component 'alert', type: 'success' do %>
+    This is a test of the emergency alert system.
+  <% end %>
+</div>
 
-<h3>Warning</h3>
+<div class="column column-gap-md">
+  <h3>Warning</h3>
 
-<%= component 'alert', type: 'warning' do %>
-  This is a test of the emergency alert system.
-<% end %>
+  <%= component 'alert', type: 'warning' do %>
+    This is a test of the emergency alert system.
+  <% end %>
+</div>
