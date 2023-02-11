@@ -1,5 +1,5 @@
 .alert {
-  background-color: hsl(210, 100%, 80%);
+  background-color: hsl(200, 100%, 70%);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lowest);
   color: hsl(210, 50%, 20%);
