@@ -33,16 +33,22 @@ input[type="submit"]:active,
   translate: 0 1px;
 }
 
-.button-danger {
+.button-danger,
+input[type="reset"].button-danger,
+input[type="submit"].button-danger {
   background-color: hsl(0, 100%, 80%);
   color: hsl(0, 50%, 20%);
 }
 
-.button-primary {
+.button-primary,
+input[type="reset"].button-primary,
+input[type="submit"].button-primary {
   background-color: hsl(200, 100%, 50%);
 }
 
-.button-success {
+.button-success,
+input[type="reset"].button-success,
+input[type="submit"].button-success {
   background-color: hsl(140, 80%, 60%);
   color: hsl(140, 50%, 20%);
 }
