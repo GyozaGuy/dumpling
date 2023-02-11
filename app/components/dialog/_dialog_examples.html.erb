@@ -1,6 +1,6 @@
 <h3>Basic</h3>
 
-<%= vc 'dialog' do |dialog| %>
+<%= component 'dialog' do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>
@@ -10,7 +10,7 @@
 
 <h3>With Title</h3>
 
-<%= vc 'dialog', title: 'Dialog Title' do |dialog| %>
+<%= component 'dialog', title: 'Dialog Title' do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>
@@ -20,7 +20,7 @@
 
 <h3>With Footer</h3>
 
-<%= vc 'dialog' do |dialog| %>
+<%= component 'dialog' do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>
@@ -34,7 +34,7 @@
 
 <h3>With Title and Footer</h3>
 
-<%= vc 'dialog', title: 'Dialog Title' do |dialog| %>
+<%= component 'dialog', title: 'Dialog Title' do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>
@@ -48,7 +48,7 @@
 
 <h3>Don't Close When Scrim is Clicked</h3>
 
-<%= vc 'dialog', close_on_click_scrim: false do |dialog| %>
+<%= component 'dialog', close_on_click_scrim: false do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>
@@ -58,7 +58,7 @@
 
 <h3>Non-Modal</h3>
 
-<%= vc 'dialog', modal: false do |dialog| %>
+<%= component 'dialog', modal: false do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>
@@ -68,7 +68,7 @@
 
 <h3>Non-Movable</h3>
 
-<%= vc 'dialog', movable: false do |dialog| %>
+<%= component 'dialog', movable: false do |dialog| %>
   <% dialog.with_open_button do %>
     Open
   <% end %>

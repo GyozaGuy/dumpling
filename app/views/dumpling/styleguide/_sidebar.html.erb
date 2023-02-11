@@ -1,6 +1,6 @@
 <% components = %w[alert button card column dialog form_controls notification row tabs] %>
 
-<%= vc 'sidebar', title: 'Components' do %>
+<%= component 'sidebar', title: 'Components' do %>
   <div class="column">
     <% components.each do |comp| %>
       <%= render 'nav_link', component: comp %>

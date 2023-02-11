@@ -1,6 +1,6 @@
 <h3>Basic</h3>
 
-<%= vc 'tabs' do |tabs| %>
+<%= component 'tabs' do |tabs| %>
   <% tabs.with_tab(label: 'Tab 1') do %>
     Tab content 1 in a slot!
   <% end %>
@@ -12,7 +12,7 @@
 
 <h3>Set Default Selected Index</h3>
 
-<%= vc 'tabs', selected_index: 1 do |tabs| %>
+<%= component 'tabs', selected_index: 1 do |tabs| %>
   <% tabs.with_tab(label: 'Tab 1') do %>
     This tab was not selected by default.
   <% end %>
