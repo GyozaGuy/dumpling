@@ -7,31 +7,31 @@
   padding: var(--container-padding, var(--spacing-normal));
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .container {
     max-width: var(--container-width-xs, 100%);
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 481px) {
+@media (max-width: 768px) and (min-width: 481px) {
   .container {
     max-width: var(--container-width-sm, 450px);
   }
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 769px) {
   .container {
     max-width: var(--container-width-md, 600px);
   }
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+@media (max-width: 1200px) and (min-width: 1025px) {
   .container {
     max-width: var(--container-width-lg, 750px);
   }
 }
 
-@media only screen and (min-width: 1201px) {
+@media (min-width: 1201px) {
   .container {
     max-width: var(--container-width-xl, 900px);
   }
