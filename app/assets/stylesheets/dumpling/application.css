@@ -19,8 +19,3 @@
 body {
   overflow: hidden;
 }
-
-main {
-  height: 100%;
-  overflow: auto;
-}
