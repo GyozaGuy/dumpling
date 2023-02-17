@@ -4,7 +4,6 @@ module Dumpling
   class Component < ViewComponent::Base
     def classes
       @classes ||= []
-      @classes
     end
 
     def class_string
@@ -13,7 +12,6 @@ module Dumpling
 
     def styles
       @styles ||= []
-      @styles
     end
 
     def style_string
