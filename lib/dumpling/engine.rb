@@ -1,3 +1,5 @@
+require_relative '../../app/helpers/dumpling/component_helper'
+
 module Dumpling
   class Engine < ::Rails::Engine
     isolate_namespace Dumpling
@@ -24,6 +26,12 @@ module Dumpling
     initializer 'dumpling.load_components', before: :set_autoload_paths do |app|
       app.config.autoload_paths += Dir["#{app.root.join('app', 'components')}/{*}"]
       app.config.autoload_paths += Dir["#{root.join('app', 'components')}/{*}"]
+    end
+
+    initializer 'dumpling.load_helpers' do
+      ActiveSupport.on_load :action_controller do
+        ::ActionController::Base.helper Dumpling::ComponentHelper
+      end
     end
 
     initializer 'dumpling.precompile' do |app|

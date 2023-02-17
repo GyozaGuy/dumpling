@@ -1,5 +1,5 @@
 module Dumpling
-  module ApplicationHelper
+  module ComponentHelper
     def component(name, *args, **kwargs, &block)
       component = "#{name.to_s.camelize}Component".safe_constantize
       render component.new(*args, **kwargs), &block
