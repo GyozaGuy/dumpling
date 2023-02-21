@@ -4,7 +4,7 @@ class CardComponent < Dumpling::Component
   renders_one :header
   renders_one :footer
 
-  def initialize(args)
+  def initialize(args = {})
     classes << 'card_link' if args[:href]
     classes << args[:class] if args[:class]
     @href = args[:href]
