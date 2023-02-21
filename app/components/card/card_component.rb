@@ -4,8 +4,10 @@ class CardComponent < Dumpling::Component
   renders_one :header
   renders_one :footer
 
-  def initialize(background_color: nil, href: nil)
-    @href = href
-    styles << "--background-color: #{background_color}" if background_color.present?
+  def initialize(args)
+    classes << 'card_link' if args[:href]
+    classes << args[:class] if args[:class]
+    @href = args[:href]
+    styles << "--background-color: #{args[:background_color]}" if args[:background_color].present?
   end
 end

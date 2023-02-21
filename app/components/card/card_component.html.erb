@@ -1,8 +1,8 @@
 <% if href %>
-  <a class="card_link" href="<%= href %>">
+  <a <%= class_string %> href="<%= href %>">
   <% end %>
 
-  <div data-component="card" <%= style_string %>>
+  <div <%= class_string unless href %> data-component="card" <%= style_string %>>
     <% if header? %>
       <div class="card_header">
         <%= header %>
