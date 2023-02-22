@@ -40,6 +40,13 @@ input[type="submit"].button-danger {
   color: hsl(0, 50%, 20%);
 }
 
+.button-hidden,
+input[type="reset"].button-hidden,
+input[type="submit"].button-hidden {
+  background: none;
+  box-shadow: none;
+}
+
 .button-primary,
 input[type="reset"].button-primary,
 input[type="submit"].button-primary {
