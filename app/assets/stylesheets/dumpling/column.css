@@ -1,5 +1,4 @@
 .column {
-  background-color: var(--column-background-color);
   display: flex;
   flex-direction: column;
   gap: var(--column-gap, var(--spacing-normal));

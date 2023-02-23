@@ -1,5 +1,4 @@
 .row {
-  background-color: var(--row-background-color);
   display: flex;
   gap: var(--row-gap, var(--spacing-normal));
 }
