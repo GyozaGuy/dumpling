@@ -21,10 +21,10 @@ input[type="submit"]:not(.button-hidden),
   text-decoration: none;
 }
 
-button:not(:disabled):not(.button-hidden):hover,
-input[type="reset"]:not(:disabled):not(.button-hidden):hover,
-input[type="submit"]:not(:disabled):not(.button-hidden):hover,
-.button:not(:disabled):not(.button-hidden):hover {
+button:not(:disabled):not(.button-hidden):not(.close):hover,
+input[type="reset"]:not(:disabled):not(.button-hidden):not(.close):hover,
+input[type="submit"]:not(:disabled):not(.button-hidden):not(.close):hover,
+.button:not(:disabled):not(.button-hidden):not(.close):hover {
   box-shadow: var(--shadow-low);
   text-decoration: none;
   translate: 0 -1px;
@@ -41,6 +41,7 @@ input[type="submit"]:not(:disabled):not(.button-hidden):active,
 button:disabled,
 input[type="reset"]:disabled,
 input[type="submit"]:disabled {
+  background-color: hsl(200, 20%, 95%);
   color: hsl(200, 10%, 40%);
   cursor: not-allowed;
 }
