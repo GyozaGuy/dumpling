@@ -1,3 +1,10 @@
+button,
+input[type="reset"],
+input[type="submit"] {
+  transition-duration: 125ms;
+  transition-property: background-color, box-shadow, translate;
+}
+
 button:not(.button-hidden),
 input[type="reset"]:not(.button-hidden),
 input[type="submit"]:not(.button-hidden),
@@ -12,30 +19,35 @@ input[type="submit"]:not(.button-hidden),
   padding: var(--spacing-small3) var(--spacing-small1);
   text-align: center;
   text-decoration: none;
-  transition-duration: 125ms;
-  transition-property: box-shadow, translate;
 }
 
-button:not(.button-hidden):hover,
-input[type="reset"]:not(.button-hidden):hover,
-input[type="submit"]:not(.button-hidden):hover,
-.button:not(.button-hidden):hover {
+button:not(:disabled):not(.button-hidden):hover,
+input[type="reset"]:not(:disabled):not(.button-hidden):hover,
+input[type="submit"]:not(:disabled):not(.button-hidden):hover,
+.button:not(:disabled):not(.button-hidden):hover {
   box-shadow: var(--shadow-low);
   text-decoration: none;
   translate: 0 -1px;
 }
 
-button:not(.button-hidden):active,
-input[type="reset"]:not(.button-hidden):active,
-input[type="submit"]:not(.button-hidden):active,
-.button:not(.button-hidden):active {
+button:not(:disabled):not(.button-hidden):active,
+input[type="reset"]:not(:disabled):not(.button-hidden):active,
+input[type="submit"]:not(:disabled):not(.button-hidden):active,
+.button:not(:disabled):not(.button-hidden):active {
   box-shadow: none;
   translate: 0 1px;
 }
 
-.button-danger,
-input[type="reset"].button-danger,
-input[type="submit"].button-danger {
+button:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled {
+  color: hsl(200, 10%, 40%);
+  cursor: not-allowed;
+}
+
+.button-danger:not(:disabled),
+input[type="reset"]:not(:disabled).button-danger,
+input[type="submit"]:not(:disabled).button-danger {
   background-color: hsl(0, 100%, 80%);
   color: hsl(0, 50%, 20%);
 }
@@ -47,15 +59,15 @@ input[type="submit"].button-hidden {
   border: none;
 }
 
-.button-primary,
-input[type="reset"].button-primary,
-input[type="submit"].button-primary {
+.button-primary:not(:disabled),
+input[type="reset"]:not(:disabled).button-primary,
+input[type="submit"]:not(:disabled).button-primary {
   background-color: hsl(200, 100%, 70%);
 }
 
-.button-success,
-input[type="reset"].button-success,
-input[type="submit"].button-success {
+.button-success:not(:disabled),
+input[type="reset"]:not(:disabled).button-success,
+input[type="submit"]:not(:disabled).button-success {
   background-color: hsl(140, 60%, 60%);
   color: hsl(140, 50%, 20%);
 }
