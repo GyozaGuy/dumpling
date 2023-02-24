@@ -1,51 +1,57 @@
 <div
   data-controller="dialog-component"
-  data-dialog-component-closing-class="dialog-closing"
-  data-dialog-component-opening-class="dialog-opening"
-  data-dialog-component-visible-class="dialog-visible"
+  data-dialog-component-dialog-id-value="<%= id %>"
+  data-dialog-component-dumpling-dialog-container-outlet="[data-controller='dumpling-dialog-container']"
   data-turbo-cache="false"
 >
-  <% if modal? %>
-    <div
-      <%= scrim_class_string %>
-      <%= close_on_click_scrim? ? raw('data-action="click->dialog-component#close"') : '' %>
-      data-dialog-component-target="scrim"
-    ></div>
-  <% end %>
-
-  <div
-    <%= class_string %>
-    data-component="dialog"
-    data-dialog-component-target="dialog"
-  >
-    <div
-      class="dialog_header"
-      <%= movable? ? raw('data-action="mousedown->dialog-component#beginMove mouseup@document->dialog-component#endMove"') : '' %>
-    >
-      <span class="dialog_title"><%= title %></span>
-      <button
-        class="close"
-        data-action="dialog-component#close"
-        title="<%= t('dialog.close', default: 'Close') %>"
-        type="button"
-      >
-        <%= svg('icons/x-mark.svg') %>
-      </button>
-    </div>
-
-    <div class="dialog_content">
-      <%= content %>
-    </div>
-
-    <% if footer? %>
-      <div class="dialog_footer">
-        <%= footer %>
-      </div>
+  <template data-dialog-component-target="template">
+    <% if modal? %>
+      <div
+        <%= scrim_class_string %>
+        <%= close_on_click_scrim? ? raw('data-action="click->dumpling-dialog-container#close"') : '' %>
+        data-dialog-id="<%= id %>"
+        data-dumpling-dialog-container-dialog-id-param="<%= id %>"
+        data-dumpling-dialog-container-target="scrim"
+      ></div>
     <% end %>
-  </div>
+
+    <div
+    <%= class_string %>
+      data-component="dialog"
+      data-dialog-id="<%= id %>"
+      data-dumpling-dialog-container-target="dialog"
+    >
+      <div
+        class="dialog_header"
+        <%= movable? ? raw('data-action="mousedown->dumpling-dialog-container#beginMove mouseup@document->dumpling-dialog-container#endMove"') : '' %>
+        data-dumpling-dialog-container-dialog-id-param="<%= id %>"
+      >
+        <span class="dialog_title"><%= title %></span>
+        <button
+          class="close"
+          data-action="dumpling-dialog-container#close"
+          data-dumpling-dialog-container-dialog-id-param="<%= id %>"
+          title="<%= t('dialog.close', default: 'Close') %>"
+          type="button"
+        >
+          <%= svg('icons/x-mark.svg') %>
+        </button>
+      </div>
+
+      <div class="dialog_content">
+        <%= content %>
+      </div>
+
+      <% if footer? %>
+        <div class="dialog_footer">
+          <%= footer %>
+        </div>
+      <% end %>
+    </div>
+  </template>
 
   <% if open_button? %>
-    <button data-action="dialog-component#open" type="button">
+    <button data-action="dialog-component#openDialog" type="button">
       <%= open_button %>
     </button>
   <% end %>

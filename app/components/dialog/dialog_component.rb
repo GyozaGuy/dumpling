@@ -16,6 +16,7 @@ class DialogComponent < Dumpling::Component
 
     @close_on_click_scrim = close_on_click_scrim
     @id = id
+    @id ||= SecureRandom.uuid
     @modal = modal
     @movable = movable
     @title = title

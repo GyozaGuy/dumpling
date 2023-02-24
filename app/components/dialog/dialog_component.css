@@ -7,7 +7,7 @@
   }
 }
 
-[data-controller="dialog-component"] .dialog_scrim {
+[data-controller="dumpling-dialog-container"] .dialog_scrim {
   animation-fill-mode: forwards;
   background-color: var(
     --dialog-scrim-background-color,
@@ -21,15 +21,15 @@
   z-index: 90;
 }
 
-[data-controller="dialog-component"] .dialog_scrim.dialog-closing {
+[data-controller="dumpling-dialog-container"] .dialog_scrim.dialog-closing {
   animation: 125ms dialog-fade-in reverse;
 }
 
-[data-controller="dialog-component"] .dialog_scrim.dialog-opening {
+[data-controller="dumpling-dialog-container"] .dialog_scrim.dialog-opening {
   animation: 125ms dialog-fade-in;
 }
 
-[data-controller="dialog-component"] .dialog_scrim.dialog-visible {
+[data-controller="dumpling-dialog-container"] .dialog_scrim.dialog-visible {
   display: unset;
 }
 
