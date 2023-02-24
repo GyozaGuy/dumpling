@@ -4,7 +4,7 @@
   data-dialog-component-dumpling-dialog-container-outlet="[data-controller='dumpling-dialog-container']"
   data-turbo-cache="false"
 >
-  <template data-dialog-component-target="template">
+  <% content_for :dumpling_dialogs do %>
     <% if modal? %>
       <div
         <%= scrim_class_string %>
@@ -48,7 +48,7 @@
         </div>
       <% end %>
     </div>
-  </template>
+  <% end %>
 
   <% if open_button? %>
     <button data-action="dialog-component#openDialog" type="button">
