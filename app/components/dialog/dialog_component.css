@@ -9,7 +9,10 @@
 
 [data-controller="dialog-component"] .dialog_scrim {
   animation-fill-mode: forwards;
-  background-color: hsla(200, 10%, 20%, 0.25);
+  background-color: var(
+    --dialog-scrim-background-color,
+    hsla(200, 10%, 20%, 0.25)
+  );
   display: none;
   height: 100vh;
   inset: 0;
@@ -35,9 +38,9 @@
   --dialog-translate-y: 0px;
   animation-duration: 125ms;
   animation-fill-mode: forwards;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-high);
+  background-color: var(--dialog-background-color, hsl(0, 0%, 100%));
+  border-radius: var(--dialog-border-radius, var(--border-radius));
+  box-shadow: var(--dialog-box-shadow, var(--shadow-high));
   display: none;
   left: 50%;
   max-width: fit-content;
@@ -75,14 +78,16 @@
 }
 
 [data-component="dialog"] .dialog_header {
-  --close-button-color: hsl(200, 10%, 40%);
+  --close-button-color: var(
+    --dialog-header-close-button-color,
+    hsl(200, 10%, 40%)
+  );
   align-items: center;
-  background-color: hsl(200, 10%, 95%);
+  background-color: var(--dialog-header-background-color, hsl(200, 10%, 95%));
   display: flex;
   gap: var(--spacing-normal);
   justify-content: space-between;
-  padding: var(--spacing-normal);
-  width: 100%;
+  padding: var(--dialog-header-padding, var(--spacing-normal));
 }
 
 [data-component="dialog"].dialog-movable .dialog_header {
@@ -91,15 +96,15 @@
 }
 
 [data-component="dialog"] .dialog_header .dialog_title {
-  color: hsl(200, 10%, 40%);
-  font-size: 1.25rem;
+  color: var(--dialog-header-title-color, hsl(200, 10%, 40%));
+  font-size: var(--dialog-header-font-size, 1.25rem);
 }
 
 [data-component="dialog"] .dialog_content {
-  padding: var(--spacing-normal);
+  padding: var(--dialog-content-padding, var(--spacing-normal));
 }
 
 [data-component="dialog"] .dialog_footer {
-  padding: var(--spacing-normal);
+  padding: var(--dialog-footer-padding, var(--spacing-normal));
   text-align: right;
 }

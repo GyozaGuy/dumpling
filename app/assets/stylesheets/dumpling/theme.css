@@ -6,6 +6,19 @@
   --card-box-shadow-hover: var(--shadow-medium);
   --card-header-background-color: hsl(200, 10%, 90%);
   --card-padding: var(--spacing-normal);
+
+  --dialog-background-color: hsl(0, 0%, 100%);
+  --dialog-border-radius: var(--border-radius);
+  --dialog-box-shadow: var(--shadow-high);
+  --dialog-content-padding: var(--spacing-normal);
+  --dialog-footer-padding: var(--spacing-normal);
+  --dialog-header-background-color: hsl(200, 10%, 95%);
+  --dialog-header-close-button-color: hsl(200, 10%, 40%);
+  --dialog-header-font-size: 1.25rem;
+  --dialog-header-padding: var(--spacing-normal);
+  --dialog-header-title-color: hsl(200, 10%, 40%);
+  --dialog-scrim-background-color: hsla(200, 10%, 20%, 0.25);
+
   --label-color: hsl(200, 20%, 20%);
 }
 */
