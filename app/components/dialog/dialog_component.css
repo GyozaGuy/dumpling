@@ -10,7 +10,6 @@
 [data-controller="dialog-component"] .dialog_scrim {
   animation-fill-mode: forwards;
   background-color: hsla(200, 10%, 20%, 0.25);
-  content: "";
   display: none;
   height: 100vh;
   inset: 0;
