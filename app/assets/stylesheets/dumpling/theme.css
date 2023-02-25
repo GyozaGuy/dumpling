@@ -7,6 +7,13 @@
   --card-header-background-color: hsl(200, 10%, 90%);
   --card-padding: var(--spacing-normal);
 
+  --container-padding: var(--spacing-normal);
+  --container-width-lg: 750px;
+  --container-width-md: 600px;
+  --container-width-sm: 450px;
+  --container-width-xl: 900px;
+  --container-width-xs: 100%;
+
   --dialog-background-color: hsl(0, 0%, 100%);
   --dialog-border-radius: var(--border-radius);
   --dialog-box-shadow: var(--shadow-high);
