@@ -81,6 +81,10 @@ export default class extends Controller {
     }
   }
 
+  openDialogFromEvent({ detail: dialogId }) {
+    this.openDialog(dialogId);
+  }
+
   get activeDialog() {
     return this.findDialog(this.activeDialogId).dialog;
   }
