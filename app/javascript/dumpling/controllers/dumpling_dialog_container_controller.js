@@ -64,8 +64,13 @@ export default class extends Controller {
     this.activeDialog.style.setProperty('--dialog-translate-y', `${newY}px`);
   };
 
-  async openDialog(dialogId) {
+  async openDialog(dialogId, cb) {
     const { dialog, scrim } = this.findDialog(dialogId);
+
+    if (typeof cb === 'function') {
+      await cb(dialog);
+    }
+
     dialog.classList.add(this.openingClass, this.visibleClass);
 
     if (scrim) {
