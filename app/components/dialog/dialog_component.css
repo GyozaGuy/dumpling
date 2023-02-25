@@ -16,7 +16,7 @@
   display: none;
   height: 100vh;
   inset: 0;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   z-index: 90;
 }
@@ -46,7 +46,7 @@
   max-width: fit-content;
   min-width: 500px;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 50%;
   translate: calc(var(--dialog-translate-x) + -50%)
     calc(var(--dialog-translate-y) + -50%);
