@@ -1,6 +1,7 @@
 button,
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.button {
   transition-duration: 125ms;
   transition-property: background-color, box-shadow, translate;
 }
@@ -21,10 +22,14 @@ input[type="submit"]:not(.button-hidden),
   text-decoration: none;
 }
 
-button:not(:disabled):not(.button-hidden):not(.close):hover,
-input[type="reset"]:not(:disabled):not(.button-hidden):not(.close):hover,
-input[type="submit"]:not(:disabled):not(.button-hidden):not(.close):hover,
-.button:not(:disabled):not(.button-hidden):not(.close):hover {
+button:not(:disabled):not(.button-hidden):not(.close):not(:active):hover,
+input[type="reset"]:not(:disabled):not(.button-hidden):not(.close):not(
+    :active
+  ):hover,
+input[type="submit"]:not(:disabled):not(.button-hidden):not(.close):not(
+    :active
+  ):hover,
+.button:not(:disabled):not(.button-hidden):not(.close):not(:active):hover {
   box-shadow: var(--shadow-low);
   text-decoration: none;
   translate: 0 -1px;
