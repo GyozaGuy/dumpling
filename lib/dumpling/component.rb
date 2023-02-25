@@ -2,6 +2,8 @@ require 'view_component'
 
 module Dumpling
   class Component < ViewComponent::Base
+    include ActiveModel::Model
+
     def classes
       @classes ||= []
     end
