@@ -15,8 +15,9 @@
     <% end %>
 
     <div
-    <%= class_string %>
+      <%= class_string %>
       data-component="dialog"
+      <%= controller ? "data-controller=#{controller}" : nil %>
       data-dialog-id="<%= id %>"
       data-dumpling-dialog-container-target="dialog"
     >

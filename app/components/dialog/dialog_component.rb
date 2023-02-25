@@ -1,11 +1,12 @@
 class DialogComponent < Dumpling::Component
-  attr_reader :id, :title
+  attr_reader :controller, :id, :title
 
   renders_one :footer
   renders_one :open_button
 
   def initialize(
     close_on_click_scrim: true,
+    controller: nil,
     id: nil,
     modal: true,
     movable: true,
@@ -15,6 +16,7 @@ class DialogComponent < Dumpling::Component
     @scrim_classes = ['dialog_scrim']
 
     @close_on_click_scrim = close_on_click_scrim
+    @controller = controller
     @id = id
     @id ||= SecureRandom.uuid
     @modal = modal
