@@ -106,5 +106,4 @@
 
 [data-component="dialog"] .dialog_footer {
   padding: var(--dialog-footer-padding, var(--spacing-normal));
-  text-align: right;
 }
