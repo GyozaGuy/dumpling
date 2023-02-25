@@ -2,6 +2,7 @@ button,
 input[type="reset"],
 input[type="submit"],
 .button {
+  height: fit-content;
   transition-duration: 125ms;
   transition-property: background-color, box-shadow, translate;
 }
