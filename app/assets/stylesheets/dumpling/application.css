@@ -15,7 +15,3 @@
  *= require_tree ../../../components
  *= require_tree ../../../views
  */
-
-body {
-  overflow: hidden;
-}
