@@ -8,6 +8,8 @@ class CardComponent < Dumpling::Component
     classes << 'card_link' if args[:href]
     classes << args[:class] if args[:class]
     @href = args[:href]
-    styles << "--background-color: #{args[:background_color]}" if args[:background_color].present?
+    return unless args[:background_color].present?
+
+    styles << "--card-background-color: #{args[:background_color]}"
   end
 end
