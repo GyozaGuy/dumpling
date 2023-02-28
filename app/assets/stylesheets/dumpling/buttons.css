@@ -64,6 +64,8 @@ input[type="reset"].button-hidden,
 input[type="submit"].button-hidden {
   background: none;
   border: none;
+  color: inherit;
+  text-align: inherit;
 }
 
 .button-primary:not(:disabled),
