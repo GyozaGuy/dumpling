@@ -3,7 +3,6 @@
   data-controller="tabs-component"
   data-tabs-component-active-class="tab-selected"
   data-tabs-component-selected-index-value="<%= selected_index %>"
-  style="display: flex; flex-direction: column-reverse;"
 >
   <% tabs.each_with_index do |tab, i| %>
     <% tab.instance_variable_get(:@__vc_content) => { attrs:, block:, component_class:, tabs_id: } %>

@@ -1,12 +1,19 @@
+[data-component="tabs"] {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--tabs-gap, var(--spacing-normal));
+}
+
 [data-component="tabs"] .tabs_tabBar {
   display: flex;
 }
 
 [data-component="tabs"] .tabs_tabBar .tab {
-  background: unset;
+  background-color: var(--tab-unselected-background-color, unset);
   border: 0;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
-  color: hsl(0, 0%, 40%);
+  border-radius: var(--tab-border-radius, var(--border-radius))
+    var(--tab-border-radius, var(--border-radius)) 0 0;
+  color: var(--tab-unselected-color, hsl(0, 0%, 40%));
   cursor: pointer;
   padding: var(--spacing-small1) var(--spacing-normal) var(--spacing-small2);
   position: relative;
@@ -15,12 +22,12 @@
 }
 
 [data-component="tabs"] .tabs_tabBar .tab.tab-selected {
-  background-color: hsl(0, 0%, 90%);
-  color: unset;
+  background-color: var(--tab-selected-background-color, hsl(200, 20%, 90%));
+  color: var(--tab-selected-color, unset);
 }
 
 [data-component="tabs"] .tabs_tabBar .tab .tab_bottom {
-  background-color: hsl(0, 0%, 90%);
+  background-color: var(--tab-unselected-bottom-color, hsl(200, 20%, 90%));
   bottom: 0;
   height: 3px;
   left: 0;
@@ -31,6 +38,6 @@
 }
 
 [data-component="tabs"] .tabs_tabBar .tab.tab-selected .tab_bottom {
-  background-color: hsl(200, 100%, 70%);
+  background-color: var(--tab-selected-bottom-color, hsl(200, 100%, 70%));
   box-shadow: 0 0 8px hsl(200, 100%, 50%);
 }

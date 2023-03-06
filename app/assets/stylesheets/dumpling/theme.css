@@ -27,5 +27,14 @@
   --dialog-scrim-background-color: hsla(200, 10%, 20%, 0.25);
 
   --label-color: hsl(200, 20%, 20%);
+
+  --tab-border-radius: var(--border-radius);
+  --tab-selected-background-color: hsl(200, 20%, 90%);
+  --tab-selected-bottom-color: hsl(200, 100%, 70%);
+  --tab-selected-color: unset;
+  --tab-unselected-background-color: unset;
+  --tab-unselected-bottom-color: hsl(200, 20%, 90%);
+  --tab-unselected-color: hsl(0, 0%, 40%);
+  --tabs-gap: var(--spacing-normal);
 }
 */
