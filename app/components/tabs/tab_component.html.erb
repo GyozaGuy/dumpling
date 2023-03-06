@@ -1,6 +1,6 @@
 <% content_for tabs_id.to_sym do %>
   <button
-    class="tab <%= selected? ? 'tab-selected' : '' %>"
+    class="button-hidden tab <%= selected? ? 'tab-selected' : '' %>"
     data-action="tabs-component#select"
     data-index="<%= index %>"
     data-tabs-component-target="tab"
