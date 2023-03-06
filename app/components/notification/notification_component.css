@@ -7,12 +7,7 @@
   }
 }
 
-[data-controller="notification"] {
-  height: 100%;
-}
-
 .notificationContainer {
-  height: 100%;
   position: fixed;
   right: 0;
   top: 0;

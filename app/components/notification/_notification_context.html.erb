@@ -1,9 +1,9 @@
-<div data-controller="notification">
+<div class="full-height" data-controller="notification">
   <template data-notification-target="template">
     <%= render 'notification/notification' %>
   </template>
 
-  <div class="notificationContainer" data-notification-target="container"></div>
+  <div class="full-height notificationContainer" data-notification-target="container"></div>
 
   <%= yield %>
 </div>
