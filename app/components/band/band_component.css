@@ -1,5 +1,5 @@
 [data-component="band"] {
-  background-color: var(--band-background-color);
+  background: var(--band-background);
   padding-bottom: var(--band-padding);
   padding-top: var(--band-padding);
 }

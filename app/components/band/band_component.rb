@@ -1,7 +1,7 @@
 class BandComponent < Dumpling::Component
   def initialize(args = {})
     classes << args[:class] if args[:class]
-    styles << "--band-background-color: #{args[:background_color]}" if args[:background_color]
+    styles << "--band-background: #{args[:background]}" if args[:background]
     styles << "--band-padding: #{padding_size(args[:size])}"
   end
 
