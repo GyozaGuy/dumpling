@@ -5,8 +5,7 @@ module Dumpling
     isolate_namespace Dumpling
 
     initializer 'dumpling.app_assets' do |app|
-      app.config.assets.paths << app.root.join('app', 'components')
-      app.config.assets.paths << app.root.join('app', 'views')
+      app.config.assets.paths << app.root.join('app')
     end
 
     initializer 'dumpling.assets' do |app|
@@ -17,6 +16,11 @@ module Dumpling
 
     initializer 'dumpling.app_controllers' do |app|
       app.config.paths['app/controllers'].concat(Dir.glob('app/views/*', base: app.root))
+    end
+
+    initializer 'dumpling.component_sweepers' do |app|
+      app.config.importmap.cache_sweepers << app.root.join('app', 'components')
+      app.config.importmap.cache_sweepers << root.join('app', 'components')
     end
 
     initializer 'dumpling.importmap', before: 'importmap' do |app|
