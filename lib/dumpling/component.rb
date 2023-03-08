@@ -2,7 +2,7 @@ require 'view_component'
 
 module Dumpling
   class Component < ViewComponent::Base
-    include ActiveModel::Model
+    include ActiveModel::API
 
     def classes
       @classes ||= []
