@@ -1,0 +1,5 @@
+[data-component="columns"] {
+  display: grid;
+  gap: var(--spacing-normal);
+  grid-template-columns: repeat(var(--column-count), 1fr);
+}

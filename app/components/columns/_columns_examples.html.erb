@@ -1,0 +1,18 @@
+<div class="column column-gap-md">
+  <h3>Basic</h3>
+
+  <%= component 'columns' do %>
+    <span>Column 1</span>
+    <span>Column 2</span>
+  <% end %>
+</div>
+
+<div class="column column-gap-md">
+  <h3>Custom Column Count</h3>
+
+  <%= component 'columns', count: 3 do %>
+    <span>Column 1</span>
+    <span>Column 2</span>
+    <span>Column 3</span>
+  <% end %>
+</div>
