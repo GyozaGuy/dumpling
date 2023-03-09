@@ -13,9 +13,11 @@
 
   <body>
     <%= render 'notification/notification_context' do %>
+      <%= component 'dumpling_utilities' %>
+
       <main <%= content_for?(:main_classes) ? "class=#{content_for(:main_classes)}" : nil %>>
         <%= yield %>
       </main>
-    <% end %>
-  </body>
-</html>
+      <% end %>
+    </body>
+  </html>
