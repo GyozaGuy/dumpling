@@ -7,8 +7,22 @@ module Dumpling
 
     alias vc component
 
+    def method_missing(method_name, *args, **kwargs, &block)
+      if method_name.end_with?('_component')
+        component_class = method_name.to_s.classify.safe_constantize
+        component = component_class.new(*args, **kwargs)
+        component.render_in(self, &block)
+      else
+        super
+      end
+    end
+
     def page_title(content)
       content_for(:title, content)
+    end
+
+    def respond_to_missing?(method_name, include_private = false)
+      method_name.to_s.end_with?('Component') || super
     end
 
     # TODO: Make the following more elegant

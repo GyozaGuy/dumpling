@@ -30,9 +30,9 @@ module Dumpling
       self.class.name.gsub('Component', '')
     end
 
-    def component_tag(&block)
+    def component_tag(tag = :div, **kwargs, &block)
       content_tag(
-        :div,
+        tag,
         class: classes.join(' '),
         data: {
           component: component_name,
@@ -40,6 +40,7 @@ module Dumpling
         },
         id: @id,
         style: styles.join('; '),
+        **kwargs,
         &block
       )
     end
