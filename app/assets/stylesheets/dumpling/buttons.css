@@ -2,6 +2,7 @@ button,
 input[type="reset"],
 input[type="submit"],
 .button {
+  cursor: pointer;
   height: fit-content;
   transition-duration: 125ms;
   transition-property: background-color, box-shadow, translate;
@@ -16,7 +17,6 @@ input[type="submit"]:not(.button-hidden),
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lowest);
   color: hsl(200, 20%, 20%);
-  cursor: pointer;
   display: inline-block;
   padding: var(--spacing-small3) var(--spacing-small1);
   text-align: center;
