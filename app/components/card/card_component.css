@@ -7,28 +7,31 @@
   text-decoration: inherit;
 }
 
-.card_link [data-component="card"] {
+.card_link [data-component="Card"],
+[data-component="Card"].card_link {
+  cursor: pointer;
   transition: 250ms box-shadow;
 }
 
-.card_link:hover [data-component="card"] {
+.card_link:hover [data-component="Card"],
+[data-component="Card"].card_link:hover {
   box-shadow: var(--card-box-shadow-hover, var(--shadow-medium));
 }
 
-[data-component="card"] {
-  background-color: var(--card-background-color, hsl(200, 10%, 95%));
+[data-component="Card"] {
+  background: var(--card-background, hsl(200, 10%, 95%));
   border-radius: var(--card-border-radius, var(--border-radius));
   box-shadow: var(--card-box-shadow, var(--shadow-low));
   overflow: hidden;
 }
 
-[data-component="card"] .card_header,
-[data-component="card"] .card_content,
-[data-component="card"] .card_footer {
+[data-component="Card"] .card_header,
+[data-component="Card"] .card_content,
+[data-component="Card"] .card_footer {
   padding: var(--card-padding, var(--spacing-normal));
 }
 
-[data-component="card"] .card_header {
-  background-color: var(--card-header-background-color, hsl(200, 10%, 90%));
+[data-component="Card"] .card_header {
+  background: var(--card-header-background, hsl(200, 10%, 90%));
   font-weight: bold;
 }

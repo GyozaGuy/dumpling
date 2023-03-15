@@ -1,10 +1,10 @@
 /*
 :root {
-  --card-background-color: hsl(200, 10%, 95%);
+  --card-background: hsl(200, 10%, 95%);
   --card-border-radius: var(--border-radius);
   --card-box-shadow: var(--shadow-low);
   --card-box-shadow-hover: var(--shadow-medium);
-  --card-header-background-color: hsl(200, 10%, 90%);
+  --card-header-background: hsl(200, 10%, 90%);
   --card-padding: var(--spacing-normal);
 
   --container-padding: var(--spacing-normal);

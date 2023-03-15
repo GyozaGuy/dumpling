@@ -1,8 +1,8 @@
 <% if href %>
-  <a <%= class_string %> href="<%= href %>">
+  <a class="card_link" href="<%= href %>">
   <% end %>
 
-  <div <%= class_string unless href %> data-component="card" <%= style_string %>>
+  <%= component_tag do %>
     <% if header? %>
       <div class="card_header">
         <%= header %>
@@ -18,7 +18,7 @@
         <%= footer %>
       </div>
     <% end %>
-  </div>
+  <% end %>
 
   <% if href %>
   </a>
