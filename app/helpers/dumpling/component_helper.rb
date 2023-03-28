@@ -22,7 +22,7 @@ module Dumpling
     end
 
     def respond_to_missing?(method_name, include_private = false)
-      method_name.to_s.end_with?('Component') || super
+      method_name.to_s.end_with?('_component') || super
     end
 
     # TODO: Make the following more elegant
