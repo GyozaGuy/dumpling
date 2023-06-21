@@ -15,6 +15,6 @@ gem 'puma', '~> 6.0'
 
 gem 'importmap-rails', '~> 1.1'
 
-gem 'view_component', '~> 2.82'
+gem 'view_component', '3.1.0'
 
 gem 'dotenv-rails', '~> 2.8'
