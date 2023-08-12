@@ -48,3 +48,7 @@ h6 {
 *[hidden] {
   display: none !important;
 }
+
+turbo-frame:empty {
+  display: none;
+}
