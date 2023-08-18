@@ -4,7 +4,9 @@ label {
   flex-direction: column;
 }
 
+input[type="email"],
 input[type="number"],
+input[type="password"],
 input[type="text"],
 select,
 textarea {
@@ -18,7 +20,9 @@ textarea {
   transition-property: box-shadow, outline;
 }
 
+input[type="email"]:focus,
 input[type="number"]:focus,
+input[type="password"]:focus,
 input[type="text"]:focus,
 select:focus,
 textarea:focus {
