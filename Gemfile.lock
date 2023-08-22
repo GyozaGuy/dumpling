@@ -113,7 +113,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
-    puma (6.3.0)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.7)
@@ -175,7 +175,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.8)
   dumpling!
   importmap-rails (~> 1.1)
-  puma (~> 6.0)
+  puma (~> 6.3)
   sprockets-rails
   sqlite3
   view_component (= 3.1.0)
