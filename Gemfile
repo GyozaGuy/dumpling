@@ -18,3 +18,5 @@ gem 'importmap-rails', '~> 1.1'
 gem 'view_component', '3.1.0'
 
 gem 'dotenv-rails', '~> 2.8'
+
+gem 'phlex-rails', '~> 1.0'

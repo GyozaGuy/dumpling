@@ -1,5 +1,6 @@
 AllCops:
   Exclude:
+    - "**/*.erb"
     - db/migrate/*
     - db/schema.rb
 
@@ -62,6 +63,9 @@ Metrics/ClassLength:
 
 Metrics/MethodLength:
   Max: 50
+
+Style/BlockDelimiters:
+  Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false

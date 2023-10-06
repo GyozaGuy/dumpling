@@ -28,8 +28,10 @@ module Dumpling
     end
 
     initializer 'dumpling.load_components', before: :set_autoload_paths do |app|
-      app.config.autoload_paths += Dir["#{app.root.join('app', 'components')}/{*}"]
-      app.config.autoload_paths += Dir["#{root.join('app', 'components')}/{*}"]
+      app.config.autoload_paths += Dir[app.root.join('app', 'views', 'components')]
+      app.config.autoload_paths += Dir[root.join('app', 'views')]
+      app.config.autoload_paths += Dir[root.join('app', 'views', 'components')]
+      app.config.autoload_paths += Dir[root.join('app', 'views', 'layouts')]
     end
 
     initializer 'dumpling.load_helpers' do
