@@ -12,7 +12,19 @@ class TestPage < ApplicationComponent
       end
 
       render Section.new do
-        render Dropdown.new items: ['One', :divider, 'Two'], text: 'hi'
+        render Dropdown.new items: ['One', :divider, 'Two'], label: 'Dropdown'
+      end
+
+      render Section.new do
+        render Menu.new do |menu|
+          menu.menu_section(
+            items: [
+              { href: '/', label: 'Home' },
+              { active: true, href: test_path, label: 'Testing' }
+            ],
+            label: 'General'
+          )
+        end
       end
     end
   end

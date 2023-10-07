@@ -1,5 +1,5 @@
 class Dropdown < ApplicationComponent
-  attr_accessor :active, :hoverable, :items, :text
+  attr_accessor :active, :hoverable, :items, :label
 
   def template
     div(
@@ -14,7 +14,7 @@ class Dropdown < ApplicationComponent
           data: { action: 'dropdown#toggle' }
         ) {
           span {
-            @text
+            @label
           }
           span(class: 'icon is-small') {
             image_tag('dumpling/icons/chevron_down', aria_hidden: true)
