@@ -34,9 +34,18 @@ class TestPage < ApplicationComponent
       end
 
       render Section.new do
-        render Modal.new do
-          render Card.new do
-            'Card content'
+        render Modal.new title: 'Modal' do |modal|
+          modal.modal_body do
+            'Modal content'
+          end
+
+          modal.modal_footer do
+            button(class: 'button is-primary') {
+              'Click me'
+            }
+            button(class: 'button', data: { action: 'modal#close' }) {
+              'Close'
+            }
           end
         end
       end
