@@ -32,6 +32,14 @@ class TestPage < ApplicationComponent
           'Message content'
         end
       end
+
+      render Section.new do
+        render Modal.new do
+          render Card.new do
+            'Card content'
+          end
+        end
+      end
     end
   end
 end
