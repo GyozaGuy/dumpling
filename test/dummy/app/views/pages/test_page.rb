@@ -1,5 +1,13 @@
 class TestPage < ApplicationComponent
   def template
+    render Navbar.new(
+      color: 'dark',
+      left_items: [{ href: '/', label: 'Home' }, { href: test_path, label: 'Testing' }],
+      right_items: [{ href: '/', label: 'Profile' }],
+      shadow: true,
+      spaced: true
+    )
+
     render Container.new do
       render Section.new do
         render Breadcrumb.new items: [['First', '/'], ['Second', test_path]]
