@@ -20,7 +20,7 @@ class TestPage < ApplicationComponent
       end
 
       render Section.new do
-        render Dropdown.new items: ['One', :divider, 'Two'], label: 'Dropdown'
+        render Dropdown.new items: %w[One Two], label: 'Dropdown'
       end
 
       render Section.new do
@@ -41,21 +41,31 @@ class TestPage < ApplicationComponent
         end
       end
 
-      render Section.new do
-        render Modal.new title: 'Modal' do |modal|
-          modal.modal_body do
-            'Modal content'
-          end
-
-          modal.modal_footer do
-            button(class: 'button is-primary') {
-              'Click me'
-            }
-            button(class: 'button', data: { action: 'modal#close' }) {
-              'Close'
-            }
-          end
+      render Modal.new title: 'Modal' do |modal|
+        modal.modal_body do
+          'Modal content'
         end
+
+        modal.modal_footer do
+          button(class: 'button is-primary') {
+            'Click me'
+          }
+          button(class: 'button', data: { action: 'modal#close' }) {
+            'Close'
+          }
+        end
+      end
+
+      render Section.new do
+        render Pagination.new(
+          current_page: 1,
+          pages: [
+            { href: '', number: 1 },
+            { href: '', number: 2 },
+            :ellipsis,
+            { href: '', number: 10 }
+          ]
+        )
       end
     end
   end
