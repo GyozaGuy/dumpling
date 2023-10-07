@@ -26,6 +26,12 @@ class TestPage < ApplicationComponent
           )
         end
       end
+
+      render Section.new do
+        render Message.new title: 'Message' do
+          'Message content'
+        end
+      end
     end
   end
 end

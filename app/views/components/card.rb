@@ -9,7 +9,7 @@ class Card < ApplicationComponent
             @heading
           }
 
-          button(aria_label: 'Toggle', class: 'card-header-icon') {
+          button(aria_label: 'toggle', class: 'card-header-icon') {
             span(class: 'icon') {
               image_tag('dumpling/icons/chevron_down', aria_hidden: true)
             }
