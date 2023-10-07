@@ -67,6 +67,11 @@ class TestPage < ApplicationComponent
           ]
         )
       end
+
+      render Section.new do
+        render Button.new text: 'Button'
+        render Button.new color: 'link', href: test_path, text: 'Link'
+      end
     end
   end
 end
