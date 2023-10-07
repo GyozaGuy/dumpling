@@ -1,6 +1,4 @@
 class Dropdown < ApplicationComponent
-  include Phlex::DeferredRender
-
   attr_accessor :active, :hoverable, :items, :text
 
   def template
