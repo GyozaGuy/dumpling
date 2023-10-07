@@ -1,6 +1,7 @@
 class ApplicationComponent < Phlex::HTML
   include ActiveModel::API
   include Dumpling::ComponentHelper
+  include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::Routes
 
   attr_accessor :data, :id, :style

@@ -12,6 +12,7 @@ class ApplicationLayout < ApplicationView
         csrf_meta_tags
         stylesheet_link_tag 'application', data_turbo_track: 'reload'
         javascript_importmap_tags
+        javascript_import_module_tag 'dumpling'
       }
 
       body {

@@ -1,5 +1,5 @@
 class Card < ApplicationComponent
-  attr_accessor :actions, :heading, :icon, :icon_label, :image, :image_alt
+  attr_accessor :actions, :heading, :image, :image_alt
 
   def template(&block)
     div(class: 'card') {
@@ -9,13 +9,11 @@ class Card < ApplicationComponent
             @heading
           }
 
-          if icon?
-            button(aria_label: @icon_label, class: 'card-header-icon') {
-              span(class: 'icon') {
-                @icon
-              }
+          button(aria_label: 'Toggle', class: 'card-header-icon') {
+            span(class: 'icon') {
+              image_tag('dumpling/icons/chevron_down', aria_hidden: true)
             }
-          end
+          }
         }
       end
 
@@ -51,10 +49,6 @@ class Card < ApplicationComponent
 
   def heading?
     @heading.present?
-  end
-
-  def icon?
-    @icon.present?
   end
 
   def image?

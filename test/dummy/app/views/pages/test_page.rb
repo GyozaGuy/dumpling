@@ -7,8 +7,12 @@ class TestPage < ApplicationComponent
 
       render Section.new do
         render Card.new actions: [['Save', ''], ['Edit', ''], ['Delete', '']], heading: 'Card' do
-          plain 'Hi there!'
+          'Hi there!'
         end
+      end
+
+      render Section.new do
+        render Dropdown.new items: ['One', :divider, 'Two'], text: 'hi'
       end
     end
   end
