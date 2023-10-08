@@ -11,6 +11,7 @@ class Button < ApplicationComponent
     :loading,
     :outlined,
     :rounded,
+    :selected,
     :size,
     :static,
     :target,
@@ -42,6 +43,7 @@ class Button < ApplicationComponent
         loading?: 'is-loading',
         outlined?: 'is-outlined',
         rounded?: 'is-rounded',
+        selected?: 'is-selected',
         sized?: "is-#{@size}",
         static?: 'is-static'
       ),
@@ -62,6 +64,8 @@ class Button < ApplicationComponent
   def outlined? = @outlined.present?
 
   def rounded? = @rounded.present?
+
+  def selected? = @selected.present?
 
   def sized? = @size.present?
 

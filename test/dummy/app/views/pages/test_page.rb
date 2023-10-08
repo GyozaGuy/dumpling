@@ -69,8 +69,13 @@ class TestPage < ApplicationComponent
       end
 
       render Section.new do
-        render Button.new text: 'Button'
-        render Button.new color: 'link', href: test_path, text: 'Link'
+        d_button text: 'Button'
+        d_button color: 'link', href: test_path, text: 'Link'
+
+        d_button_group(addons: true) {
+          d_button color: 'primary', selected: true, text: 'Button'
+          d_button text: 'Button'
+        }
       end
     end
   end
