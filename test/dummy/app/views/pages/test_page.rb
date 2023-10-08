@@ -1,6 +1,6 @@
-class TestPage < ApplicationComponent
+class TestPage < ApplicationView
   def template
-    render Navbar.new(
+    d_navbar(
       color: 'dark',
       left_items: [{ href: '/', label: 'Home' }, { href: test_path, label: 'Testing' }],
       right_items: [{ href: '/', label: 'Profile' }],
@@ -8,23 +8,23 @@ class TestPage < ApplicationComponent
       spaced: true
     )
 
-    render Container.new do
-      render Section.new do
-        render Breadcrumb.new items: [['First', '/'], ['Second', test_path]]
-      end
+    d_container {
+      d_section {
+        d_breadcrumbs items: [['First', '/'], ['Second', test_path]]
+      }
 
-      render Section.new do
-        render Card.new actions: [['Save', ''], ['Edit', ''], ['Delete', '']], heading: 'Card' do
+      d_section {
+        d_card(actions: [['Save', ''], ['Edit', ''], ['Delete', '']], heading: 'Card') {
           'Hi there!'
-        end
-      end
+        }
+      }
 
-      render Section.new do
-        render Dropdown.new items: %w[One Two], label: 'Dropdown'
-      end
+      d_section {
+        d_dropdown items: %w[One Two], label: 'Dropdown'
+      }
 
-      render Section.new do
-        render Menu.new do |menu|
+      d_section {
+        d_menu { |menu|
           menu.menu_section(
             items: [
               { href: '/', label: 'Home' },
@@ -32,32 +32,32 @@ class TestPage < ApplicationComponent
             ],
             label: 'General'
           )
-        end
-      end
+        }
+      }
 
-      render Section.new do
-        render Message.new title: 'Message' do
+      d_section {
+        d_message(title: 'Message') {
           'Message content'
-        end
-      end
+        }
+      }
 
-      render Modal.new title: 'Modal' do |modal|
-        modal.modal_body do
+      d_modal(title: 'Modal') { |modal|
+        modal.modal_body {
           'Modal content'
-        end
+        }
 
-        modal.modal_footer do
+        modal.modal_footer {
           button(class: 'button is-primary') {
             'Click me'
           }
           button(class: 'button', data: { action: 'modal#close' }) {
             'Close'
           }
-        end
-      end
+        }
+      }
 
-      render Section.new do
-        render Pagination.new(
+      d_section {
+        d_pagination(
           current_page: 1,
           pages: [
             { href: '', number: 1 },
@@ -66,9 +66,9 @@ class TestPage < ApplicationComponent
             { href: '', number: 10 }
           ]
         )
-      end
+      }
 
-      render Section.new do
+      d_section {
         d_button text: 'Button'
         d_button color: 'link', href: test_path, text: 'Link'
 
@@ -76,7 +76,7 @@ class TestPage < ApplicationComponent
           d_button color: 'primary', selected: true, text: 'Button'
           d_button text: 'Button'
         }
-      end
-    end
+      }
+    }
   end
 end
