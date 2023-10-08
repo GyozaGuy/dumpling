@@ -42,6 +42,12 @@ class TestPage < ApplicationView
         }
       }
 
+      d_section {
+        d_notification(color: 'info', light: true) {
+          'Notification!'
+        }
+      }
+
       d_modal(title: 'Modal') { |modal|
         modal.modal_body {
           'Modal content'
