@@ -3,6 +3,12 @@ import { Controller } from '@hotwired/stimulus';
 export default class extends Controller {
   static targets = ['menu', 'menuButton'];
 
+  initialize() {
+    if (this.element.matches('[class*="is-fixed-"]')) {
+      document.documentElement.classList.add('has-navbar-fixed-top');
+    }
+  }
+
   toggleMenu() {
     this.menuButtonTarget.classList.toggle('is-active');
     this.menuTarget.classList.toggle('is-active');

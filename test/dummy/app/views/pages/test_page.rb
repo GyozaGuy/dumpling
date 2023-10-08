@@ -2,6 +2,7 @@ class TestPage < ApplicationView
   def template
     d_navbar(
       color: 'dark',
+      fixed: true,
       left_items: [{ href: '/', label: 'Home' }, { href: test_path, label: 'Testing' }],
       right_items: [{ href: '/', label: 'Profile' }],
       shadow: true,
@@ -69,12 +70,33 @@ class TestPage < ApplicationView
       }
 
       d_section {
-        d_button text: 'Button'
-        d_button color: 'link', href: test_path, text: 'Link'
-
-        d_button_group(addons: true) {
-          d_button color: 'primary', selected: true, text: 'Button'
+        d_box {
           d_button text: 'Button'
+          d_button color: 'link', href: test_path, text: 'Link'
+        }
+
+        d_box {
+          d_button_group(addons: true) {
+            d_button color: 'primary', selected: true, text: 'Button'
+            d_button text: 'Button'
+          }
+        }
+      }
+
+      d_section {
+        d_box {
+          d_block {
+            'This is text.'
+          }
+          d_block {
+            'This is also text.'
+          }
+        }
+      }
+
+      d_section {
+        d_content(size: 'medium') {
+          'This is medium content!'
         }
       }
     }
