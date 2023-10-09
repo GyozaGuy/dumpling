@@ -138,6 +138,35 @@ class TestPage < ApplicationView
           table.row(first: 'Value 1', second: 'Value 2', third: 'Value 3')
         }
       }
+
+      d_section {
+        d_tag_list(addons: true, size: 'medium') {
+          d_tag(
+            color: 'info',
+            delete_action: 'close',
+            light: true,
+            rounded: true,
+            text: 'Hi'
+          )
+          d_tag(
+            color: 'primary',
+            delete_action: 'close',
+            light: true,
+            text: 'Hello'
+          )
+          d_tag(
+            color: 'success',
+            delete_action: 'close',
+            text: 'Hola'
+          )
+          d_tag(
+            color: 'link',
+            href: 'https://google.com',
+            target: '_blank',
+            text: 'Google'
+          )
+        }
+      }
     }
   end
 end
