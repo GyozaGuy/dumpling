@@ -90,6 +90,10 @@ class TestPage < ApplicationView
       }
 
       d_section {
+        d_progress_bar(color: 'info', value: 25)
+      }
+
+      d_section {
         d_box {
           d_block {
             'This is text.'
