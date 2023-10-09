@@ -2,14 +2,14 @@ class Card < ApplicationComponent
   attr_accessor :actions, :heading, :image, :image_alt
 
   def template(&block)
-    div(class: 'card') {
+    div(class: 'card', data_controller: 'card') {
       if heading?
         header(class: 'card-header') {
           p(class: 'card-header-title') {
             @heading
           }
 
-          button(aria_label: 'toggle', class: 'card-header-icon') {
+          button(aria_label: 'toggle', class: 'card-header-icon', data_action: 'card#toggle') {
             span(class: 'icon') {
               image_tag('dumpling/icons/chevron_down', aria_hidden: true)
             }
@@ -25,12 +25,12 @@ class Card < ApplicationComponent
         }
       end
 
-      div(class: 'card-content') {
+      div(class: 'card-content', data_card_target: 'content') {
         div(class: 'content', &block)
       }
 
       if actions?
-        footer(class: 'card-footer') {
+        footer(class: 'card-footer', data_card_target: 'footer') {
           @actions.each do |text, href|
             a(class: 'card-footer-item', href: href) {
               text
