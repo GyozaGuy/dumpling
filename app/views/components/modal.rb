@@ -12,7 +12,7 @@ class Modal < ApplicationComponent
   end
 
   def template
-    div(class: 'modal is-active', data: { controller: 'modal' }) {
+    div(class: 'modal', data: { controller: 'modal' }) {
       div(class: 'modal-background', data: { action: 'click->modal#close' })
 
       if @title
