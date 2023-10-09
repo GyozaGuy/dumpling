@@ -109,6 +109,35 @@ class TestPage < ApplicationView
           'This is medium content!'
         }
       }
+
+      d_section {
+        d_table(
+          border: true,
+          full_width: true,
+          headers: {
+            first: 'First',
+            second: 'Second',
+            third: 'Third',
+            fourth: 'Fourth',
+            fifth: 'Fifth'
+          },
+          hoverable: true,
+          scrollable: true,
+          striped: true
+        ) { |table|
+          table.row(
+            first: 'Value 1',
+            second: 'Value 2',
+            third: 'Value 3',
+            fourth: 'Value 4',
+            fifth: 'Value 5'
+          )
+          table.row(first: 'Value 1', second: 'Value 2', selected: true, third: 'Value 3')
+          table.row(first: 'Value 1', second: 'Value 2', third: 'Value 3')
+          table.row(first: 'Value 1', second: 'Value 2', third: 'Value 3')
+          table.row(first: 'Value 1', second: 'Value 2', third: 'Value 3')
+        }
+      }
     }
   end
 end
