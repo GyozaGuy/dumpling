@@ -168,6 +168,22 @@ class TestPage < ApplicationView
           )
         }
       }
+
+      d_section {
+        d_column_group(centered: true, vcentered: true) { |columns|
+          columns.column(columns: 2) {
+            d_box {
+              'First column'
+            }
+          }
+          columns.column(columns: 2) {
+            'Second column'
+          }
+          columns.column(columns: 2) {
+            'Third column'
+          }
+        }
+      }
     }
   end
 end
