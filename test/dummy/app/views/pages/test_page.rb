@@ -36,6 +36,7 @@ class TestPage < ApplicationView
         d_input(type: 'number')
         d_input(type: 'date')
         d_input(type: 'time')
+        d_textarea(fixed_size: true)
       }
 
       d_section {
