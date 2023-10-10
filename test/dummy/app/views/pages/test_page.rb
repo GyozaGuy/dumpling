@@ -204,13 +204,21 @@ class TestPage < ApplicationView
       }
 
       d_section {
-        d_media_object { |obj|
-          obj.content {
-            'Content!'
+        d_box {
+          d_media_object { |obj|
+            obj.content {
+              'Content!'
+            }
+            obj.right {
+              'Right content'
+            }
           }
-          obj.right {
-            'Right content'
-          }
+        }
+      }
+
+      d_section {
+        d_tile {
+          'hi'
         }
       }
     }
