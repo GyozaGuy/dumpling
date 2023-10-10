@@ -29,6 +29,16 @@ class TestPage < ApplicationView
       }
 
       d_section {
+        d_input
+        d_input(type: 'password')
+        d_input(type: 'email')
+        d_input(type: 'tel')
+        d_input(type: 'number')
+        d_input(type: 'date')
+        d_input(type: 'time')
+      }
+
+      d_section {
         d_dropdown items: %w[One Two], label: 'Dropdown'
       }
 
