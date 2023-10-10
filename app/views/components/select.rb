@@ -1,5 +1,10 @@
 class Select < ApplicationComponent
-  attr_accessor :color, :fullwidth, :multiple, :rounded, :rows, :size
+  attribute :color, :string
+  attribute :full_width, :boolean
+  attribute :multiple, :boolean
+  attribute :rounded, :boolean
+  attribute :rows, :integer
+  attribute :size, :string
 
   def select_option(label:, value:)
     option(value: value) {
@@ -13,7 +18,7 @@ class Select < ApplicationComponent
         **classes(
           'select',
           colored?: "is-#{@color}",
-          fullwidth?: 'is-fullwidth',
+          full_width?: 'is-fullwidth',
           multiple?: 'is-multiple',
           rounded?: 'is-rounded',
           sized?: "is-#{@size}"
@@ -26,13 +31,9 @@ class Select < ApplicationComponent
 
   private
 
-  def colored? = @color.present?
-
-  def fullwidth? = @fullwidth == true
+  def full_width? = @full_width == true
 
   def multiple? = @multiple == true
 
   def rounded? = @rounded == true
-
-  def sized? = @size.present?
 end

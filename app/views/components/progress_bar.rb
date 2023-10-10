@@ -1,10 +1,8 @@
 class ProgressBar < ApplicationComponent
-  attr_accessor :color, :max, :size, :value
-
-  def initialize(*args)
-    super
-    @max ||= 100
-  end
+  attribute :color, :string
+  attribute :max, :integer, default: 100
+  attribute :size, :string
+  attribute :value, :integer
 
   def template
     progress(
@@ -13,10 +11,4 @@ class ProgressBar < ApplicationComponent
       value: @value
     )
   end
-
-  private
-
-  def colored? = @color.present?
-
-  def sized? = @size.present?
 end
