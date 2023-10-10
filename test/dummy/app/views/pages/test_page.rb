@@ -4,10 +4,17 @@ class TestPage < ApplicationView
       color: 'dark',
       fixed: true,
       left_items: [{ href: '/', label: 'Home' }, { href: test_path, label: 'Testing' }],
-      right_items: [{ href: '/', label: 'Profile' }],
-      shadow: true,
-      spaced: true
+      right_items: [{ href: '/', label: 'Profile' }]
     )
+
+    d_hero(color: 'info', subtitle: 'Now with Bulma', title: 'Dumpling') { |hero|
+      hero.head {
+        'Hero header!'
+      }
+      hero.foot {
+        'Hero footer!'
+      }
+    }
 
     d_container {
       d_section {
