@@ -184,6 +184,17 @@ class TestPage < ApplicationView
           }
         }
       }
+
+      d_section {
+        d_level { |level|
+          level.item {
+            'Item 1!'
+          }
+          level.item {
+            'Item 2!'
+          }
+        }
+      }
     }
   end
 end
