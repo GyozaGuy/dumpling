@@ -214,5 +214,11 @@ class TestPage < ApplicationView
         }
       }
     }
+
+    d_footer {
+      d_content(centered: true, size: 'small') {
+        'Copyright &copy; 2023 - All rights reserved'.html_safe
+      }
+    }
   end
 end
