@@ -36,7 +36,12 @@ class TestPage < ApplicationView
         d_input(type: 'number')
         d_input(type: 'date')
         d_input(type: 'time')
-        d_textarea(fixed_size: true)
+        d_textarea
+        d_select { |select|
+          select.select_option(label: 'Select an option', value: '1')
+          select.select_option(label: 'Option 1', value: '2')
+          select.select_option(label: 'Option 2', value: '3')
+        }
       }
 
       d_section {
