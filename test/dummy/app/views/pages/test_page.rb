@@ -195,6 +195,17 @@ class TestPage < ApplicationView
           }
         }
       }
+
+      d_section {
+        d_media_object { |obj|
+          obj.content {
+            'Content!'
+          }
+          obj.right {
+            'Right content'
+          }
+        }
+      }
     }
   end
 end
