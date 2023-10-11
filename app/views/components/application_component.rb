@@ -32,7 +32,7 @@ class ApplicationComponent < Phlex::HTML
       @classes << value
     end
 
-    kwargs.reject { |key, value| key.end_with?('?') && value.empty? }.each_value do |value|
+    kwargs.reject { |key| key.end_with?('?') && !send(key) }.each_value do |value|
       @classes << value
     end
   end
