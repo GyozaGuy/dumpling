@@ -1,10 +1,11 @@
 class Select < ApplicationComponent
+  include Shared::HasSize
+
   attribute :color, :string
   attribute :full_width, :boolean
   attribute :multiple, :boolean
   attribute :rounded, :boolean
   attribute :rows, :integer
-  attribute :size, :string
 
   def select_option(label:, value:)
     option(value: value) {
@@ -21,7 +22,7 @@ class Select < ApplicationComponent
           full_width?: 'is-fullwidth',
           multiple?: 'is-multiple',
           rounded?: 'is-rounded',
-          sized?: "is-#{@size}"
+          size?: "is-#{@size}"
         )
       ) {
         select(multiple: multiple? ? '' : nil, size: @rows, &block)

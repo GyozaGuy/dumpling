@@ -5,14 +5,14 @@ class ApplicationComponent < Phlex::HTML
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::Routes
 
-  attr_accessor :data, :id, :style
+  attribute :data
+  attribute :id, :string
+  attribute :style, :string
 
   VALID_COLORS = %w[black danger dark info light link primary success warning white].freeze
-  VALID_SIZES = %w[small normal medium large].freeze
 
   def initialize(**kwargs)
     super
-    puts attributes
     attributes.each do |key, value|
       instance_variable_set("@#{key}", value)
     end
@@ -32,6 +32,4 @@ class ApplicationComponent < Phlex::HTML
   def props(**extra_props)
     { data: @data, id: @id, style: @style, **extra_props }
   end
-
-  def sized? = VALID_SIZES.include?(@size)
 end

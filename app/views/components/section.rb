@@ -1,11 +1,7 @@
 class Section < ApplicationComponent
-  attr_accessor :size
+  include Shared::HasSize
 
   def template(&block)
-    section(**classes('section', sized?: "is-#{@size}"), &block)
+    section(**classes('section', size?: "is-#{@size}"), &block)
   end
-
-  private
-
-  def sized? = @size.present?
 end

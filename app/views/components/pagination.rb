@@ -1,5 +1,7 @@
 class Pagination < ApplicationComponent
-  attr_accessor :current_page, :pages, :position, :rounded, :size
+  include Shared::HasSize
+
+  attr_accessor :current_page, :pages, :position, :rounded
 
   def template
     nav(
@@ -8,7 +10,7 @@ class Pagination < ApplicationComponent
         'pagination',
         position?: "is-#{@position}",
         rounded?: 'is-rounded',
-        sized?: "is-#{@size}"
+        size?: "is-#{@size}"
       ),
       role: 'pagination'
     ) {
@@ -53,6 +55,4 @@ class Pagination < ApplicationComponent
   def position? = @position.present?
 
   def rounded? = @rounded.present?
-
-  def sized? = @size.present?
 end

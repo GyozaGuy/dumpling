@@ -19,7 +19,7 @@ class TestPage < ApplicationView
     d_container {
       d_section {
         d_title(subtitle: 'For navigation', title: 'Breadcrumbs')
-        d_breadcrumbs items: [['First', '/'], ['Second', test_path]]
+        d_breadcrumbs(items: [['First', '/'], ['Second', test_path]])
       }
 
       d_section {

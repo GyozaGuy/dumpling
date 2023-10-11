@@ -1,9 +1,11 @@
 class Message < ApplicationComponent
-  attr_accessor :color, :size, :title
+  include Shared::HasSize
+
+  attr_accessor :color, :title
 
   def template(&block)
     article(
-      **classes('message', colored?: "is-#{@color}", sized?: "is-#{@size}"),
+      **classes('message', colored?: "is-#{@color}", size?: "is-#{@size}"),
       data: { controller: 'message' }
     ) {
       if @title
@@ -27,6 +29,4 @@ class Message < ApplicationComponent
   private
 
   def colored? = @color.present?
-
-  def sized? = @size.present?
 end

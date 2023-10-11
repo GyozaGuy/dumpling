@@ -1,5 +1,9 @@
 class Breadcrumb < ApplicationComponent
-  attr_accessor :alignment, :items, :separator, :size
+  include Shared::HasSize
+
+  attribute :alignment, :string
+  attribute :items, array: true
+  attribute :separator, :string
 
   def template
     nav(
@@ -8,7 +12,7 @@ class Breadcrumb < ApplicationComponent
         'breadcrumb',
         aligned?: "is-#{@alignment}",
         separated?: "has-#{@separator}-separator",
-        sized?: "is-#{@size}"
+        size?: "is-#{@size}"
       )
     ) {
       ul {
@@ -36,9 +40,5 @@ class Breadcrumb < ApplicationComponent
 
   def separated?
     @separator.present?
-  end
-
-  def sized?
-    @size.present?
   end
 end

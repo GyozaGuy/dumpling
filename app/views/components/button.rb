@@ -1,4 +1,6 @@
 class Button < ApplicationComponent
+  include Shared::HasSize
+
   # TODO: icons
   attr_accessor(
     :action,
@@ -12,7 +14,6 @@ class Button < ApplicationComponent
     :outlined,
     :rounded,
     :selected,
-    :size,
     :static,
     :target,
     :text
@@ -44,7 +45,7 @@ class Button < ApplicationComponent
         outlined?: 'is-outlined',
         rounded?: 'is-rounded',
         selected?: 'is-selected',
-        sized?: "is-#{@size}",
+        size?: "is-#{@size}",
         static?: 'is-static'
       ),
       disabled: @disabled
@@ -66,8 +67,6 @@ class Button < ApplicationComponent
   def rounded? = @rounded.present?
 
   def selected? = @selected.present?
-
-  def sized? = @size.present?
 
   def static? = @static.present?
 end

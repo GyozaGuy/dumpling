@@ -1,7 +1,8 @@
 class Hero < ApplicationComponent
   include Phlex::DeferredRender
+  include Shared::HasSize
 
-  attr_accessor :color, :fixed_navbar, :size, :subtitle, :title
+  attr_accessor :color, :fixed_navbar, :subtitle, :title
 
   def body(&block)
     @body = block
@@ -21,7 +22,7 @@ class Hero < ApplicationComponent
         'hero',
         colored?: "is-#{@color}",
         full_height_with_fixed_navbar?: 'is-fullheight-with-navbar',
-        sized?: "is-#{@size}"
+        size?: "is-#{@size}"
       )
     ) {
       div(class: 'hero-head', &@head) if @head
@@ -50,5 +51,5 @@ class Hero < ApplicationComponent
 
   def full_height_with_fixed_navbar? = full_height? && fixed_navbar?
 
-  def sized? = @size.present? && !full_height_with_fixed_navbar?
+  def size? = VALID_SIZES.include?(@size) && !full_height_with_fixed_navbar?
 end

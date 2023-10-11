@@ -1,4 +1,6 @@
 class Input < ApplicationComponent
+  include Shared::HasSize
+
   # TODO: finish icons
   attr_accessor(
     :color,
@@ -9,7 +11,6 @@ class Input < ApplicationComponent
     :readonly,
     :right_icon,
     :rounded,
-    :size,
     :state,
     :static,
     :type,
@@ -23,7 +24,7 @@ class Input < ApplicationComponent
           'input',
           colored?: "is-#{@color}",
           rounded?: 'is-rounded',
-          sized?: "is-#{@size}",
+          size?: "is-#{@size}",
           static?: 'is-static'
         ),
         disabled: @disabled ? '' : nil,
@@ -42,8 +43,6 @@ class Input < ApplicationComponent
   def loading? = @loading == true
 
   def rounded? = @rounded == true
-
-  def sized? = @size.present?
 
   def static? = @static == true
 end

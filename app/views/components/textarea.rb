@@ -1,5 +1,7 @@
 class Textarea < ApplicationComponent
-  attr_accessor :color, :disabled, :fixed_size, :loading, :placeholder, :readonly, :rows, :size
+  include Shared::HasSize
+
+  attr_accessor :color, :disabled, :fixed_size, :loading, :placeholder, :readonly, :rows
 
   def template(&block)
     div(**classes('control', loading?: 'is-loading')) {
@@ -8,7 +10,7 @@ class Textarea < ApplicationComponent
           'textarea',
           colored?: "is-#{@color}",
           fixed_size?: 'has-fixed-size',
-          sized?: "is-#{@size}"
+          size?: "is-#{@size}"
         ),
         disabled: @disabled ? '' : nil,
         placeholder: @placeholder,
@@ -26,6 +28,4 @@ class Textarea < ApplicationComponent
   def fixed_size? = @fixed_size == true
 
   def loading? = @loading == true
-
-  def sized? = @size.present?
 end

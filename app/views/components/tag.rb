@@ -1,5 +1,7 @@
 class Tag < ApplicationComponent
-  attr_accessor :color, :delete, :delete_action, :href, :light, :rounded, :size, :target, :text
+  include Shared::HasSize
+
+  attr_accessor :color, :delete, :delete_action, :href, :light, :rounded, :target, :text
 
   def template
     if href
@@ -25,8 +27,6 @@ class Tag < ApplicationComponent
 
   def rounded? = @rounded == true
 
-  def sized? = @size.present?
-
   def tag_content
     plain @text
     d_delete(action: @delete_action) if @text.present? && delete_action?
@@ -40,7 +40,7 @@ class Tag < ApplicationComponent
         delete?: 'is-delete',
         light?: 'is-light',
         rounded?: 'is-rounded',
-        sized?: "is-#{@size}"
+        size?: "is-#{@size}"
       )
     }
   end
