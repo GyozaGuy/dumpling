@@ -1,5 +1,5 @@
 class TagList < ApplicationComponent
-  include Shared::HasSize
+  include Shared::AreSize
 
   attr_accessor :addons
 

@@ -1,8 +1,9 @@
 class Hero < ApplicationComponent
   include Phlex::DeferredRender
-  include Shared::HasSize
+  include Shared::IsColor
+  include Shared::IsSize
 
-  attr_accessor :color, :fixed_navbar, :subtitle, :title
+  attr_accessor :fixed_navbar, :subtitle, :title
 
   def body(&block)
     @body = block
@@ -20,7 +21,7 @@ class Hero < ApplicationComponent
     section(
       **classes(
         'hero',
-        colored?: "is-#{@color}",
+        color?: "is-#{color}",
         full_height_with_fixed_navbar?: 'is-fullheight-with-navbar',
         size?: "is-#{@size}"
       )
@@ -42,8 +43,6 @@ class Hero < ApplicationComponent
   end
 
   private
-
-  def colored? = @color.present?
 
   def fixed_navbar? = @fixed_navbar == true
 

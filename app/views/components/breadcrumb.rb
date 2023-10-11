@@ -1,5 +1,5 @@
 class Breadcrumb < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsSize
 
   attribute :alignment, :string
   attribute :items, array: true

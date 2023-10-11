@@ -1,7 +1,7 @@
 class Select < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsColor
+  include Shared::IsSize
 
-  attribute :color, :string
   attribute :full_width, :boolean
   attribute :multiple, :boolean
   attribute :rounded, :boolean
@@ -18,11 +18,11 @@ class Select < ApplicationComponent
       div(
         **classes(
           'select',
-          colored?: "is-#{@color}",
+          color?: "is-#{color}",
           full_width?: 'is-fullwidth',
           multiple?: 'is-multiple',
           rounded?: 'is-rounded',
-          size?: "is-#{@size}"
+          size?: "is-#{size}"
         )
       ) {
         select(multiple: multiple? ? '' : nil, size: @rows, &block)

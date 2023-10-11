@@ -1,5 +1,5 @@
 class Content < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsSize
 
   attr_accessor :centered
 

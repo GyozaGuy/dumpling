@@ -1,5 +1,5 @@
 class Section < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsSize
 
   def template(&block)
     section(**classes('section', size?: "is-#{@size}"), &block)

@@ -1,10 +1,10 @@
 class Button < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsColor
+  include Shared::IsSize
 
   # TODO: icons
   attr_accessor(
     :action,
-    :color,
     :disabled,
     :full_width,
     :href,
@@ -37,7 +37,7 @@ class Button < ApplicationComponent
     props(
       **classes(
         'button',
-        colored?: "is-#{@color}",
+        color?: "is-#{color}",
         full_width?: 'is-fullwidth',
         inverted?: 'is-inverted',
         light?: 'is-light',
@@ -51,8 +51,6 @@ class Button < ApplicationComponent
       disabled: @disabled
     )
   end
-
-  def colored? = @color.present?
 
   def full_width? = @full_width.present?
 

@@ -1,13 +1,13 @@
 class ProgressBar < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsColor
+  include Shared::IsSize
 
-  attribute :color, :string
   attribute :max, :integer, default: 100
   attribute :value, :integer
 
   def template
     progress(
-      **classes('progress', colored?: "is-#{@color}", size?: "is-#{@size}"),
+      **classes('progress', color?: "is-#{color}", size?: "is-#{@size}"),
       max: @max,
       value: @value
     )

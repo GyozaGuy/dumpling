@@ -1,12 +1,14 @@
 class Navbar < ApplicationComponent
-  attr_accessor :color, :fixed, :image, :image_alt, :left_items, :right_items, :shadow, :spaced
+  include Shared::IsColor
+
+  attr_accessor :fixed, :image, :image_alt, :left_items, :right_items, :shadow, :spaced
 
   def template
     nav(
       aria_label: 'main navigation',
       **classes(
         'navbar',
-        colored?: "is-#{@color}",
+        color?: "is-#{color}",
         fixed?: 'is-fixed-top',
         shadowed?: 'has-shadow',
         spaced?: 'is-spaced'
@@ -57,8 +59,6 @@ class Navbar < ApplicationComponent
   end
 
   private
-
-  def colored? = @color.present?
 
   def fixed? = @fixed.present?
 

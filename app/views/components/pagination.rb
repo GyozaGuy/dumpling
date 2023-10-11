@@ -1,5 +1,5 @@
 class Pagination < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsSize
 
   attr_accessor :current_page, :pages, :position, :rounded
 

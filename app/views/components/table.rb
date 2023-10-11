@@ -1,10 +1,7 @@
 class Table < ApplicationComponent
-  attr_accessor :border, :footer, :full_width, :headers, :hoverable, :narrow, :scrollable, :striped
+  attribute :rows, array: true, default: []
 
-  def initialize(**kwargs)
-    super
-    @rows = []
-  end
+  attr_accessor :border, :footer, :full_width, :headers, :hoverable, :narrow, :scrollable, :striped
 
   def row(values)
     @rows << tr(class: values[:selected] ? 'is-selected' : nil) {

@@ -9,8 +9,6 @@ class ApplicationComponent < Phlex::HTML
   attribute :id, :string
   attribute :style, :string
 
-  VALID_COLORS = %w[black danger dark info light link primary success warning white].freeze
-
   def initialize(**kwargs)
     super
     attributes.each do |key, value|
@@ -26,8 +24,6 @@ class ApplicationComponent < Phlex::HTML
   end
 
   private
-
-  def colored? = VALID_COLORS.include?(@color)
 
   def props(**extra_props)
     { data: @data, id: @id, style: @style, **extra_props }

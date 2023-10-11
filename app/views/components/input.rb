@@ -1,9 +1,9 @@
 class Input < ApplicationComponent
-  include Shared::HasSize
+  include Shared::IsColor
+  include Shared::IsSize
 
   # TODO: finish icons
   attr_accessor(
-    :color,
     :disabled,
     :left_icon,
     :loading,
@@ -22,7 +22,7 @@ class Input < ApplicationComponent
       input(
         **classes(
           'input',
-          colored?: "is-#{@color}",
+          color?: "is-#{color}",
           rounded?: 'is-rounded',
           size?: "is-#{@size}",
           static?: 'is-static'
@@ -37,8 +37,6 @@ class Input < ApplicationComponent
   end
 
   private
-
-  def colored? = @color.present?
 
   def loading? = @loading == true
 
