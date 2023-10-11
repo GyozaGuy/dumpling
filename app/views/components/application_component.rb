@@ -25,6 +25,22 @@ class ApplicationComponent < Phlex::HTML
 
   private
 
+  def add_classes(*args, **kwargs)
+    @classes ||= []
+
+    args.each do |value|
+      @classes << value
+    end
+
+    kwargs.reject { |key, value| key.end_with?('?') && value.empty? }.each_value do |value|
+      @classes << value
+    end
+  end
+
+  def class_list(*args, **kwargs)
+    classes(*@classes, *args, **kwargs)
+  end
+
   def props(**extra_props)
     { data: @data, id: @id, style: @style, **extra_props }
   end

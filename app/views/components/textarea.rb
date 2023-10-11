@@ -7,9 +7,8 @@ class Textarea < ApplicationComponent
   def template(&block)
     div(**classes('control', loading?: 'is-loading')) {
       textarea(
-        **classes(
+        **class_list(
           'textarea',
-          color?: "is-#{color}",
           fixed_size?: 'has-fixed-size',
           size?: "is-#{size}"
         ),

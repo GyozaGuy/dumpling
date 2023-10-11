@@ -5,7 +5,7 @@ class Notification < ApplicationComponent
 
   def template
     div(
-      **classes('notification', color?: "is-#{color}", light?: 'is-light'),
+      **class_list('notification', light?: 'is-light'),
       data_controller: 'notification'
     ) {
       d_delete(action: 'notification#close')

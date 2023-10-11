@@ -33,9 +33,8 @@ class Tag < ApplicationComponent
 
   def tag_props
     {
-      **classes(
+      **class_list(
         'tag',
-        color?: "is-#{color}",
         delete?: 'is-delete',
         light?: 'is-light',
         rounded?: 'is-rounded',

@@ -6,9 +6,8 @@ class Navbar < ApplicationComponent
   def template
     nav(
       aria_label: 'main navigation',
-      **classes(
+      **class_list(
         'navbar',
-        color?: "is-#{color}",
         fixed?: 'is-fixed-top',
         shadowed?: 'has-shadow',
         spaced?: 'is-spaced'

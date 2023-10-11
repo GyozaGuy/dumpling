@@ -19,9 +19,8 @@ class Hero < ApplicationComponent
 
   def template
     section(
-      **classes(
+      **class_list(
         'hero',
-        color?: "is-#{color}",
         full_height_with_fixed_navbar?: 'is-fullheight-with-navbar',
         size?: "is-#{@size}"
       )

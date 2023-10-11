@@ -35,9 +35,8 @@ class Button < ApplicationComponent
 
   def button_props
     props(
-      **classes(
+      **class_list(
         'button',
-        color?: "is-#{color}",
         full_width?: 'is-fullwidth',
         inverted?: 'is-inverted',
         light?: 'is-light',

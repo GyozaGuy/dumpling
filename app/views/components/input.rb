@@ -20,9 +20,8 @@ class Input < ApplicationComponent
   def template
     div(**classes('control', loading?: 'is-loading')) {
       input(
-        **classes(
+        **class_list(
           'input',
-          color?: "is-#{color}",
           rounded?: 'is-rounded',
           size?: "is-#{@size}",
           static?: 'is-static'

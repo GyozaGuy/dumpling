@@ -5,6 +5,11 @@ module Shared::IsColor
     base.attribute :color, :string
   end
 
+  def initialize(**kwargs)
+    super
+    add_classes(color?: "is-#{color}")
+  end
+
   private
 
   def color? = VALID_COLORS.include?(color)

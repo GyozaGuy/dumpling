@@ -7,7 +7,7 @@ class ProgressBar < ApplicationComponent
 
   def template
     progress(
-      **classes('progress', color?: "is-#{color}", size?: "is-#{@size}"),
+      **class_list('progress', size?: "is-#{@size}"),
       max: @max,
       value: @value
     )

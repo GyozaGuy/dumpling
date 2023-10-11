@@ -6,7 +6,7 @@ class Message < ApplicationComponent
 
   def template(&block)
     article(
-      **classes('message', color?: "is-#{color}", size?: "is-#{@size}"),
+      **class_list('message', size?: "is-#{@size}"),
       data: { controller: 'message' }
     ) {
       if @title

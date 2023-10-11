@@ -16,9 +16,8 @@ class Select < ApplicationComponent
   def template(&block)
     div(class: 'control') {
       div(
-        **classes(
+        **class_list(
           'select',
-          color?: "is-#{color}",
           full_width?: 'is-fullwidth',
           multiple?: 'is-multiple',
           rounded?: 'is-rounded',
