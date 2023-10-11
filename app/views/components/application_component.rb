@@ -5,7 +5,7 @@ class ApplicationComponent < Phlex::HTML
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::Routes
 
-  attribute :data
+  attribute :data, default: {}
   attribute :id, :string
   attribute :style, :string
 
@@ -41,7 +41,7 @@ class ApplicationComponent < Phlex::HTML
     classes(*@classes, *args, **kwargs)
   end
 
-  def props(**extra_props)
-    { data: @data, id: @id, style: @style, **extra_props }
+  def props(**kwargs)
+    { data: data, id: id, style: style, **kwargs }
   end
 end
