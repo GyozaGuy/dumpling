@@ -23,7 +23,6 @@ class Input < ApplicationComponent
         **class_list(
           'input',
           rounded?: 'is-rounded',
-          size?: "is-#{@size}",
           static?: 'is-static'
         ),
         disabled: @disabled ? '' : nil,

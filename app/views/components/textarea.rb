@@ -9,8 +9,7 @@ class Textarea < ApplicationComponent
       textarea(
         **class_list(
           'textarea',
-          fixed_size?: 'has-fixed-size',
-          size?: "is-#{size}"
+          fixed_size?: 'has-fixed-size'
         ),
         disabled: @disabled ? '' : nil,
         placeholder: @placeholder,

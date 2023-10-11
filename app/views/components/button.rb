@@ -44,7 +44,6 @@ class Button < ApplicationComponent
         outlined?: 'is-outlined',
         rounded?: 'is-rounded',
         selected?: 'is-selected',
-        size?: "is-#{@size}",
         static?: 'is-static'
       ),
       disabled: @disabled

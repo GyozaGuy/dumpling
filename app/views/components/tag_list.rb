@@ -4,7 +4,7 @@ class TagList < ApplicationComponent
   attr_accessor :addons
 
   def template(&block)
-    div(**classes('tags', addons?: 'has-addons', size?: "are-#{@size}"), &block)
+    div(**class_list('tags', addons?: 'has-addons'), &block)
   end
 
   private

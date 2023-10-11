@@ -6,11 +6,10 @@ class Pagination < ApplicationComponent
   def template
     nav(
       aria_label: 'pagination',
-      **classes(
+      **class_list(
         'pagination',
         position?: "is-#{@position}",
-        rounded?: 'is-rounded',
-        size?: "is-#{@size}"
+        rounded?: 'is-rounded'
       ),
       role: 'pagination'
     ) {

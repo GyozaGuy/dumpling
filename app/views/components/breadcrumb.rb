@@ -8,11 +8,10 @@ class Breadcrumb < ApplicationComponent
   def template
     nav(
       aria_label: 'breadcrumbs',
-      **classes(
+      **class_list(
         'breadcrumb',
         aligned?: "is-#{@alignment}",
-        separated?: "has-#{@separator}-separator",
-        size?: "is-#{@size}"
+        separated?: "has-#{@separator}-separator"
       )
     ) {
       ul {

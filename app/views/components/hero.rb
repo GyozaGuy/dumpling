@@ -21,8 +21,7 @@ class Hero < ApplicationComponent
     section(
       **class_list(
         'hero',
-        full_height_with_fixed_navbar?: 'is-fullheight-with-navbar',
-        size?: "is-#{@size}"
+        full_height_with_fixed_navbar?: 'is-fullheight-with-navbar'
       )
     ) {
       div(class: 'hero-head', &@head) if @head

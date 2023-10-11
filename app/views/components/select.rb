@@ -20,8 +20,7 @@ class Select < ApplicationComponent
           'select',
           full_width?: 'is-fullwidth',
           multiple?: 'is-multiple',
-          rounded?: 'is-rounded',
-          size?: "is-#{size}"
+          rounded?: 'is-rounded'
         )
       ) {
         select(multiple: multiple? ? '' : nil, size: @rows, &block)

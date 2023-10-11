@@ -37,8 +37,7 @@ class Tag < ApplicationComponent
         'tag',
         delete?: 'is-delete',
         light?: 'is-light',
-        rounded?: 'is-rounded',
-        size?: "is-#{@size}"
+        rounded?: 'is-rounded'
       )
     }
   end

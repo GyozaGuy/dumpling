@@ -5,6 +5,11 @@ module Shared::IsSize
     base.attribute :size, :string
   end
 
+  def initialize(**kwargs)
+    super
+    add_classes(size?: "is-#{size}")
+  end
+
   private
 
   def size? = VALID_SIZES.include?(size)
