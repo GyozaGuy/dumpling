@@ -1,5 +1,6 @@
 class Input < ApplicationComponent
   include Shared::IsColor
+  include Shared::IsRounded
   include Shared::IsSize
 
   # TODO: finish icons
@@ -10,7 +11,6 @@ class Input < ApplicationComponent
     :placeholder,
     :readonly,
     :right_icon,
-    :rounded,
     :state,
     :static,
     :type,
@@ -22,7 +22,6 @@ class Input < ApplicationComponent
       input(
         **class_list(
           'input',
-          rounded?: 'is-rounded',
           static?: 'is-static'
         ),
         disabled: @disabled ? '' : nil,
@@ -37,8 +36,6 @@ class Input < ApplicationComponent
   private
 
   def loading? = @loading == true
-
-  def rounded? = @rounded == true
 
   def static? = @static == true
 end

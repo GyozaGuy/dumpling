@@ -1,15 +1,15 @@
 class Pagination < ApplicationComponent
+  include Shared::IsRounded
   include Shared::IsSize
 
-  attr_accessor :current_page, :pages, :position, :rounded
+  attr_accessor :current_page, :pages, :position
 
   def template
     nav(
       aria_label: 'pagination',
       **class_list(
         'pagination',
-        position?: "is-#{@position}",
-        rounded?: 'is-rounded'
+        position?: "is-#{@position}"
       ),
       role: 'pagination'
     ) {
@@ -52,6 +52,4 @@ class Pagination < ApplicationComponent
   def last_page? = @current_page == pages.last[:number]
 
   def position? = @position.present?
-
-  def rounded? = @rounded.present?
 end

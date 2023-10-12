@@ -1,5 +1,6 @@
 class Button < ApplicationComponent
   include Shared::IsColor
+  include Shared::IsRounded
   include Shared::IsSize
 
   # TODO: icons
@@ -12,7 +13,6 @@ class Button < ApplicationComponent
     :light,
     :loading,
     :outlined,
-    :rounded,
     :selected,
     :static,
     :target,
@@ -42,7 +42,6 @@ class Button < ApplicationComponent
         light?: 'is-light',
         loading?: 'is-loading',
         outlined?: 'is-outlined',
-        rounded?: 'is-rounded',
         selected?: 'is-selected',
         static?: 'is-static'
       ),
@@ -59,8 +58,6 @@ class Button < ApplicationComponent
   def loading? = @loading.present?
 
   def outlined? = @outlined.present?
-
-  def rounded? = @rounded.present?
 
   def selected? = @selected.present?
 
