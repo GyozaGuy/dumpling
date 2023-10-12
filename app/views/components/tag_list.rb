@@ -1,13 +1,8 @@
 class TagList < ApplicationComponent
   include Shared::AreSize
-
-  attr_accessor :addons
+  include Shared::HasAddons
 
   def template(&block)
-    div(**class_list('tags', addons?: 'has-addons'), &block)
+    div(**class_list('tags'), &block)
   end
-
-  private
-
-  def addons? = @addons == true
 end

@@ -1,13 +1,13 @@
 class ButtonGroup < ApplicationComponent
-  attr_accessor :addons, :position
+  include Shared::HasAddons
+
+  attribute :position, :string
 
   def template(&block)
-    div(**classes('buttons', addons?: 'has-addons', position?: "is-#{@position}"), &block)
+    div(**class_list('buttons', position?: "is-#{position}"), &block)
   end
 
   private
 
-  def addons? = @addons.present?
-
-  def position? = @position.present?
+  def position? = position.present?
 end
