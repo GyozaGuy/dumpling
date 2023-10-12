@@ -4,29 +4,27 @@ class Button < ApplicationComponent
   include Shared::IsSize
 
   # TODO: icons
-  attr_accessor(
-    :action,
-    :disabled,
-    :full_width,
-    :href,
-    :inverted,
-    :light,
-    :loading,
-    :outlined,
-    :selected,
-    :static,
-    :target,
-    :text
-  )
+  attribute :action, :string
+  attribute :disabled, :boolean
+  attribute :full_width, :boolean
+  attribute :href, :string
+  attribute :inverted, :boolean
+  attribute :light, :boolean
+  attribute :loading, :boolean
+  attribute :outlined, :boolean
+  attribute :selected, :boolean
+  attribute :static, :boolean
+  attribute :target, :string
+  attribute :text, :string
 
   def template
-    if @href
-      a(**button_props, href: @href, target: @target) {
-        @text || yield
+    if href
+      a(**button_props, href: href, target: target) {
+        text || yield
       }
     else
-      button(**button_props, data_action: @action) {
-        @text || yield
+      button(**button_props, data_action: action) {
+        text || yield
       }
     end
   end
@@ -45,21 +43,21 @@ class Button < ApplicationComponent
         selected?: 'is-selected',
         static?: 'is-static'
       ),
-      disabled: @disabled
+      disabled: disabled
     )
   end
 
-  def full_width? = @full_width.present?
+  def full_width? = full_width == true
 
-  def inverted? = @inverted.present?
+  def inverted? = inverted == true
 
-  def light? = @light.present?
+  def light? = light == true
 
-  def loading? = @loading.present?
+  def loading? = loading == true
 
-  def outlined? = @outlined.present?
+  def outlined? = outlined == true
 
-  def selected? = @selected.present?
+  def selected? = selected == true
 
-  def static? = @static.present?
+  def static? = static == true
 end

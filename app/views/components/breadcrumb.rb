@@ -10,12 +10,12 @@ class Breadcrumb < ApplicationComponent
       aria_label: 'breadcrumbs',
       **class_list(
         'breadcrumb',
-        aligned?: "is-#{@alignment}",
-        separated?: "has-#{@separator}-separator"
+        aligned?: "is-#{alignment}",
+        separated?: "has-#{separator}-separator"
       )
     ) {
       ul {
-        @items.each do |item|
+        items.each do |item|
           text, href = item
           li(class: last_item?(item) ? 'is-active' : nil) {
             a(aria_current: last_item?(item) ? 'page' : nil, href: href) {
@@ -30,14 +30,14 @@ class Breadcrumb < ApplicationComponent
   private
 
   def aligned?
-    @alignment.present?
+    alignment.present?
   end
 
   def last_item?(item)
-    item == @items.last
+    item == items.last
   end
 
   def separated?
-    @separator.present?
+    separator.present?
   end
 end

@@ -4,7 +4,7 @@ class ApplicationLayout < ApplicationView
   def template(&block)
     doctype
 
-    html {
+    html(class: 'has-navbar-fixed-top') {
       head {
         title { "You're awesome" }
         meta name: 'viewport', content: 'width=device-width,initial-scale=1'
