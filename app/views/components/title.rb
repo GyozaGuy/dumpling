@@ -1,24 +1,26 @@
 class Title < ApplicationComponent
-  attr_accessor :size, :spaced, :subtitle, :title
+  attribute :size, :integer, default: 3
+  attribute :spaced, :boolean
+  attribute :subtitle, :string
+  attribute :title, :string
 
   def initialize(**kwargs)
     super
-    @size ||= 3
-    @subtitle_size = @size + 2
+    @subtitle_size = size + 2
   end
 
   def template
-    h1(**classes('title', "is-#{@size}", spaced?: 'is-spaced')) {
-      @title
+    h1(**classes('title', "is-#{size}", spaced?: 'is-spaced')) {
+      title
     }
-    return unless @subtitle
+    return unless subtitle
 
     h3(class: ['subtitle', "is-#{[@subtitle_size, 7].min}"]) {
-      @subtitle
+      subtitle
     }
   end
 
   private
 
-  def spaced? = @spaced == true
+  def spaced? = spaced == true
 end

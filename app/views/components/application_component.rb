@@ -9,13 +9,6 @@ class ApplicationComponent < Phlex::HTML
   attribute :id, :string
   attribute :style, :string
 
-  def initialize(**kwargs)
-    super
-    attributes.each do |key, value|
-      instance_variable_set("@#{key}", value)
-    end
-  end
-
   if Rails.env.development?
     def before_template
       comment { "Before #{self.class.name}" }

@@ -22,14 +22,14 @@ class Select < ApplicationComponent
           multiple?: 'is-multiple'
         )
       ) {
-        select(multiple: multiple? ? '' : nil, size: @rows, &block)
+        select(multiple: multiple? ? '' : nil, size: rows, &block)
       }
     }
   end
 
   private
 
-  def full_width? = @full_width == true
+  def full_width? = full_width == true
 
-  def multiple? = @multiple == true
+  def multiple? = multiple == true
 end

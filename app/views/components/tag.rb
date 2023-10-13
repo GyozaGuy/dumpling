@@ -4,13 +4,20 @@ class Tag < ApplicationComponent
   include Shared::IsRounded
   include Shared::IsSize
 
-  attr_accessor :delete, :delete_action, :href, :target, :text
+  attribute :delete, :boolean
+  attribute :delete_action, :boolean
+  attribute :href, :string
+  attribute :target, :string
+  attribute :text, :string
 
   def template
     if href
-      a(**tag_props, href: @href, target: @target) {
+      a(**tag_props, href: href, target: target) {
         tag_content
       }
+    elsif delete? && delete_action?
+      # TODO: fix this so a button looks good
+      a(**tag_props, data_action: delete_action)
     else
       span(**tag_props) {
         tag_content
@@ -20,13 +27,13 @@ class Tag < ApplicationComponent
 
   private
 
-  def delete? = @delete == true && delete_action? && @text.empty?
+  def delete? = delete == true && delete_action? && text.blank?
 
-  def delete_action? = @delete_action.present?
+  def delete_action? = delete_action.present?
 
   def tag_content
-    plain @text
-    d_delete(action: @delete_action) if @text.present? && delete_action?
+    plain text
+    d_delete(action: delete_action) if text.present? && delete_action?
   end
 
   def tag_props

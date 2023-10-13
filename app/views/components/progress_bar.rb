@@ -8,8 +8,8 @@ class ProgressBar < ApplicationComponent
   def template
     progress(
       **class_list('progress'),
-      max: @max,
-      value: @value
+      max: max,
+      value: value
     )
   end
 end

@@ -189,6 +189,7 @@ class TestPage < ApplicationView
             target: '_blank',
             text: 'Google'
           )
+          d_tag(delete: true, delete_action: 'delete')
         }
       }
 
