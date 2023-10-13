@@ -3,3 +3,7 @@
 [hidden] {
   display: none;
 }
+
+.checkbox + .checkbox {
+  margin-left: 0.5rem;
+}

@@ -42,6 +42,14 @@ class TestPage < ApplicationView
           select.select_option(label: 'Option 1', value: '2')
           select.select_option(label: 'Option 2', value: '3')
         }
+        d_checkbox_group(name: 'checkboxes') { |cg|
+          cg.checkbox(label_text: 'Checkbox 1')
+          cg.checkbox(label_text: 'Checkbox 2')
+        }
+        d_radio_group(name: 'radios') { |rg|
+          rg.radio(label_text: 'Radio 1')
+          rg.radio(label_text: 'Radio 2')
+        }
       }
 
       d_section {
