@@ -2,17 +2,17 @@ class Message < ApplicationComponent
   include Shared::IsColor
   include Shared::IsSize
 
-  attr_accessor :title
+  attribute :title, :string
 
   def template(&block)
     article(
       **class_list('message'),
       data: { controller: 'message' }
     ) {
-      if @title
+      if title
         div(class: 'message-header') {
           p {
-            @title
+            title
           }
           button(
             aria_label: 'delete',
