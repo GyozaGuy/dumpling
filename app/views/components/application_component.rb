@@ -37,6 +37,14 @@ class ApplicationComponent < Phlex::HTML
     end
   end
 
+  def add_props(**kwargs)
+    @props ||= []
+
+    kwargs.each_value.reject(&:nil?).each do |value|
+      @props << value
+    end
+  end
+
   def class_list(*args, **kwargs)
     classes(*@classes, *args, **kwargs)
   end
