@@ -1,7 +1,8 @@
 class MediaObject < ApplicationComponent
   include Phlex::DeferredRender
 
-  attr_accessor :image, :image_alt
+  attribute :image, :string
+  attribute :image_alt, :string
 
   def content(&block)
     @content = block
@@ -15,7 +16,7 @@ class MediaObject < ApplicationComponent
     article(class: 'media') {
       figure(class: 'media-left') {
         p(class: 'image is-64x64') {
-          img(alt: @image_alt, src: @image)
+          img(alt: image_alt, src: image)
         }
       }
 
