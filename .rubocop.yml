@@ -49,9 +49,6 @@ Layout/MultilineMethodParameterLineBreaks:
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Lint/MissingSuper:
-  Enabled: false
-
 Metrics/AbcSize:
   Enabled: false
 
