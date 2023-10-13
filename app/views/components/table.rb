@@ -1,13 +1,18 @@
 class Table < ApplicationComponent
   include Shared::IsHoverable
 
+  attribute :border, :boolean
+  attribute :footer, :boolean
+  attribute :full_width, :boolean
+  attribute :headers, array: true
+  attribute :narrow, :boolean
   attribute :rows, array: true, default: []
-
-  attr_accessor :border, :footer, :full_width, :headers, :narrow, :scrollable, :striped
+  attribute :scrollable, :boolean
+  attribute :striped, :boolean
 
   def row(values)
-    @rows << tr(class: values[:selected] ? 'is-selected' : nil) {
-      @headers.each_key do |key|
+    rows << tr(class: values[:selected] ? 'is-selected' : nil) {
+      headers.each_key do |key|
         td {
           values[key]
         }
@@ -27,31 +32,31 @@ class Table < ApplicationComponent
 
   private
 
-  def bordered? = @border == true
+  def border? = border == true
 
-  def footer? = @footer == true
+  def footer? = footer == true
 
-  def full_width? = @full_width == true
+  def full_width? = full_width == true
 
   def header_cells
-    @headers.each_value do |header|
+    headers.each_value do |header|
       th {
         header
       }
     end
   end
 
-  def narrow? = @narrow == true
+  def narrow? = narrow == true
 
-  def scrollable? = @scrollable == true
+  def scrollable? = scrollable == true
 
-  def striped? = @striped == true
+  def striped? = striped == true
 
   def table_template(&block)
     table(
       **class_list(
         'table',
-        bordered?: 'is-bordered',
+        border?: 'is-bordered',
         full_width?: 'is-fullwidth',
         narrow?: 'is-narrow',
         striped?: 'is-striped'
