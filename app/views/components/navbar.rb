@@ -1,7 +1,13 @@
 class Navbar < ApplicationComponent
   include Shared::IsColor
 
-  attr_accessor :fixed, :image, :image_alt, :left_items, :right_items, :shadow, :spaced
+  attribute :fixed, :boolean
+  attribute :image, :string
+  attribute :image_alt, :string
+  attribute :left_items, array: true
+  attribute :right_items, array: true
+  attribute :shadow, :boolean
+  attribute :spaced, :boolean
 
   def template
     nav(
@@ -16,9 +22,9 @@ class Navbar < ApplicationComponent
       role: 'navigation'
     ) {
       div(class: 'navbar-brand') {
-        if @image
+        if image
           a(class: 'navbar-item', href: '/') {
-            image_tag(@image, alt: @image_alt)
+            image_tag(image, alt: image_alt)
           }
         end
 
@@ -34,9 +40,9 @@ class Navbar < ApplicationComponent
       }
 
       div(class: 'navbar-menu', data_navbar_target: 'menu', id: 'navbarMenu') {
-        if @left_items
+        if left_items
           div(class: 'navbar-start') {
-            @left_items.each do |item|
+            left_items.each do |item|
               a(class: 'navbar-item', href: item[:href]) {
                 item[:label]
               }
@@ -44,9 +50,9 @@ class Navbar < ApplicationComponent
           }
         end
 
-        if @right_items
+        if right_items
           div(class: 'navbar-end') {
-            @right_items.each do |item|
+            right_items.each do |item|
               a(class: 'navbar-item', href: item[:href]) {
                 item[:label]
               }
@@ -59,9 +65,9 @@ class Navbar < ApplicationComponent
 
   private
 
-  def fixed? = @fixed.present?
+  def fixed? = fixed.present?
 
-  def shadowed? = @shadow.present?
+  def shadowed? = shadow.present?
 
-  def spaced? = @spaced.present?
+  def spaced? = spaced.present?
 end

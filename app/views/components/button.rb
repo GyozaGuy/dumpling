@@ -1,5 +1,6 @@
 class Button < ApplicationComponent
   include Shared::IsColor
+  include Shared::IsLight
   include Shared::IsRounded
   include Shared::IsSize
 
@@ -9,7 +10,6 @@ class Button < ApplicationComponent
   attribute :full_width, :boolean
   attribute :href, :string
   attribute :inverted, :boolean
-  attribute :light, :boolean
   attribute :loading, :boolean
   attribute :outlined, :boolean
   attribute :selected, :boolean
@@ -37,7 +37,6 @@ class Button < ApplicationComponent
         'button',
         full_width?: 'is-fullwidth',
         inverted?: 'is-inverted',
-        light?: 'is-light',
         loading?: 'is-loading',
         outlined?: 'is-outlined',
         selected?: 'is-selected',
@@ -50,8 +49,6 @@ class Button < ApplicationComponent
   def full_width? = full_width == true
 
   def inverted? = inverted == true
-
-  def light? = light == true
 
   def loading? = loading == true
 

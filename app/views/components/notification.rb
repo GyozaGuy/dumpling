@@ -1,19 +1,14 @@
 class Notification < ApplicationComponent
   include Shared::IsColor
-
-  attr_accessor :light
+  include Shared::IsLight
 
   def template
     div(
-      **class_list('notification', light?: 'is-light'),
+      **class_list('notification'),
       data_controller: 'notification'
     ) {
       d_delete(action: 'notification#close')
       yield
     }
   end
-
-  private
-
-  def light? = @light.present?
 end

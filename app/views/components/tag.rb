@@ -1,9 +1,10 @@
 class Tag < ApplicationComponent
   include Shared::IsColor
+  include Shared::IsLight
   include Shared::IsRounded
   include Shared::IsSize
 
-  attr_accessor :delete, :delete_action, :href, :light, :target, :text
+  attr_accessor :delete, :delete_action, :href, :target, :text
 
   def template
     if href
@@ -23,8 +24,6 @@ class Tag < ApplicationComponent
 
   def delete_action? = @delete_action.present?
 
-  def light? = @light == true
-
   def tag_content
     plain @text
     d_delete(action: @delete_action) if @text.present? && delete_action?
@@ -34,8 +33,7 @@ class Tag < ApplicationComponent
     {
       **class_list(
         'tag',
-        delete?: 'is-delete',
-        light?: 'is-light'
+        delete?: 'is-delete'
       )
     }
   end
