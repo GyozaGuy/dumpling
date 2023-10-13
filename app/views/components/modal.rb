@@ -1,7 +1,7 @@
 class Modal < ApplicationComponent
   include Phlex::DeferredRender
 
-  attr_accessor :title
+  attribute :title, :string
 
   def modal_body(&block)
     @body = block
@@ -15,14 +15,14 @@ class Modal < ApplicationComponent
     div(class: 'modal', data: { controller: 'modal' }) {
       div(class: 'modal-background', data: { action: 'click->modal#close' })
 
-      if @title
+      if title
         div(
           class: 'modal-card animate__animated animate__fadeInDown',
           data_modal_target: 'content'
         ) {
           header(class: 'modal-card-head') {
             p(class: 'modal-card-title') {
-              @title
+              title
             }
             button(
               aria_label: 'close',
