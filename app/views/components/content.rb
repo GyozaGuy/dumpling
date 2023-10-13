@@ -1,13 +1,8 @@
 class Content < ApplicationComponent
+  include Shared::HasTextCentered
   include Shared::IsSize
 
-  attr_accessor :centered
-
   def template(&block)
-    div(**class_list('content', centered?: 'has-text-centered'), &block)
+    div(**class_list('content'), &block)
   end
-
-  private
-
-  def centered? = @centered == true
 end

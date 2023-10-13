@@ -1,15 +1,11 @@
 class Level < ApplicationComponent
-  attr_accessor :mobile
+  include Shared::IsMobile
 
-  def item(centered: nil, &block)
-    div(class: ['level-item', centered ? 'has-text-centered' : nil], &block)
+  def item(**kwargs, &block)
+    d_level_item(**kwargs, &block)
   end
 
   def template(&block)
-    nav(**classes('level', mobile?: 'is-mobile'), &block)
+    nav(**class_list('level'), &block)
   end
-
-  private
-
-  def mobile? = @mobile == true
 end

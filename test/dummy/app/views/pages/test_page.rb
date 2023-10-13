@@ -240,7 +240,7 @@ class TestPage < ApplicationView
     }
 
     d_footer {
-      d_content(centered: true, size: 'small') {
+      d_content(size: 'small', text_centered: true) {
         'Copyright &copy; 2023 - All rights reserved'.html_safe
       }
     }

@@ -1,5 +1,12 @@
 class ColumnGroup < ApplicationComponent
-  attr_accessor :centered, :desktop, :gap, :gapless, :mobile, :multiline, :vcentered
+  include Shared::IsMobile
+
+  attribute :centered, :boolean
+  attribute :desktop, :boolean
+  attribute :gap, :integer, default: 3
+  attribute :gapless, :boolean
+  attribute :multiline, :boolean
+  attribute :vcentered, :boolean
 
   # TODO: handle breakpoint sizes (for gaps too)
   def column(columns: nil, narrow: nil, offset: nil, size: nil, &block)
@@ -21,13 +28,12 @@ class ColumnGroup < ApplicationComponent
 
   def template(&block)
     div(
-      **classes(
+      **class_list(
         'columns',
         centered?: 'is-centered',
         desktop?: 'is-desktop',
-        gap?: "is-variable is-#{@gap}",
+        gap?: "is-variable is-#{gap}",
         gapless?: 'is-gapless',
-        mobile?: 'is-mobile',
         multiline?: 'is-multiline',
         vcentered?: 'is-vcentered'
       ),
@@ -37,17 +43,15 @@ class ColumnGroup < ApplicationComponent
 
   private
 
-  def centered? = @centered == true
+  def centered? = centered == true
 
-  def desktop? = @desktop == true
+  def desktop? = desktop == true
 
-  def gap? = @gap.present?
+  def gap? = gap.between?(0, 8)
 
-  def gapless? = @gapless == true
+  def gapless? = gapless == true
 
-  def mobile? = @mobile == true
+  def multiline? = multiline == true
 
-  def multiline? = @multiline == true
-
-  def vcentered? = @vcentered = true
+  def vcentered? = vcentered == true
 end
