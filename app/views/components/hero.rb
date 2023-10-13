@@ -3,7 +3,9 @@ class Hero < ApplicationComponent
   include Shared::IsColor
   include Shared::IsSize
 
-  attr_accessor :fixed_navbar, :subtitle, :title
+  attribute :fixed_navbar, :boolean
+  attribute :subtitle, :string
+  attribute :title, :string
 
   def body(&block)
     @body = block
@@ -27,9 +29,9 @@ class Hero < ApplicationComponent
       div(class: 'hero-head', &@head) if @head
 
       div(class: 'hero-body') {
-        if @title
+        if title
           div {
-            d_title(size: 1, subtitle: @subtitle, title: @title)
+            d_title(size: 1, subtitle: subtitle, title: title)
           }
         elsif @body
           render @body
@@ -42,7 +44,7 @@ class Hero < ApplicationComponent
 
   private
 
-  def fixed_navbar? = @fixed_navbar == true
+  def fixed_navbar? = fixed_navbar == true
 
   def full_height? = @size == 'fullheight'
 
