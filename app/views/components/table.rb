@@ -1,7 +1,9 @@
 class Table < ApplicationComponent
+  include Shared::IsHoverable
+
   attribute :rows, array: true, default: []
 
-  attr_accessor :border, :footer, :full_width, :headers, :hoverable, :narrow, :scrollable, :striped
+  attr_accessor :border, :footer, :full_width, :headers, :narrow, :scrollable, :striped
 
   def row(values)
     @rows << tr(class: values[:selected] ? 'is-selected' : nil) {
@@ -39,8 +41,6 @@ class Table < ApplicationComponent
     end
   end
 
-  def hoverable? = @hoverable == true
-
   def narrow? = @narrow == true
 
   def scrollable? = @scrollable == true
@@ -49,11 +49,10 @@ class Table < ApplicationComponent
 
   def table_template(&block)
     table(
-      **classes(
+      **class_list(
         'table',
         bordered?: 'is-bordered',
         full_width?: 'is-fullwidth',
-        hoverable?: 'is-hoverable',
         narrow?: 'is-narrow',
         striped?: 'is-striped'
       )

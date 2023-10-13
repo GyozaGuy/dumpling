@@ -1,20 +1,24 @@
 class Dropdown < ApplicationComponent
-  attr_accessor :active, :hoverable, :items, :label
+  include Shared::IsActive
+  include Shared::IsHoverable
+
+  attribute :items, array: true
+  attribute :label, :string
 
   def template
     div(
-      **classes('dropdown', active?: 'is-active', hoverable?: 'is-hoverable'),
+      **class_list('dropdown'),
       data: { controller: 'dropdown' }
     ) {
       div(class: 'dropdown-trigger') {
         button(
-          aria_controls: @id,
+          aria_controls: id,
           aria_haspopup: true,
           class: 'button',
           data: { action: 'dropdown#toggle' }
         ) {
           span {
-            @label
+            label
           }
           span(class: 'icon is-small') {
             image_tag('dumpling/icons/chevron_down', aria_hidden: true)
@@ -22,9 +26,9 @@ class Dropdown < ApplicationComponent
         }
       }
 
-      div(class: 'dropdown-menu', id: @id, role: 'menu') {
+      div(class: 'dropdown-menu', id: id, role: 'menu') {
         div(class: 'dropdown-content') {
-          @items.each do |item|
+          items.each do |item|
             if item == :divider
               hr(class: 'dropdown-divider')
             else
@@ -37,10 +41,4 @@ class Dropdown < ApplicationComponent
       }
     }
   end
-
-  private
-
-  def active? = @active.present?
-
-  def hoverable? = @hoverable.present?
 end
