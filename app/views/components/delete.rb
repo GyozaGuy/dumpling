@@ -1,7 +1,7 @@
 class Delete < ApplicationComponent
-  attr_accessor :action
+  attribute :action, :string
 
   def template
-    button(class: 'delete', data: { action: @action }, type: 'button')
+    button(class: 'delete', data: { action: action }, type: 'button')
   end
 end
