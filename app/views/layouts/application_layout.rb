@@ -6,7 +6,7 @@ class ApplicationLayout < ApplicationView
 
     html(class: 'has-navbar-fixed-top') {
       head {
-        title { "You're awesome" }
+        title { content_for(:page_title) }
         meta name: 'viewport', content: 'width=device-width,initial-scale=1'
         csp_meta_tag
         csrf_meta_tags

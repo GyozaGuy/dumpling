@@ -4,4 +4,8 @@ class ApplicationView < ApplicationComponent
   # By default, it inherits from `ApplicationComponent`, but you
   # can change that to `Phlex::HTML` if you want to keep views and
   # components independent.
+
+  def page_title(text)
+    content_for(:page_title, text)
+  end
 end

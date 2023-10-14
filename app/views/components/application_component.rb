@@ -2,6 +2,7 @@ class ApplicationComponent < Phlex::HTML
   include ActiveModel::API
   include ActiveModel::Attributes
   include Dumpling::ComponentHelper
+  include Phlex::Rails::Helpers::ContentFor
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::Routes
 
