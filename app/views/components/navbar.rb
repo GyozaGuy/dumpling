@@ -4,12 +4,18 @@ class Navbar < ApplicationComponent
   attribute :fixed, :boolean
   attribute :image, :string
   attribute :image_alt, :string
-  attribute :left_items, array: true
-  attribute :right_items, array: true
   attribute :shadow, :boolean
   attribute :spaced, :boolean
 
-  def template
+  def left(&block)
+    d_navbar_left(&block)
+  end
+
+  def right(&block)
+    d_navbar_right(&block)
+  end
+
+  def template(&block)
     nav(
       aria_label: 'main navigation',
       **class_list(
@@ -39,27 +45,7 @@ class Navbar < ApplicationComponent
         }
       }
 
-      div(class: 'navbar-menu', data_navbar_target: 'menu', id: 'navbarMenu') {
-        if left_items
-          div(class: 'navbar-start') {
-            left_items.each do |item|
-              a(class: 'navbar-item', href: item[:href]) {
-                item[:label]
-              }
-            end
-          }
-        end
-
-        if right_items
-          div(class: 'navbar-end') {
-            right_items.each do |item|
-              a(class: 'navbar-item', href: item[:href]) {
-                item[:label]
-              }
-            end
-          }
-        end
-      }
+      div(class: 'navbar-menu', data_navbar_target: 'menu', id: 'navbarMenu', &block)
     }
   end
 
