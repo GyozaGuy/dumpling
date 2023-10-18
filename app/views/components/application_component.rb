@@ -1,9 +1,14 @@
+require 'phlex-rails'
+
 class ApplicationComponent < Phlex::HTML
   include ActiveModel::API
   include ActiveModel::Attributes
   include Dumpling::ComponentHelper
+  include Phlex::Rails::Helpers::ButtonTo
   include Phlex::Rails::Helpers::ContentFor
+  include Phlex::Rails::Helpers::ImagePath
   include Phlex::Rails::Helpers::ImageTag
+  include Phlex::Rails::Helpers::LinkTo
   include Phlex::Rails::Helpers::Routes
 
   attribute :data, default: {}
