@@ -4,10 +4,17 @@ class TestPage < ApplicationView
 
     d_navbar(
       color: 'dark',
-      fixed: true,
-      left_items: [{ href: '/', label: 'Home' }, { href: test_path, label: 'Testing' }],
-      right_items: [{ href: '/', label: 'Profile' }]
-    )
+      fixed: true
+    ) { |navbar|
+      navbar.left {
+        d_navbar_item(href: '/', label: 'Home')
+        d_navbar_item(href: test_path, label: 'Testing')
+      }
+
+      navbar.right {
+        d_navbar_item(href: '/', label: 'Profile')
+      }
+    }
 
     d_hero(color: 'info', subtitle: 'Now with Bulma', title: 'Dumpling') { |hero|
       hero.head {
