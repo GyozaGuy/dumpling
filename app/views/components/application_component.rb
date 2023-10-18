@@ -4,8 +4,11 @@ class ApplicationComponent < Phlex::HTML
   include ActiveModel::API
   include ActiveModel::Attributes
   include Dumpling::ComponentHelper
+  include Phlex::Rails::Helpers::ActionName
   include Phlex::Rails::Helpers::ButtonTo
   include Phlex::Rails::Helpers::ContentFor
+  include Phlex::Rails::Helpers::ControllerName
+  include Phlex::Rails::Helpers::FormWith
   include Phlex::Rails::Helpers::ImagePath
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::LinkTo

@@ -6,6 +6,7 @@ class Navbar < ApplicationComponent
   attribute :image_alt, :string
   attribute :shadow, :boolean
   attribute :spaced, :boolean
+  attribute :transparent, :boolean
 
   def left(&block)
     d_navbar_left(&block)
@@ -22,7 +23,8 @@ class Navbar < ApplicationComponent
         'navbar',
         fixed?: 'is-fixed-top',
         shadowed?: 'has-shadow',
-        spaced?: 'is-spaced'
+        spaced?: 'is-spaced',
+        transparent?: 'is-transparent'
       ),
       data_controller: 'navbar',
       role: 'navigation'
@@ -51,9 +53,11 @@ class Navbar < ApplicationComponent
 
   private
 
-  def fixed? = fixed.present?
+  def fixed? = fixed == true
 
-  def shadowed? = shadow.present?
+  def shadowed? = shadow == true
 
-  def spaced? = spaced.present?
+  def spaced? = spaced == true
+
+  def transparent? = transparent == true
 end
