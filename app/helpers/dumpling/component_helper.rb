@@ -1,10 +1,14 @@
 module Dumpling
   module ComponentHelper
     def method_missing(method_name, *args, **kwargs, &block)
-      render(
-        method_name.to_s.split('d_').second.classify.safe_constantize.new(*args, **kwargs),
-        &block
-      )
+      if method_name.start_with?('d_')
+        render(
+          method_name.to_s.split('d_').second.classify.safe_constantize.new(*args, **kwargs),
+          &block
+        )
+      else
+        super
+      end
     end
 
     def respond_to_missing?(method_name, _args)
