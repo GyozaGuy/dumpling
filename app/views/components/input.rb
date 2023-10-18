@@ -21,7 +21,7 @@ class Input < ApplicationComponent
 
     div(**classes('control', loading?: 'is-loading')) {
       input(
-        **class_list(
+        **compiled_classes(
           'input',
           static?: 'is-static'
         ),

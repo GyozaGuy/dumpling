@@ -20,11 +20,19 @@ class Button < ApplicationComponent
   def template
     if href
       a(**button_props, href: href, target: target) {
-        text || yield
+        if text.present?
+          text
+        elsif block_given?
+          yield
+        end
       }
     else
       button(**button_props, data_action: action) {
-        text || yield
+        if text.present?
+          text
+        elsif block_given?
+          yield
+        end
       }
     end
   end
@@ -33,7 +41,7 @@ class Button < ApplicationComponent
 
   def button_props
     props(
-      **class_list(
+      **compiled_classes(
         'button',
         full_width?: 'is-fullwidth',
         inverted?: 'is-inverted',

@@ -38,7 +38,7 @@ class Tag < ApplicationComponent
 
   def tag_props
     {
-      **class_list(
+      **compiled_classes(
         'tag',
         delete?: 'is-delete'
       )

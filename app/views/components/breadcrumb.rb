@@ -8,7 +8,7 @@ class Breadcrumb < ApplicationComponent
   def template
     nav(
       aria_label: 'breadcrumbs',
-      **class_list(
+      **compiled_classes(
         'breadcrumb',
         aligned?: "is-#{alignment}",
         separated?: "has-#{separator}-separator"

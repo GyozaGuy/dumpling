@@ -54,7 +54,7 @@ class Table < ApplicationComponent
 
   def table_template(&block)
     table(
-      **class_list(
+      **compiled_classes(
         'table',
         border?: 'is-bordered',
         full_width?: 'is-fullwidth',

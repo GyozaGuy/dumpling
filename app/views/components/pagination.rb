@@ -9,7 +9,7 @@ class Pagination < ApplicationComponent
   def template
     nav(
       aria_label: 'pagination',
-      **class_list('pagination'),
+      **compiled_classes('pagination'),
       role: 'pagination'
     ) {
       a(**classes('pagination-previous', first_page?: 'is-disabled')) {

@@ -6,7 +6,7 @@ class Message < ApplicationComponent
 
   def template(&block)
     article(
-      **class_list('message'),
+      **compiled_classes('message'),
       data: { controller: 'message' }
     ) {
       if title

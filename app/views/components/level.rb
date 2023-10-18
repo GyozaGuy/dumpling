@@ -6,6 +6,6 @@ class Level < ApplicationComponent
   end
 
   def template(&block)
-    nav(**class_list('level'), &block)
+    nav(**compiled_classes('level'), &block)
   end
 end

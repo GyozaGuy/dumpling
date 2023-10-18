@@ -3,6 +3,6 @@ class ButtonGroup < ApplicationComponent
   include Shared::IsPosition
 
   def template(&block)
-    div(**class_list('buttons'), &block)
+    div(**compiled_classes('buttons'), &block)
   end
 end

@@ -19,7 +19,7 @@ class Navbar < ApplicationComponent
   def template(&block)
     nav(
       aria_label: 'main navigation',
-      **class_list(
+      **compiled_classes(
         'navbar',
         fixed?: 'is-fixed-top',
         shadowed?: 'has-shadow',

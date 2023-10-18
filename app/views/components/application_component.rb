@@ -14,6 +14,7 @@ class ApplicationComponent < Phlex::HTML
   include Phlex::Rails::Helpers::LinkTo
   include Phlex::Rails::Helpers::Routes
 
+  attribute :class_list, array: true
   attribute :data, default: {}
   attribute :id, :string
   attribute :style, :string
@@ -47,8 +48,8 @@ class ApplicationComponent < Phlex::HTML
     end
   end
 
-  def class_list(*args, **kwargs)
-    classes(*@classes, *args, **kwargs)
+  def compiled_classes(*args, **kwargs)
+    classes(*@classes, *args, *class_list, **kwargs)
   end
 
   def props(**kwargs)

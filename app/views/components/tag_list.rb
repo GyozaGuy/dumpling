@@ -3,6 +3,6 @@ class TagList < ApplicationComponent
   include Shared::HasAddons
 
   def template(&block)
-    div(**class_list('tags'), &block)
+    div(**compiled_classes('tags'), &block)
   end
 end

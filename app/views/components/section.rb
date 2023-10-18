@@ -2,6 +2,6 @@ class Section < ApplicationComponent
   include Shared::IsSize
 
   def template(&block)
-    section(**class_list('section'), &block)
+    section(**compiled_classes('section'), &block)
   end
 end

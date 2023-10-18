@@ -16,7 +16,7 @@ class Select < ApplicationComponent
   def template(&block)
     div(class: 'control') {
       div(
-        **class_list(
+        **compiled_classes(
           'select',
           full_width?: 'is-fullwidth',
           multiple?: 'is-multiple'

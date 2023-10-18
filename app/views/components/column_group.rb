@@ -28,7 +28,7 @@ class ColumnGroup < ApplicationComponent
 
   def template(&block)
     div(
-      **class_list(
+      **compiled_classes(
         'columns',
         centered?: 'is-centered',
         desktop?: 'is-desktop',

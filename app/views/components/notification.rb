@@ -4,7 +4,7 @@ class Notification < ApplicationComponent
 
   def template
     div(
-      **class_list('notification'),
+      **compiled_classes('notification'),
       data_controller: 'notification'
     ) {
       d_delete(action: 'notification#close')

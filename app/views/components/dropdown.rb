@@ -7,7 +7,7 @@ class Dropdown < ApplicationComponent
 
   def template
     div(
-      **class_list('dropdown'),
+      **compiled_classes('dropdown'),
       data: { controller: 'dropdown' }
     ) {
       div(class: 'dropdown-trigger') {
