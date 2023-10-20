@@ -18,9 +18,9 @@ class Textarea < ApplicationComponent
           fixed_size?: 'has-fixed-size'
         ),
         disabled: disabled ? '' : nil,
-        placeholder: placeholder,
+        placeholder:,
         readonly: readonly ? '' : nil,
-        rows: rows,
+        rows:,
         &block
       )
     }

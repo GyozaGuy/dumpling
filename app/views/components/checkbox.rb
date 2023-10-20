@@ -5,8 +5,8 @@ class Checkbox < ApplicationComponent
   attribute :name, :string
 
   def template
-    label(class: 'checkbox', disabled: disabled) {
-      input(checked: checked, disabled: disabled, name: name, type: 'checkbox')
+    label(class: 'checkbox', disabled:) {
+      input(checked:, disabled:, name:, type: 'checkbox')
       plain "&nbsp;#{label_text}".html_safe
     }
   end

@@ -18,7 +18,7 @@ class Breadcrumb < ApplicationComponent
         items.each do |item|
           text, href = item
           li(class: last_item?(item) ? 'is-active' : nil) {
-            a(aria_current: last_item?(item) ? 'page' : nil, href: href) {
+            a(aria_current: last_item?(item) ? 'page' : nil, href:) {
               text
             }
           }

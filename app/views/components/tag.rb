@@ -12,7 +12,7 @@ class Tag < ApplicationComponent
 
   def template
     if href
-      a(**tag_props, href: href, target: target) {
+      a(**tag_props, href:, target:) {
         tag_content
       }
     elsif delete? && delete_action?

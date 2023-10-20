@@ -19,7 +19,7 @@ class Button < ApplicationComponent
 
   def template
     if href
-      a(**button_props, href: href, target: target) {
+      a(**button_props, href:, target:) {
         if text.present?
           text
         elsif block_given?
@@ -50,7 +50,7 @@ class Button < ApplicationComponent
         selected?: 'is-selected',
         static?: 'is-static'
       ),
-      disabled: disabled
+      disabled:
     )
   end
 

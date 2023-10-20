@@ -11,7 +11,7 @@ class Image < ApplicationComponent
   def template
     # TODO: figure out how to avoid certain things being auto-added while staying DRY (e.g. ratio)
     figure(**classes('image', ratio?: "is-#{ratio}", size?: "is-#{size}")) {
-      img(alt: alt, **compiled_classes, src: src)
+      img(alt:, **compiled_classes, src:)
     }
   end
 

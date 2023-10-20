@@ -5,8 +5,8 @@ class Radio < ApplicationComponent
   attribute :name, :string
 
   def template
-    label(class: 'radio', disabled: disabled) {
-      input(checked: checked, disabled: disabled, name: name, type: 'radio')
+    label(class: 'radio', disabled:) {
+      input(checked:, disabled:, name:, type: 'radio')
       plain "&nbsp;#{label_text}".html_safe
     }
   end

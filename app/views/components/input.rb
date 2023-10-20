@@ -26,10 +26,10 @@ class Input < ApplicationComponent
           static?: 'is-static'
         ),
         disabled: disabled ? '' : nil,
-        placeholder: placeholder,
+        placeholder:,
         readonly: readonly ? '' : nil,
-        type: type,
-        value: value
+        type:,
+        value:
       )
     }
   end

@@ -2,7 +2,7 @@ class CheckboxGroup < ApplicationComponent
   attribute :name, :string
 
   def checkbox(**kwargs, &block)
-    d_checkbox(name: name, **kwargs, &block)
+    d_checkbox(name:, **kwargs, &block)
   end
 
   def template(&block)

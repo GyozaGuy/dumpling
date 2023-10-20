@@ -2,7 +2,7 @@ class RadioGroup < ApplicationComponent
   attribute :name, :string
 
   def radio(**kwargs, &block)
-    d_radio(name: name, **kwargs, &block)
+    d_radio(name:, **kwargs, &block)
   end
 
   def template(&block)

@@ -8,7 +8,7 @@ class Select < ApplicationComponent
   attribute :rows, :integer
 
   def select_option(label:, value:)
-    option(value: value) {
+    option(value:) {
       label
     }
   end

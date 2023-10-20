@@ -31,7 +31,7 @@ class Hero < ApplicationComponent
       div(class: 'hero-body') {
         if title
           div {
-            d_title(size: 1, subtitle: subtitle, title: title)
+            d_title(size: 1, subtitle:, title:)
           }
         elsif @body
           render @body

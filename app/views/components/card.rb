@@ -35,7 +35,7 @@ class Card < ApplicationComponent
       if actions?
         footer(class: 'card-footer', data_card_target: 'footer') {
           actions.each do |text, href|
-            a(class: 'card-footer-item', href: href) {
+            a(class: 'card-footer-item', href:) {
               text
             }
           end

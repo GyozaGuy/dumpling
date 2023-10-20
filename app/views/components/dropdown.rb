@@ -26,7 +26,7 @@ class Dropdown < ApplicationComponent
         }
       }
 
-      div(class: 'dropdown-menu', id: id, role: 'menu') {
+      div(class: 'dropdown-menu', id:, role: 'menu') {
         div(class: 'dropdown-content') {
           items.each do |item|
             if item == :divider

@@ -3,7 +3,7 @@ class NavbarItem < ApplicationComponent
   attribute :label, :string
 
   def template
-    a(class: 'navbar-item', href: href) {
+    a(class: 'navbar-item', href:) {
       label
     }
   end

@@ -53,6 +53,6 @@ class ApplicationComponent < Phlex::HTML
   end
 
   def props(**kwargs)
-    { data: data, id: id, style: style, **kwargs }
+    { data:, id:, style:, **kwargs }
   end
 end
