@@ -45,6 +45,7 @@ class Button < ApplicationComponent
         'button',
         full_width?: 'is-fullwidth',
         inverted?: 'is-inverted',
+        link?: 'is-link',
         loading?: 'is-loading',
         outlined?: 'is-outlined',
         selected?: 'is-selected',
@@ -57,6 +58,8 @@ class Button < ApplicationComponent
   def full_width? = full_width == true
 
   def inverted? = inverted == true
+
+  def link? = href.present?
 
   def loading? = loading == true
 
