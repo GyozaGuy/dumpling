@@ -46,9 +46,9 @@ class Hero < ApplicationComponent
 
   def fixed_navbar? = fixed_navbar == true
 
-  def full_height? = @size == 'fullheight'
+  def full_height? = size == 'fullheight'
 
   def full_height_with_fixed_navbar? = full_height? && fixed_navbar?
 
-  def size? = VALID_SIZES.include?(@size) && !full_height_with_fixed_navbar?
+  def size? = VALID_SIZES.include?(size) && !full_height_with_fixed_navbar?
 end
