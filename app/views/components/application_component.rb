@@ -13,6 +13,7 @@ class ApplicationComponent < Phlex::HTML
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::LinkTo
   include Phlex::Rails::Helpers::Routes
+  include Phlex::Rails::Helpers::T
 
   attribute :class_list, array: true
   attribute :data, default: {}
