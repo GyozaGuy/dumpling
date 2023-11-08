@@ -14,6 +14,7 @@ class ApplicationComponent < Phlex::HTML
   include Phlex::Rails::Helpers::LinkTo
   include Phlex::Rails::Helpers::Routes
   include Phlex::Rails::Helpers::T
+  include Phlex::Rails::Helpers::TurboFrameTag
 
   attribute :class_list, array: true
   attribute :data, default: {}
@@ -50,7 +51,7 @@ class ApplicationComponent < Phlex::HTML
   end
 
   def compiled_classes(*args, **kwargs)
-    classes(*@classes, *args, *class_list, **kwargs)
+    classes(*args, *@classes, *class_list, **kwargs)
   end
 
   def props(**kwargs)
