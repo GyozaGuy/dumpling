@@ -5,6 +5,9 @@ export default class extends Controller {
 
   toggle() {
     this.contentTarget.toggleAttribute('hidden');
-    this.footerTarget.toggleAttribute('hidden');
+
+    if (this.hasFooterTarget) {
+      this.footerTarget.toggleAttribute('hidden');
+    }
   }
 }
