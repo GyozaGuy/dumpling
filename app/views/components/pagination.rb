@@ -4,7 +4,8 @@ class Pagination < ApplicationComponent
   include Shared::IsSize
 
   attribute :current_page, :integer
-  attribute :pages, array: true
+  attribute :navigation_path
+  attribute :total_pages, :integer
 
   def template
     nav(
@@ -12,32 +13,41 @@ class Pagination < ApplicationComponent
       **compiled_classes('pagination'),
       role: 'pagination'
     ) {
-      a(**classes('pagination-previous', first_page?: 'is-disabled')) {
+      send(
+        button_method(first_page?),
+        **classes('pagination-previous', first_page?: 'is-disabled'),
+        href: navigation_path.call(page_number: current_page - 1)
+      ) {
         'Previous'
       }
-      a(**classes('pagination-next', last_page?: 'is-disabled')) {
+      send(
+        button_method(last_page?),
+        **classes('pagination-next', last_page?: 'is-disabled'),
+        href: navigation_path.call(page_number: current_page + 1)
+      ) {
         'Next page'
       }
 
       ul(class: 'pagination-list') {
-        pages&.each do |page|
+        (1..total_pages).each do |page_number|
           li {
-            if page == :ellipsis
-              span(class: 'pagination-ellipsis') {
-                plain '&hellip;'.html_safe
-              }
-            else
-              a(
-                aria: {
-                  current: page[:number] == current_page ? 'page' : nil,
-                  label: "go to page #{page[:number]}"
-                },
-                **classes('pagination-link', page[:number] == current_page ? 'is-current' : nil),
-                href: page[:href]
-              ) {
-                page[:number]
-              }
-            end
+            # if page == :ellipsis
+            #   span(class: 'pagination-ellipsis') {
+            #     plain '&hellip;'.html_safe
+            #   }
+            # else
+            send(
+              button_method(page_number == current_page),
+              aria: {
+                current: page_number == current_page ? 'page' : nil,
+                label: "go to page #{page_number}"
+              },
+              **classes('pagination-link', page_number == current_page ? 'is-current' : nil),
+              href: navigation_path.call(page_number:)
+            ) {
+              page_number
+            }
+            # end
           }
         end
       }
@@ -46,7 +56,11 @@ class Pagination < ApplicationComponent
 
   private
 
-  def first_page? = current_page == pages.first[:number]
+  def button_method(disabled)
+    disabled ? :button : :a
+  end
 
-  def last_page? = current_page == pages.last[:number]
+  def first_page? = current_page == 1
+
+  def last_page? = current_page == total_pages
 end
