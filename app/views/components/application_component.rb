@@ -4,17 +4,13 @@ class ApplicationComponent < Phlex::HTML
   include ActiveModel::API
   include ActiveModel::Attributes
   include Dumpling::ComponentHelper
-  include Phlex::Rails::Helpers::ActionName
-  include Phlex::Rails::Helpers::ButtonTo
-  include Phlex::Rails::Helpers::ContentFor
-  include Phlex::Rails::Helpers::ControllerName
-  include Phlex::Rails::Helpers::FormWith
-  include Phlex::Rails::Helpers::ImagePath
-  include Phlex::Rails::Helpers::ImageTag
-  include Phlex::Rails::Helpers::LinkTo
-  include Phlex::Rails::Helpers::Routes
-  include Phlex::Rails::Helpers::T
-  include Phlex::Rails::Helpers::TurboFrameTag
+
+  Phlex::Rails::Helpers.constants.each do |constant|
+    module_to_include = Phlex::Rails::Helpers.const_get(constant)
+    next unless module_to_include.is_a?(Module)
+
+    include module_to_include
+  end
 
   attribute :class_list, array: true
   attribute :data, default: {}
