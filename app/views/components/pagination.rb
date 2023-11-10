@@ -29,25 +29,30 @@ class Pagination < ApplicationComponent
       }
 
       ul(class: 'pagination-list') {
-        (1..total_pages).each do |page_number|
+        pages_to_show = if total_pages > 5
+                          [1, 2, :ellipsis, total_pages - 2, total_pages - 1]
+                        else
+                          (1..total_pages)
+                        end
+        pages_to_show.each do |page_number|
           li {
-            # if page == :ellipsis
-            #   span(class: 'pagination-ellipsis') {
-            #     plain '&hellip;'.html_safe
-            #   }
-            # else
-            send(
-              button_method(page_number == current_page),
-              aria: {
-                current: page_number == current_page ? 'page' : nil,
-                label: "go to page #{page_number}"
-              },
-              **classes('pagination-link', page_number == current_page ? 'is-current' : nil),
-              href: navigation_path.call(page_number:)
-            ) {
-              page_number
-            }
-            # end
+            if page_number == :ellipsis
+              span(class: 'pagination-ellipsis') {
+                plain '&hellip;'.html_safe
+              }
+            else
+              send(
+                button_method(page_number == current_page),
+                aria: {
+                  current: page_number == current_page ? 'page' : nil,
+                  label: "go to page #{page_number}"
+                },
+                **classes('pagination-link', page_number == current_page ? 'is-current' : nil),
+                href: navigation_path.call(page_number:)
+              ) {
+                page_number
+              }
+            end
           }
         end
       }
