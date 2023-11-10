@@ -30,7 +30,7 @@ class Pagination < ApplicationComponent
 
       ul(class: 'pagination-list') {
         pages_to_show = if total_pages > 5
-                          [1, 2, :ellipsis, total_pages - 2, total_pages - 1]
+                          [1, 2, :ellipsis, total_pages - 1, total_pages]
                         else
                           (1..total_pages)
                         end
