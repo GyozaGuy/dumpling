@@ -15,7 +15,8 @@ class Dropdown < ApplicationComponent
           aria_controls: id,
           aria_haspopup: true,
           class: 'button',
-          data: { action: 'dropdown#toggle' }
+          data: { action: 'dropdown#toggle' },
+          type: 'button'
         ) {
           span {
             label
