@@ -2,7 +2,7 @@ class Box < ApplicationComponent
   attribute :href, :string
 
   def template(&block)
-    box_element.call(class: 'box', href:, &block)
+    box_element.call(**props, **compiled_classes('box'), href:, &block)
   end
 
   private

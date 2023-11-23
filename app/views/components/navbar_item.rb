@@ -3,8 +3,14 @@ class NavbarItem < ApplicationComponent
   attribute :label, :string
 
   def template
-    a(class: 'navbar-item', href:) {
+    send(item_tag, class: 'navbar-item', href:) {
       label
     }
+  end
+
+  private
+
+  def item_tag
+    href.present? ? :a : :div
   end
 end

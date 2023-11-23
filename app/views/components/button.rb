@@ -11,6 +11,7 @@ class Button < ApplicationComponent
   attribute :href, :string
   attribute :inverted, :boolean
   attribute :loading, :boolean
+  attribute :method, :string
   attribute :outlined, :boolean
   attribute :selected, :boolean
   attribute :static, :boolean
@@ -19,20 +20,18 @@ class Button < ApplicationComponent
 
   def template
     if href
-      a(**button_props, href:, target:) {
-        if text.present?
-          text
-        elsif block_given?
-          yield
-        end
-      }
+      if method?
+        button_to(href, **button_props, method:) {
+          button_text
+        }
+      else
+        a(**button_props, href:, target:) {
+          button_text
+        }
+      end
     else
       button(**button_props, data_action: action) {
-        if text.present?
-          text
-        elsif block_given?
-          yield
-        end
+        button_text
       }
     end
   end
@@ -55,17 +54,20 @@ class Button < ApplicationComponent
     )
   end
 
+  def button_text
+    if text.present?
+      text
+    elsif block_given?
+      yield
+    end
+  end
+
   def full_width? = full_width == true
-
   def inverted? = inverted == true
-
   def link? = href.present?
-
   def loading? = loading == true
-
+  def method? = method.present?
   def outlined? = outlined == true
-
   def selected? = selected == true
-
   def static? = static == true
 end

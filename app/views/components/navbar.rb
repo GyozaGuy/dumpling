@@ -8,6 +8,10 @@ class Navbar < ApplicationComponent
   attribute :spaced, :boolean
   attribute :transparent, :boolean
 
+  def item(**kwargs)
+    d_navbar_item(**kwargs)
+  end
+
   def left(&block)
     d_navbar_left(&block)
   end
@@ -54,10 +58,7 @@ class Navbar < ApplicationComponent
   private
 
   def fixed? = fixed == true
-
   def shadowed? = shadow == true
-
   def spaced? = spaced == true
-
   def transparent? = transparent == true
 end
