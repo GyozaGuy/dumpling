@@ -1,6 +1,7 @@
 class Card < ApplicationComponent
   include Phlex::DeferredRender
 
+  attribute :collapsible, :boolean, default: false
   attribute :heading, :string
   attribute :image, :string
   attribute :image_alt, :string
@@ -15,11 +16,13 @@ class Card < ApplicationComponent
             heading
           }
 
-          button(aria_label: 'toggle', class: 'card-header-icon', data_action: 'card#toggle') {
-            span(class: 'icon') {
-              image_tag('dumpling/icons/chevron_down', aria_hidden: true)
+          if collapsible?
+            button(aria_label: 'toggle', class: 'card-header-icon', data_action: 'card#toggle') {
+              span(class: 'icon') {
+                image_tag('dumpling/icons/chevron_down', aria_hidden: true)
+              }
             }
-          }
+          end
         }
       end
 
@@ -59,6 +62,7 @@ class Card < ApplicationComponent
 
   private
 
+  def collapsible? = collapsible == true
   def heading? = heading.present?
   def image? = image.present?
   def image_size? = image_size.present?
