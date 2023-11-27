@@ -64,7 +64,7 @@ class Button < ApplicationComponent
 
   def full_width? = full_width == true
   def inverted? = inverted == true
-  def link? = href.present?
+  def link? = href.present? && !color
   def loading? = loading == true
   def method? = method.present?
   def outlined? = outlined == true
