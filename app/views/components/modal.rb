@@ -1,6 +1,7 @@
 class Modal < ApplicationComponent
   include Phlex::DeferredRender
 
+  attribute :active, :boolean, default: false
   attribute :title, :string
 
   def modal_body(&block)
@@ -12,7 +13,7 @@ class Modal < ApplicationComponent
   end
 
   def template
-    div(class: 'modal', data: { controller: 'modal' }) {
+    div(**classes('modal', active?: 'is-active'), data: { controller: 'modal' }) {
       div(class: 'modal-background', data: { action: 'click->modal#close' })
 
       if title
@@ -52,4 +53,8 @@ class Modal < ApplicationComponent
       end
     }
   end
+
+  private
+
+  def active? = active == true
 end
