@@ -2,6 +2,7 @@ class Modal < ApplicationComponent
   include Phlex::DeferredRender
 
   attribute :active, :boolean, default: false
+  attribute :animated, :boolean, default: true
   attribute :title, :string
 
   def modal_body(&block)
@@ -18,7 +19,7 @@ class Modal < ApplicationComponent
 
       if title
         div(
-          class: 'modal-card animate__animated animate__fadeInDown',
+          **classes('modal-card', 'animate__animated', animated?: 'animate__fadeInDown'),
           data_modal_target: 'content'
         ) {
           header(class: 'modal-card-head') {
@@ -39,7 +40,7 @@ class Modal < ApplicationComponent
         }
       else
         div(
-          class: 'modal-content animate__animated animate__fadeInDown',
+          **classes('modal-content', 'animate__animated', animated?: 'animate__fadeInDown'),
           data_modal_target: 'content',
           &@body
         )
@@ -57,4 +58,5 @@ class Modal < ApplicationComponent
   private
 
   def active? = active == true
+  def animated? = animated == true
 end
