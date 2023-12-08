@@ -42,11 +42,11 @@ class Card < ApplicationComponent
     }
   end
 
-  def action(href:, text:, method: nil)
+  def action(href:, text:, data: {}, method: nil)
     if method.present?
-      button_to(text, href, class: 'card-footer-item', method:)
+      button_to(text, href, class: 'card-footer-item', data:, method:)
     else
-      a(class: 'card-footer-item', href:) {
+      a(class: 'card-footer-item', data:, href:) {
         text
       }
     end
