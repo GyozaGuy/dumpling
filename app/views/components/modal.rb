@@ -19,7 +19,12 @@ class Modal < ApplicationComponent
 
       if title
         div(
-          **classes('modal-card', 'animate__animated', animated?: 'animate__fadeInDown'),
+          **classes(
+            'modal-card',
+            'animate__animated',
+            'animate__faster',
+            animated?: 'animate__fadeInDown'
+          ),
           data_modal_target: 'content'
         ) {
           header(class: 'modal-card-head') {
@@ -40,7 +45,12 @@ class Modal < ApplicationComponent
         }
       else
         div(
-          **classes('modal-content', 'animate__animated', animated?: 'animate__fadeInDown'),
+          **classes(
+            'modal-content',
+            'animate__animated',
+            'animate__faster',
+            animated?: 'animate__fadeInDown'
+          ),
           data_modal_target: 'content',
           &@body
         )

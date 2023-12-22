@@ -9,6 +9,6 @@ export default class extends Controller {
 
     setTimeout(() => {
       this.element.classList.remove('is-active');
-    }, 1000);
+    }, 500);
   }
 }

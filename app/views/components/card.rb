@@ -42,13 +42,17 @@ class Card < ApplicationComponent
     }
   end
 
-  def action(href:, text:, data: {}, disabled: false, method: nil)
-    if method.present?
-      button_to(text, href, class: 'card-footer-item', data:, disabled:, method:)
-    else
+  def action(text:, action: nil, data: {}, disabled: false, href: nil, method: nil)
+    if href.present? && method.nil?
       a(**classes('card-footer-item', disabled ? 'is-disabled' : nil), data:, href:) {
         text
       }
+    elsif href.nil? && method.nil?
+      button(class: 'card-footer-item', data: { **data, action: }, disabled:) {
+        text
+      }
+    else
+      button_to(text, href, class: 'card-footer-item', data:, disabled:, method:)
     end
   end
 
