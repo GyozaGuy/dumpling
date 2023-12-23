@@ -7,3 +7,9 @@
 .checkbox + .checkbox {
   margin-left: 0.5rem;
 }
+
+.notification > form:has(.delete) {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
