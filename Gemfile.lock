@@ -100,7 +100,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.19.0)
+    minitest (5.20.0)
     net-imap (0.3.6)
       date
       net-protocol
@@ -160,7 +160,7 @@ GEM
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    view_component (3.1.0)
+    view_component (3.9.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
@@ -179,7 +179,7 @@ DEPENDENCIES
   puma (~> 6.3)
   sprockets-rails
   sqlite3
-  view_component (= 3.1.0)
+  view_component (= 3.9.0)
 
 BUNDLED WITH
    2.4.6
