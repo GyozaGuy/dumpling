@@ -7,8 +7,6 @@ class Dumpling::ApplicationLayout < ApplicationView
   end
 
   def default_stylesheets
-    stylesheet_link_tag 'application', data_turbo_track: 'reload'
-    stylesheet_link_tag 'dumpling'
-    stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'
+    stylesheet_link_tag :all, data_turbo_track: 'reload'
   end
 end
