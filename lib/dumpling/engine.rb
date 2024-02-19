@@ -26,5 +26,11 @@ module Dumpling
       app.config.autoload_paths += Dir[root.join('app', 'views', 'components', '*')]
       app.config.autoload_paths += Dir[root.join('app', 'views', 'layouts')]
     end
+
+    initializer 'dumpling.load_helpers' do
+      ActiveSupport.on_load :action_controller do
+        ::ActionController::Base.helper Dumpling::ApplicationHelper
+      end
+    end
   end
 end
