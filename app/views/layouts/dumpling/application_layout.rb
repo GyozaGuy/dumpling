@@ -1,3 +1,5 @@
+require 'phlex-rails'
+
 class Dumpling::ApplicationLayout < ApplicationView
   include Phlex::Rails::Layout
 
