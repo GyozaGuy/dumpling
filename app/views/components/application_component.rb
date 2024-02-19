@@ -1,4 +1,6 @@
 class ApplicationComponent < Phlex::HTML
+  include Dumpling::ApplicationHelper
+
   Phlex::Rails::Helpers.constants.each do |constant|
     module_to_include = Phlex::Rails::Helpers.const_get(constant)
     next unless module_to_include.is_a?(Module)
