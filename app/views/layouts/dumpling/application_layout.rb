@@ -6,9 +6,9 @@ class Dumpling::ApplicationLayout < ApplicationView
     javascript_import_module_tag 'dumpling'
   end
 
-  def default_stylesheets
+  def default_stylesheets(theme: :light)
     stylesheet_link_tag :all, data_turbo_track: 'reload'
     stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css'
-    stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/light.css'
+    stylesheet_link_tag "https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/#{theme}.css"
   end
 end
