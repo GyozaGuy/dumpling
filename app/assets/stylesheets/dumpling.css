@@ -3,3 +3,15 @@
 [hidden] {
   display: none;
 }
+
+:is(html, body) {
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+
+  &:has(:not(:defined)) {
+    visibility: hidden;
+  }
+}
