@@ -1,7 +1,0 @@
-<% page_title params[:id].titleize %>
-
-<%= render 'styleguide_wrapper' do %>
-  <%= render 'styleguide_section', title: params[:id].titleize do %>
-    <%= render "#{params[:id]}/#{params[:id]}_examples" %>
-  <% end %>
-<% end %>

@@ -1,4 +1,2 @@
-module Dumpling
-  class ApplicationController < ActionController::Base
-  end
+class Dumpling::ApplicationController < ActionController::Base
 end
