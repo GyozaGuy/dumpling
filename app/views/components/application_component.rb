@@ -75,18 +75,6 @@ class ApplicationComponent < Phlex::HTML
 
   private
 
-  def method_missing(method_name, *, **, &)
-    if (component_class = method_name.to_s.camelize.safe_constantize)
-      return render component_class.new(*, **, &)
-    end
-
-    super
-  end
-
-  def respond_to_missing?(method_name, include_private = false)
-    method_name.start_with?('b_') || method_name.start_with?('sl_') || super
-  end
-
   def to_dash(sym)
     sym.to_s.gsub('_', '-')
   end
