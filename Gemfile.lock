@@ -225,7 +225,6 @@ DEPENDENCIES
   propshaft
   puma (~> 6.3)
   sqlite3
-  view_component (= 3.1.0)
 
 BUNDLED WITH
    2.4.6
