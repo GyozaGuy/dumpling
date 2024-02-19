@@ -22,6 +22,7 @@ module Dumpling
       app.config.autoload_paths += Dir[app.root.join('app', 'views', 'layouts')]
       app.config.autoload_paths += Dir[root.join('app', 'views')]
       app.config.autoload_paths += Dir[root.join('app', 'views', 'components')]
+      app.config.autoload_paths += Dir[root.join('app', 'views', 'components', '*')]
       app.config.autoload_paths += Dir[root.join('app', 'views', 'layouts')]
     end
   end
