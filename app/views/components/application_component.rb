@@ -1,3 +1,5 @@
+require 'phlex-rails'
+
 class ApplicationComponent < Phlex::HTML
   include Dumpling::ApplicationHelper
 

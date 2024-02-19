@@ -5,6 +5,7 @@ module Dumpling
     initializer 'dumpling.assets' do |app|
       app.config.assets.paths << root.join('app', 'javascript')
       app.config.assets.paths << root.join('app', 'views')
+      app.config.assets.paths += Dir[app.root.join('app', 'views', '*')]
     end
 
     initializer 'dumpling.app_controllers' do |app|
