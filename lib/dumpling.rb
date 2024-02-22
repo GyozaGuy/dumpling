@@ -1,4 +1,3 @@
-require 'dumpling/component'
 require 'dumpling/engine'
 require 'dumpling/version'
 

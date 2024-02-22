@@ -19,7 +19,6 @@ class BulmaNavbar extends DumplingComponent {
         'white'
       ]
     },
-    href: {},
     spaced: { default: false }
   };
   static styles = html`
@@ -39,9 +38,7 @@ class BulmaNavbar extends DumplingComponent {
         <a class="navbar-item" data-target="brandImageLink" id="brandImageLink">
           <slot name="brand-image"></slot>
         </a>
-        <a class="navbar-item" data-target="brand" id="brand">
-          <slot name="brand"></slot>
-        </a>
+        <slot name="brand"></slot>
       </div>
     </nav>
   `;
@@ -49,11 +46,6 @@ class BulmaNavbar extends DumplingComponent {
   connected() {
     if (this.props.color) {
       this.navbarTarget.classList.add(`is-${this.props.color}`);
-    }
-
-    if (this.props.href) {
-      this.brandTarget.href = this.props.href;
-      this.brandImageLinkTarget.href = this.props.href;
     }
 
     if (this.props.spaced) {
