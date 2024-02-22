@@ -5,8 +5,7 @@ export default class extends HTMLElement {
     super();
     this.root = this.attachShadow({ mode: 'open' });
     this.root.append(document.head.querySelector('link[href*="bulma"]').cloneNode());
-    this.styles()?.forEach(child => this.root.append(child));
-    this.template()?.forEach(child => this.root.append(child));
+    [...this.render().children].forEach(child => this.root.append(child));
   }
 
   connectedCallback() {
@@ -33,16 +32,6 @@ export default class extends HTMLElement {
     this.disconnected?.();
   }
 
-  styles() {
-    if (!this.constructor.styles?.hasChildNodes()) return;
-    return [...this.constructor.styles.children];
-  }
-
-  template() {
-    if (!this.constructor.template?.hasChildNodes()) return;
-    return [...this.constructor.template.children];
-  }
-
   #configureProps() {
     if (!this.constructor.props) return;
 
@@ -59,12 +48,13 @@ export default class extends HTMLElement {
         );
       }
 
-      this.props[name] = typeof options.default === 'boolean' ? true : attrValue || options.default;
+      this.props[name] =
+        typeof options.default === 'boolean' ? attrValue === '' : attrValue || options.default;
     });
   }
 
   #defaultAction(element) {
-    return { button: 'click', input: 'input' }[element.tagName.toLowerCase()];
+    return { a: 'click', button: 'click', input: 'input' }[element.tagName.toLowerCase()];
   }
 }
 
