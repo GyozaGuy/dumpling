@@ -5,10 +5,11 @@ export default class extends HTMLElement {
     super();
     this.root = this.attachShadow({ mode: 'open' });
     this.root.append(document.head.querySelector('link[href*="bulma"]').cloneNode());
-    [...this.render().children].forEach(child => this.root.append(child));
   }
 
   connectedCallback() {
+    this.#configureProps();
+    [...this.render().children].forEach(child => this.root.append(child));
     this.root.querySelectorAll('[data-action]').forEach(element => {
       let [eventName, action] = element.dataset.action.split('->');
 
@@ -24,7 +25,6 @@ export default class extends HTMLElement {
     this.root.querySelectorAll('[data-target]').forEach(element => {
       this[`${element.dataset.target}Target`] = element;
     });
-    this.#configureProps();
     this.connected?.();
   }
 

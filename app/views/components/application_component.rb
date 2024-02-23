@@ -10,6 +10,8 @@ class ApplicationComponent < Phlex::HTML
     include module_to_include
   end
 
+  register_element :bulma_navbar
+
   def self.attribute(name, **params)
     @attributes ||= []
     @attributes << [name, params]

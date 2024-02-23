@@ -18,7 +18,10 @@ class BulmaNavbar extends DumplingComponent {
         'white'
       ]
     },
-    spaced: { default: false }
+    fixed: { default: null, oneOf: [null, 'bottom', 'top'] },
+    shadowed: { default: false },
+    spaced: { default: false },
+    transparent: { default: false }
   };
 
   connected() {
@@ -26,8 +29,20 @@ class BulmaNavbar extends DumplingComponent {
       this.navbarTarget.classList.add(`is-${this.props.color}`);
     }
 
+    if (this.props.fixed) {
+      this.navbarTarget.classList.add(`is-fixed-${this.props.fixed}`);
+    }
+
+    if (this.props.shadowed) {
+      this.navbarTarget.classList.add('has-shadow');
+    }
+
     if (this.props.spaced) {
       this.navbarTarget.classList.add('is-spaced');
+    }
+
+    if (this.props.transparent) {
+      this.navbarTarget.classList.add('is-transparent');
     }
   }
 
