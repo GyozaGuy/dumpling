@@ -1,6 +1,4 @@
 class BNavbar < ApplicationComponent
-  include Phlex::DeferredRender
-
   attribute :color,
     default: nil,
     one_of: [
@@ -22,85 +20,69 @@ class BNavbar < ApplicationComponent
   attribute :shadowed, default: false
   attribute :spaced, default: false
   attribute :transparent, default: false
+  register_element :bulma_navbar
 
-  def brand(&block) = @brand = block
-
-  def divider
-    div(class: 'navbar-divider')
+  def brand_image(href:, src:, alt: nil)
+    link_to(href, slot: 'brand-image') do
+      image_tag(src, alt:)
+    end
   end
 
-  def dropdown(*bools, text:, &block)
-    raise 'Invalid attribute' if bools.any? { !%i[arrowless boxed hoverable right up].include?(_1) }
-
-    arrowless = bools.include?(:arrowless)
-    boxed = bools.include?(:boxed)
-    hoverable = bools.include?(:hoverable)
-    right = bools.include?(:right)
-    up = bools.include?(:up)
-
-    div(
-      class: "navbar-item has-dropdown#{hoverable ? ' is-hoverable' : nil}#{up ? ' has-dropdown-up' : nil}",
-      data_controller: 'b-navbar-menu'
-    ) {
-      button(
-        class: "navbar-link#{arrowless ? ' is-arrowless' : nil}",
-        data: { action: hoverable ? nil : 'b-navbar-menu#toggleMenu' },
-        type: 'button'
-      ) {
-        text
-      }
-      div(class: "navbar-dropdown#{boxed ? ' is-boxed' : nil}#{right ? ' is-right' : nil}", &block)
-    }
+  def brand_link(href:, &block)
+    item(href:, slot: 'brand', &block)
   end
 
-  def end(&block) = @end = block
+  def divider = div(class: 'navbar-divider')
 
-  def item(href:, expanded: false, tab: false, &block)
-    a(class: "navbar-item#{expanded ? ' is-expanded' : nil}#{tab ? ' is-tab' : nil}", href:, &block)
+  # TODO: Rethink dropdowns
+  # def dropdown(*bools, text:, &block)
+  #   raise 'Invalid attribute' if bools.any? { !%i[arrowless boxed hoverable right up].include?(_1) }
+  #
+  #   arrowless = bools.include?(:arrowless)
+  #   boxed = bools.include?(:boxed)
+  #   hoverable = bools.include?(:hoverable)
+  #   right = bools.include?(:right)
+  #   up = bools.include?(:up)
+  #
+  #   div(
+  #     class: "navbar-item has-dropdown#{hoverable ? ' is-hoverable' : nil}#{up ? ' has-dropdown-up' : nil}",
+  #     data_controller: 'b-navbar-menu'
+  #   ) {
+  #     button(
+  #       class: "navbar-link#{arrowless ? ' is-arrowless' : nil}",
+  #       data: { action: hoverable ? nil : 'b-navbar-menu#toggleMenu' },
+  #       type: 'button'
+  #     ) {
+  #       text
+  #     }
+  #     div(class: "navbar-dropdown#{boxed ? ' is-boxed' : nil}#{right ? ' is-right' : nil}", &block)
+  #   }
+  # end
+
+  def end_item(href:, expanded: false, tab: false, &block)
+    item(expanded:, href:, slot: 'end', tab:, &block)
   end
 
-  def start(&block) = @start = block
+  def start_item(href:, expanded: false, tab: false, &block)
+    item(expanded:, href:, slot: 'start', tab:, &block)
+  end
 
-  def template
-    nav(
-      **classes(
-        'navbar',
-        color?: "is-#{color}",
-        fixed?: "is-fixed-#{fixed}",
-        shadowed?: 'has-shadow',
-        spaced?: 'is-spaced',
-        transparent?: 'is-transparent'
-      ),
-      data: {
-        controller: 'b-navbar',
-        **data
-      },
-      role: 'navigation'
-    ) {
-      div(class: 'navbar-brand') {
-        if image
-          a(class: 'navbar-item', href: test_path) {
-            image_tag(image, alt: image_alt)
-          }
-        end
+  def template(&block)
+    bulma_navbar(color:, fixed:, shadowed:, spaced:, transparent:, &block)
+  end
 
-        @brand&.call
+  private
 
-        a(
-          class: 'navbar-burger',
-          data: { action: 'b-navbar#toggleMenu', b_navbar_target: 'burger' },
-          role: 'button'
-        ) {
-          3.times do
-            span(aria_hidden: true)
-          end
-        }
-      }
+  def item(...) = render BNavbarItem.new(...)
 
-      div(class: 'navbar-menu', data_b_navbar_target: 'menu') {
-        div(class: 'navbar-start', &@start) if @start
-        div(class: 'navbar-end', &@end) if @end
-      }
-    }
+  class BNavbarItem < ApplicationComponent
+    attribute :expanded, default: false
+    attribute :href
+    attribute :slot
+    attribute :tab, default: false
+
+    def template(&block)
+      a(**classes('navbar-item', expanded?: 'is-expanded', tab?: 'is-tab'), href:, slot:, &block)
+    end
   end
 end
