@@ -56,10 +56,7 @@ class BulmaNavbar extends DumplingComponent {
 
       <nav class="navbar" data-target="navbar" part="nav" role="navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" data-target="brandImageLink" id="brandImageLink">
-            <slot name="brand-image"></slot>
-          </a>
-
+          <slot name="brand-image"></slot>
           <slot name="brand"></slot>
 
           <a
