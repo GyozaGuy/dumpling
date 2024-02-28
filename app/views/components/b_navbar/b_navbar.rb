@@ -59,12 +59,12 @@ class BNavbar < ApplicationComponent
   #   }
   # end
 
-  def end_item(href:, expanded: false, tab: false, &block)
-    item(expanded:, href:, slot: 'end', tab:, &block)
+  def end_item(href:, data: {}, expanded: false, tab: false, &block)
+    item(data:, expanded:, href:, slot: 'end', tab:, &block)
   end
 
-  def start_item(href:, expanded: false, tab: false, &block)
-    item(expanded:, href:, slot: 'start', tab:, &block)
+  def start_item(href:, data: {}, expanded: false, tab: false, &block)
+    item(data:, expanded:, href:, slot: 'start', tab:, &block)
   end
 
   def template(&block)
@@ -82,7 +82,21 @@ class BNavbar < ApplicationComponent
     attribute :tab, default: false
 
     def template(&block)
-      a(**classes('navbar-item', expanded?: 'is-expanded', tab?: 'is-tab'), href:, slot:, &block)
+      a(
+        **default_attributes,
+        **classes(
+          'navbar-item',
+          expanded?: 'is-expanded',
+          tab?: 'is-tab'
+        ),
+        data: {
+          **default_attributes[:data],
+          **data
+        },
+        href:,
+        slot:,
+        &block
+      )
     end
   end
 end
