@@ -1,5 +1,5 @@
 class BBlock < ApplicationComponent
   def template(&block)
-    div(class: 'block', &block)
+    div(**default_attributes, **classes('block', class_string), &block)
   end
 end

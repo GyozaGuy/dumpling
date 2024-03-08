@@ -3,7 +3,17 @@ class BBox < ApplicationComponent
   attribute :target, default: nil, one_of: [nil, :blank]
 
   def template(&block)
-    send(element_tag, class: 'box', href:, target: target? ? "_#{target}" : nil, &block)
+    send(
+      element_tag,
+      **default_attributes,
+      **classes(
+        'box',
+        class_string
+      ),
+      href:,
+      target: target? ? "_#{target}" : nil,
+      &block
+    )
   end
 
   private
