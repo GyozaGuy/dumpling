@@ -6,6 +6,7 @@ class SlTextarea < ApplicationComponent
   attribute :name
   attribute :placeholder
   attribute :readonly, default: false
+  attribute :required, default: false
   attribute :resize, default: :vertical, one_of: %i[auto none vertical]
   attribute :rows
   attribute :size, default: :medium, one_of: %i[small medium large]
@@ -22,6 +23,7 @@ class SlTextarea < ApplicationComponent
       name:,
       placeholder:,
       readonly:,
+      required:,
       resize:,
       rows:,
       size:,
