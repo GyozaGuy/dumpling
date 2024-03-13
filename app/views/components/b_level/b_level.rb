@@ -14,6 +14,6 @@ class BLevel < ApplicationComponent
   end
 
   def template(&block)
-    div(**classes('level', mobile?: 'is-mobile'), &block)
+    div(**default_attributes, **classes('level', class_string, mobile?: 'is-mobile'), &block)
   end
 end
