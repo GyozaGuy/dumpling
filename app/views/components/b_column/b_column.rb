@@ -25,6 +25,14 @@ class BColumn < ApplicationComponent
     ]
 
   def template(&block)
-    div(**classes('column', narrow?: 'is-narrow', size?: "is-#{to_dash(size)}"), &block)
+    div(
+      **default_attributes, **classes(
+        'column',
+        class_string,
+        narrow?: 'is-narrow',
+        size?: "is-#{to_dash(size)}"
+      ),
+      &block
+    )
   end
 end

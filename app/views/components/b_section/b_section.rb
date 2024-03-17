@@ -2,7 +2,7 @@ class BSection < ApplicationComponent
   attribute :container, default: true
 
   def template(&block)
-    section(class: 'section') {
+    section(**default_attributes, **classes('section', class_string)) {
       if container?
         b_container(&block)
       else

@@ -68,7 +68,7 @@ class BNavbar < ApplicationComponent
   end
 
   def template(&block)
-    bulma_navbar(color:, fixed:, shadowed:, spaced:, transparent:, &block)
+    bulma_navbar(**default_attributes, color:, fixed:, shadowed:, spaced:, transparent:, &block)
   end
 
   private

@@ -7,12 +7,14 @@ class BColumns < ApplicationComponent
   attribute :multiline, default: true
   attribute :vcentered, default: false
 
-  def column(*, **, &block) = b_column(*, **, &block)
+  def column(...) = b_column(...)
 
   def template(&block)
     div(
+      **default_attributes,
       **classes(
         'columns',
+        class_string,
         centered?: 'is-centered',
         desktop?: 'is-desktop',
         gap?: "is-#{gap}",
