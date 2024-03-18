@@ -1,7 +1,7 @@
 class Dumpling::DumplingAssetsController < ApplicationController
   def show
     asset_path = "dumpling/#{params[:path]}.#{params[:format]}"
-    asset = HTTPX.get(request.base_url + ActionController::Base.helpers.asset_path(asset_path))
+    asset = File.read("#{Dumpling::Engine.root}/app/assets/images/#{asset_path}")
 
     send_data(
       asset,
