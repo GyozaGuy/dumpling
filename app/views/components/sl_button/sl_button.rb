@@ -12,6 +12,7 @@ class SlButton < ApplicationComponent
   attribute :size, default: :medium, one_of: %i[small medium large]
   attribute :slot
   attribute :suffix_icon
+  attribute :target, default: nil, one_of: [nil, '_blank', '_parent', '_self', '_top']
   attribute :type
   attribute :variant,
     default: :default,
@@ -40,6 +41,7 @@ class SlButton < ApplicationComponent
       pill:,
       size:,
       slot:,
+      target:,
       type: method ? 'submit' : type,
       variant:
     ) {
