@@ -9,6 +9,11 @@ export default class extends Controller {
     this.#showElement(dialogId);
   }
 
+  showDrawer({ target }) {
+    const actualTarget = target.closest('button');
+    this.#showElement(actualTarget.dataset.drawerId);
+  }
+
   #showElement(id) {
     document.getElementById(id).show();
   }
