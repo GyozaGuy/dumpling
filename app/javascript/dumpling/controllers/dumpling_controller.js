@@ -1,14 +1,20 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  showDialog({ target }) {
-    const actualTarget = target.closest('button') || target.closest('sl-button');
-    this.#showElement(actualTarget.dataset.dialogId);
+  showDialog({
+    currentTarget: {
+      dataset: { dialogId }
+    }
+  }) {
+    this.#showElement(dialogId);
   }
 
-  showDrawer({ target }) {
-    const actualTarget = target.closest('button') || target.closest('sl-button');
-    this.#showElement(actualTarget.dataset.drawerId);
+  showDrawer({
+    currentTarget: {
+      dataset: { drawerId }
+    }
+  }) {
+    this.#showElement(drawerId);
   }
 
   #showElement(id) {

@@ -1,7 +1,7 @@
 module Dumpling::ApplicationHelper
-  def method_missing(name, *, **, &)
+  def method_missing(name, ...)
     if (component_class = name.to_s.camelize.safe_constantize)
-      return render component_class.new(*, **, &)
+      return render component_class.new(...)
     end
 
     super
