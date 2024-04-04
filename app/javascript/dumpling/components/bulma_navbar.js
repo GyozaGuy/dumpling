@@ -69,6 +69,7 @@ class BulmaNavbar extends DumplingComponent {
             <span aria-hidden></span>
             <span aria-hidden></span>
             <span aria-hidden></span>
+            <span aria-hidden></span>
           </a>
         </div>
 
