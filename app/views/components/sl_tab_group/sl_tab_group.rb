@@ -9,8 +9,12 @@ class SlTabGroup < ApplicationComponent
     sl_tab_panel(data_component: true, name:, &block)
   end
 
-  def tab(panel:, closable: false, data: {}, disabled: false, &block)
-    sl_tab(closable:, data: { component: true, **data }, disabled:, panel:, slot: 'nav', &block)
+  def tab(*args, panel:, active: false, closable: false, data: {}, disabled: false, &block)
+    active = args.include?(:active) || active
+    sl_tab(
+      active:, closable:, data: { component: true, **data }, disabled:, panel:, slot: 'nav',
+      &block
+    )
   end
 
   def template(&block)
