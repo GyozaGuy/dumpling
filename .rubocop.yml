@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "**/*.erb"
+    - '**/*.erb'
     - db/migrate/*
     - db/schema.rb
 
@@ -32,7 +32,7 @@ Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
 Layout/LineLength:
-  Max: 100
+  Max: 120
 
 Layout/MultilineArrayLineBreaks:
   Enabled: true

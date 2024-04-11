@@ -2,11 +2,7 @@ dumpling_root = Dumpling::Engine.root
 dumpling_path = dumpling_root.join('app', 'javascript', 'dumpling')
 
 pin 'dumpling', to: 'dumpling/application.js', preload: true
-pin(
-  'shoelace',
-  to: 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/shoelace.js',
-  preload: true
-)
+pin 'shoelace', to: 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/shoelace.js', preload: true
 pin_all_from dumpling_path.join('components'), under: 'dumpling/components'
 pin_all_from dumpling_path.join('controllers'), under: 'dumpling/controllers'
 pin_all_from dumpling_path.join('helpers'), under: 'dumpling/helpers'
