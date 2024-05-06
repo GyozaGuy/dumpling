@@ -23,7 +23,7 @@ class BNavbar < ApplicationComponent
   register_element :bulma_navbar
 
   def brand_image(href:, src:, alt: nil)
-    link_to(href, slot: 'brand-image') do
+    link_to(href, class: 'navbar-item', slot: 'brand-image') do
       image_tag(src, alt:)
     end
   end
