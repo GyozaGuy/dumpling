@@ -1,5 +1,5 @@
 class TestPage < ApplicationView
-  def template
+  def view_template
     page_title 'Testing'
   end
 end
