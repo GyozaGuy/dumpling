@@ -6,7 +6,7 @@ class SlSpinner < ApplicationComponent
   attribute :track_width
   register_element :sl_spinner
 
-  def template
+  def view_template
     sl_spinner(**default_attributes, style: style_string)
   end
 

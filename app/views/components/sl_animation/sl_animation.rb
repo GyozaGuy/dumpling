@@ -5,7 +5,7 @@ class SlAnimation < ApplicationComponent
   attribute :play, default: true
   register_element :sl_animation
 
-  def template(&block)
+  def view_template(&block)
     sl_animation(**default_attributes, duration:, easing:, name:, play:, &block)
   end
 end

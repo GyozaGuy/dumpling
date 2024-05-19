@@ -6,7 +6,7 @@ class SlAvatar < ApplicationComponent
   attribute :shape, default: :circle, one_of: %i[circle rounded square]
   register_element :sl_avatar
 
-  def template
+  def view_template
     sl_avatar(**default_attributes, image:, initials:, label: @label, shape:) {
       sl_icon(name: icon, slot: 'icon') if icon
     }

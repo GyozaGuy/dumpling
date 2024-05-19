@@ -15,7 +15,7 @@ class SlCarousel < ApplicationComponent
     sl_carousel_item(data_component: true, &block)
   end
 
-  def template(&block)
+  def view_template(&block)
     sl_carousel(
       **default_attributes,
       autoplay:,

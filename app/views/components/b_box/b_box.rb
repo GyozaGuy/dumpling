@@ -2,7 +2,7 @@ class BBox < ApplicationComponent
   attribute :href
   attribute :target, default: nil, one_of: [nil, :blank]
 
-  def template(&block)
+  def view_template(&block)
     send(
       element_tag,
       **default_attributes,

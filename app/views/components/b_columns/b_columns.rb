@@ -9,7 +9,7 @@ class BColumns < ApplicationComponent
 
   def column(...) = b_column(...)
 
-  def template(&block)
+  def view_template(&block)
     div(
       **default_attributes,
       **classes(

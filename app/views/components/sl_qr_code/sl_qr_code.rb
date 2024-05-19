@@ -8,7 +8,7 @@ class SlQrCode < ApplicationComponent
   attribute :value, required: true
   register_element :sl_qr_code
 
-  def template
+  def view_template
     sl_qr_code(
       **default_attributes,
       background:,

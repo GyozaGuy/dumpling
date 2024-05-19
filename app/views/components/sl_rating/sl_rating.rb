@@ -9,7 +9,7 @@ class SlRating < ApplicationComponent
   attribute :value
   register_element :sl_rating
 
-  def template
+  def view_template
     sl_rating(
       **default_attributes,
       disabled:,

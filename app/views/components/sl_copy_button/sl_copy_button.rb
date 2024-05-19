@@ -11,7 +11,7 @@ class SlCopyButton < ApplicationComponent
   attribute :value
   register_element :sl_copy_button
 
-  def template
+  def view_template
     sl_copy_button(
       **default_attributes,
       copy_label:,

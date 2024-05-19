@@ -5,7 +5,7 @@ class SlProgressBar < ApplicationComponent
   attribute :value
   register_element :sl_progress_bar
 
-  def template(&block)
+  def view_template(&block)
     sl_progress_bar(
       **default_attributes, indeterminate:, label:, style: style_string, value:,
       &block

@@ -5,7 +5,7 @@ class SlDivider < ApplicationComponent
   attribute :width
   register_element :sl_divider
 
-  def template
+  def view_template
     sl_divider(**default_attributes, style: style_string, vertical:)
   end
 

@@ -25,7 +25,7 @@ class SlMenu < ApplicationComponent
     sl_menu_label(&block)
   end
 
-  def template(&block)
+  def view_template(&block)
     sl_menu(**default_attributes, slot: submenu ? 'submenu' : nil, &block)
   end
 end

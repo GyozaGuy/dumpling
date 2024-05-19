@@ -12,7 +12,7 @@ class SlDrawer < ApplicationComponent
     }
   end
 
-  def template(&block)
+  def view_template(&block)
     sl_drawer(
       **default_attributes,
       contained:,

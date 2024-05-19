@@ -24,7 +24,7 @@ class SlTooltip < ApplicationComponent
   attribute :trigger # Valid values: click, hover, focus, manual
   register_element :sl_tooltip
 
-  def template(&block)
+  def view_template(&block)
     sl_tooltip(
       **default_attributes,
       content:,

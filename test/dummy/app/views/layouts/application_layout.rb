@@ -1,5 +1,5 @@
 class ApplicationLayout < Dumpling::ApplicationLayout
-  def template(&block)
+  def view_template(&block)
     doctype
 
     html {

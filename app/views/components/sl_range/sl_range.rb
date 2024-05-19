@@ -13,7 +13,7 @@ class SlRange < ApplicationComponent
   attribute :value
   register_element :sl_range
 
-  def template
+  def view_template
     sl_range(
       **default_attributes,
       disabled:,

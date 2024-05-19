@@ -4,7 +4,7 @@ class SlSwitch < ApplicationComponent
   attribute :size, default: :medium, one_of: %i[small medium large]
   register_element :sl_switch
 
-  def template
+  def view_template
     sl_switch(**default_attributes, checked:, disabled:, size:)
   end
 end

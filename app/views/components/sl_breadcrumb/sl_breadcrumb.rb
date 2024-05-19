@@ -11,7 +11,7 @@ class SlBreadcrumb < ApplicationComponent
     }
   end
 
-  def template
+  def view_template
     sl_breadcrumb(**default_attributes) {
       sl_icon(name: separator, slot: 'separator') if separator
       yield

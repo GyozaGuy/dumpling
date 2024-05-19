@@ -7,7 +7,7 @@ class SlAlert < ApplicationComponent
   attribute :variant, default: :primary, one_of: %i[danger neutral primary success warning]
   register_element :sl_alert
 
-  def template
+  def view_template
     sl_alert(
       **default_attributes,
       closable:,

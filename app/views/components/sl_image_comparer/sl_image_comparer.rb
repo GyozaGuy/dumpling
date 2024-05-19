@@ -5,7 +5,7 @@ class SlImageComparer < ApplicationComponent
   def after(alt:, src:) = img(alt:, slot: 'after', src:)
   def before(alt:, src:) = img(alt:, slot: 'before', src:)
 
-  def template(&block)
+  def view_template(&block)
     sl_image_comparer(**default_attributes, position:, &block)
   end
 end

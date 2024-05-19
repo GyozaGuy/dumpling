@@ -10,7 +10,7 @@ class SlColorPicker < ApplicationComponent
   attribute :value
   register_element :sl_color_picker
 
-  def template
+  def view_template
     sl_color_picker(
       **default_attributes,
       disabled:,

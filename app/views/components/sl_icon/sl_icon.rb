@@ -5,7 +5,7 @@ class SlIcon < ApplicationComponent
   attribute :src
   register_element :sl_icon
 
-  def template
+  def view_template
     sl_icon(**default_attributes, label:, name:, slot:, src:)
   end
 end

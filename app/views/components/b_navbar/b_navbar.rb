@@ -67,7 +67,7 @@ class BNavbar < ApplicationComponent
     item(data:, expanded:, href:, slot: 'start', tab:, &block)
   end
 
-  def template(&block)
+  def view_template(&block)
     bulma_navbar(**default_attributes, color:, fixed:, shadowed:, spaced:, transparent:, &block)
   end
 
@@ -81,7 +81,7 @@ class BNavbar < ApplicationComponent
     attribute :slot
     attribute :tab, default: false
 
-    def template(&block)
+    def view_template(&block)
       a(
         **default_attributes,
         **classes(

@@ -7,7 +7,7 @@ class SlCheckbox < ApplicationComponent
   attribute :value
   register_element :sl_checkbox
 
-  def template(&block)
+  def view_template(&block)
     sl_checkbox(
       **default_attributes, checked:, disabled:, indeterminate:, name:, size:, value:,
       &block

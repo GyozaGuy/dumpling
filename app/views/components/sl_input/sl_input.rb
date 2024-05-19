@@ -32,7 +32,7 @@ class SlInput < ApplicationComponent
   attribute :value
   register_element :sl_input
 
-  def template
+  def view_template
     sl_input(
       **default_attributes,
       autocapitalize:,

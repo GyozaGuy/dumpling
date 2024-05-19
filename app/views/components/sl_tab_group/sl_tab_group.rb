@@ -17,7 +17,7 @@ class SlTabGroup < ApplicationComponent
     )
   end
 
-  def template(&block)
+  def view_template(&block)
     sl_tab_group(**default_attributes, activation:, placement:, &block)
   end
 end

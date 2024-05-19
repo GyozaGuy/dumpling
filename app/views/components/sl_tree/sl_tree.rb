@@ -16,7 +16,7 @@ class SlTree < ApplicationComponent
     }
   end
 
-  def template
+  def view_template
     sl_tree(**default_attributes, selection:, style: style_string) {
       sl_icon(name: collapse_icon, slot: 'collapse-icon') if collapse_icon
       sl_icon(name: expand_icon, slot: 'expand-icon') if expand_icon

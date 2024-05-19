@@ -19,7 +19,7 @@ class SlButton < ApplicationComponent
     one_of: %i[danger default neutral primary success text warning]
   register_element :sl_button
 
-  def template(wrapped: false, &block)
+  def view_template(wrapped: false, &block)
     if href && method && !wrapped
       return form(action: href, method:) {
         template(wrapped: true, &block)

@@ -18,7 +18,7 @@ class SlRadioGroup < ApplicationComponent
     sl_radio(data_component: true, disabled:, value:, &block)
   end
 
-  def template(&block)
+  def view_template(&block)
     sl_radio_group(**default_attributes, name:, size:, value:, &block)
   end
 end

@@ -7,7 +7,7 @@ class SlCard < ApplicationComponent
   def footer(&block) = div(slot: 'footer', &block)
   def header(&block) = div(slot: 'header', &block)
 
-  def template
+  def view_template
     sl_card(**default_attributes) {
       img(alt: image_alt, loading:, slot: 'image', src: image) if image
       yield

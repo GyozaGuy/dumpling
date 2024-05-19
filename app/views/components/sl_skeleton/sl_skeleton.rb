@@ -4,7 +4,7 @@ class SlSkeleton < ApplicationComponent
   attribute :sheen_color
   register_element :sl_skeleton
 
-  def template
+  def view_template
     sl_skeleton(**default_attributes, effect:, style: style_string)
   end
 

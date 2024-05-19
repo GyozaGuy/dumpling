@@ -7,7 +7,7 @@ class SlDialog < ApplicationComponent
     sl_button(action: 'visibility#hide', slot: 'footer', variant: :primary) { 'Close' }
   end
 
-  def template(&block)
+  def view_template(&block)
     sl_dialog(
       **default_attributes, data: { **data, controller: 'visibility' }, label: @label,
       &block

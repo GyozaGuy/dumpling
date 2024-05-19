@@ -8,7 +8,7 @@ class SlProgressRing < ApplicationComponent
   attribute :value
   register_element :sl_progress_ring
 
-  def template(&block)
+  def view_template(&block)
     sl_progress_ring(**default_attributes, label:, style: style_string, value:, &block)
   end
 

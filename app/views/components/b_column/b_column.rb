@@ -24,7 +24,7 @@ class BColumn < ApplicationComponent
       12
     ]
 
-  def template(&block)
+  def view_template(&block)
     div(
       **default_attributes, **classes(
         'column',

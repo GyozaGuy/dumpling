@@ -5,7 +5,7 @@ class SlIconButton < ApplicationComponent
   attribute :name, required: true
   register_element :sl_icon_button
 
-  def template
+  def view_template
     sl_icon_button(**default_attributes, action: "click->#{action}", disabled:, href:, name:)
   end
 end

@@ -13,7 +13,7 @@ class SlTextarea < ApplicationComponent
   attribute :value
   register_element :sl_textarea
 
-  def template
+  def view_template
     sl_textarea(
       **default_attributes,
       disabled:,

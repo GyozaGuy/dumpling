@@ -5,7 +5,7 @@ class SlTag < ApplicationComponent
   attribute :variant, default: :neutral, one_of: %i[danger neutral primary success warning]
   register_element :sl_tag
 
-  def template(&block)
+  def view_template(&block)
     sl_tag(
       **default_attributes,
       data: {

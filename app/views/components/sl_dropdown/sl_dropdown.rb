@@ -21,7 +21,7 @@ class SlDropdown < ApplicationComponent
   attribute :skidding
   register_element :sl_dropdown
 
-  def template
+  def view_template
     sl_dropdown(**default_attributes, distance:, hoist:, placement: to_dash(placement), skidding:) {
       sl_button(caret: true, slot: 'trigger') { label }
       yield

@@ -10,7 +10,7 @@ class SlSplitPanel < ApplicationComponent
   def end(&block) = div(slot: 'end', &block)
   def start(&block) = div(slot: 'start', &block)
 
-  def template(&block)
+  def view_template(&block)
     sl_split_panel(
       **default_attributes,
       disabled:,

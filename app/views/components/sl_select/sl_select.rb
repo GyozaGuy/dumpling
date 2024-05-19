@@ -23,7 +23,7 @@ class SlSelect < ApplicationComponent
     }
   end
 
-  def template
+  def view_template
     sl_select(
       **default_attributes,
       clearable:,
