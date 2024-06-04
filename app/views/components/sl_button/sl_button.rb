@@ -22,7 +22,7 @@ class SlButton < ApplicationComponent
   def view_template(wrapped: false, &block)
     if href && method && !wrapped
       return form(action: href, method:) {
-        template(wrapped: true, &block)
+        view_template(wrapped: true, &block)
       }
     end
 
