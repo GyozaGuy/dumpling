@@ -15,8 +15,6 @@ class BNavbar < ApplicationComponent
       :white
     ]
   attribute :fixed, default: nil, one_of: [nil, :bottom, :top]
-  attribute :image
-  attribute :image_alt
   attribute :shadowed, default: false
   attribute :spaced, default: false
   attribute :transparent, default: false
