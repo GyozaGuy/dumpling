@@ -57,11 +57,11 @@ class BNavbar < ApplicationComponent
   #   }
   # end
 
-  def end_item(href:, data: {}, expanded: false, tab: false, &block)
+  def end_item(href: nil, data: {}, expanded: false, tab: false, &block)
     item(data:, expanded:, href:, slot: 'end', tab:, &block)
   end
 
-  def start_item(href:, data: {}, expanded: false, tab: false, &block)
+  def start_item(href: nil, data: {}, expanded: false, tab: false, &block)
     item(data:, expanded:, href:, slot: 'start', tab:, &block)
   end
 
@@ -80,7 +80,8 @@ class BNavbar < ApplicationComponent
     attribute :tab, default: false
 
     def view_template(&block)
-      a(
+      send(
+        href.present? ? :a : :div,
         **default_attributes,
         **classes(
           'navbar-item',
