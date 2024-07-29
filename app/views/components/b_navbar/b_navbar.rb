@@ -20,16 +20,19 @@ class BNavbar < ApplicationComponent
   attribute :transparent, default: false
   register_element :bulma_navbar
 
-  def brand_image(href:, src:, alt: nil)
-    link_to(href, class: 'navbar-item', slot: 'brand-image') do
-      image_tag(src, alt:)
+  def brand_image(src:, alt: nil, href: nil)
+    if href.present?
+      link_to(href, class: 'navbar-item', slot: 'brand-image') do
+        image_tag(src, alt:)
+      end
+    else
+      div(class: 'navbar-item', slot: 'brand-image') {
+        image_tag(src, alt:)
+      }
     end
   end
 
-  def brand_link(href:, &block)
-    item(href:, slot: 'brand', &block)
-  end
-
+  def brand_item(href: nil, &block) = item(href:, slot: 'brand', &block)
   def divider = div(class: 'navbar-divider')
 
   # TODO: Rethink dropdowns
