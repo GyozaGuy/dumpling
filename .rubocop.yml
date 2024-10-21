@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - db/migrate/*
+    - "**/*.erb"
     - db/schema.rb
 
 Layout/ArgumentAlignment:
@@ -31,7 +31,7 @@ Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
 Layout/LineLength:
-  Max: 100
+  Max: 120
 
 Layout/MultilineArrayLineBreaks:
   Enabled: true
@@ -62,6 +62,9 @@ Metrics/ClassLength:
 
 Metrics/MethodLength:
   Max: 50
+
+Style/BlockDelimiters:
+  Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false
